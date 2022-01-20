@@ -19,3 +19,5 @@ export const MenuItem = styled.span`
   height: 16.25px;
   color: #454545;
 `;
+
+// https://stackoverflow.com/questions/55465673/jest-enzyme-with-styled-components
