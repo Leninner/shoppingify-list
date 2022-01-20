@@ -1,3 +1,11 @@
+import GlobalStyles from './styles/GlobalStyles';
+import { MenuAside } from './components/MenuAside';
+
 export const App = () => {
-  return <h1>Leninner</h1>;
+  return (
+    <>
+      <GlobalStyles />
+      <MenuAside />
+    </>
+  );
 };

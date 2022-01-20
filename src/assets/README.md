@@ -1,19 +1,6 @@
-# Shoppingify List
-
-This project is a shopping list application: https://devchallenges.io/challenges/mGd5VpbO4JnzU6I9l96x
-
-## Stack
-
-- React
-- Styled Components
-- Proptypes
-- Testing with Jest and Enzyme
-
-## This project is made with ❤ by **Leninner**
-
 <!-- Please update value in the {}  -->
 
-<h1 align="center">Shoppingify List</h1>
+<h1 align="center">{Your project name}</h1>
 
 <div align="center">
    Solution for a challenge from  <a href="http://devchallenges.io" target="_blank">Devchallenges.io</a>.
@@ -39,16 +26,12 @@ This project is a shopping list application: https://devchallenges.io/challenges
 
 ## Table of Contents
 
-- [Shoppingify List](#shoppingify-list)
-  - [Stack](#stack)
-  - [This project is made with ❤ by **Leninner**](#this-project-is-made-with--by-leninner)
-  - [Table of Contents](#table-of-contents)
-  - [Overview](#overview)
-    - [Built With](#built-with)
-  - [Features](#features)
-  - [How To Use](#how-to-use)
-  - [Acknowledgements](#acknowledgements)
-  - [Contact](#contact)
+- [Overview](#overview)
+  - [Built With](#built-with)
+- [Features](#features)
+- [How to use](#how-to-use)
+- [Contact](#contact)
+- [Acknowledgements](#acknowledgements)
 
 <!-- OVERVIEW -->
 
