@@ -17,5 +17,5 @@ export const MenuItem = styled.span`
   top: ${({ top }) => `${top}%`};
   width: 20.04px;
   height: 16.25px;
-  color: '#454545';
+  color: #454545;
 `;
