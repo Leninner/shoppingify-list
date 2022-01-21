@@ -21,7 +21,7 @@ This project is a shopping list application: https://devchallenges.io/challenges
 
 <div align="center">
   <h3>
-    <a href="https://{your-demo-link.your-domain}">
+    <a href="https://shoppingify-project.vercel.app/">
       Demo
     </a>
     <span> | </span>
