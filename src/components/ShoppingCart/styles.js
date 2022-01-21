@@ -11,10 +11,26 @@ export const CartContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+`;
 
-  span {
-    color: white;
-    width: 20px;
-    height: 20px;
-  }
+export const CartIcon = styled.span`
+  color: white;
+  width: 20px;
+  height: 20px;
+`;
+
+export const NumberCart = styled.span`
+  background-color: #eb5757;
+  color: white;
+  border-radius: 4px;
+  width: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  height: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  top: -5px;
+  right: -10px;
 `;

@@ -1,10 +1,11 @@
-import { CartContainer } from './styles';
+import { CartContainer, NumberCart, CartIcon } from './styles';
 
 export const ShoppingCart = () => {
   return (
     <>
       <CartContainer>
-        <span className='material-icons'>&#xe8cc;</span>
+        <CartIcon className='material-icons'>&#xe8cc;</CartIcon>
+        <NumberCart>3</NumberCart>
       </CartContainer>
     </>
   );

@@ -9,6 +9,10 @@ export const MenuContainer = styled.div`
 
 export const DivItems = styled.div`
   width: 100%;
+
+  #menu-item-1 {
+    display: none;
+  }
 `;
 
 export const MenuItem = styled.span`
