@@ -4,21 +4,20 @@ import { ShoppingCart } from '../ShoppingCart';
 import { useHoverShow } from '../../hooks/useHoverShow';
 
 export const MenuAside = () => {
-  const {
-    show: [isShowOne, handleShowOne],
-  } = useHoverShow();
-  const {
-    show: [isShowTwo, handleShowTwo],
-  } = useHoverShow();
-  const {
-    show: [isShowThree, handleShowThree],
-  } = useHoverShow();
+  const [isShowOne, handleShowOne] = useHoverShow();
+  const [isShowTwo, handleShowTwo] = useHoverShow();
+  const [isShowThree, handleShowThree] = useHoverShow();
 
   return (
     <MenuContainer>
       <LogoComponent />
       <DivItems>
-        <MenuItem className='material-icons' top={40.34} onMouseEnter={handleShowOne} onMouseLeave={handleShowOne}>
+        <MenuItem
+          className='material-icons'
+          top={40.34}
+          onMouseEnter={handleShowOne}
+          onMouseLeave={handleShowOne}
+          to='/items'>
           &#xe896;
         </MenuItem>
 
@@ -26,7 +25,12 @@ export const MenuAside = () => {
           Items
         </HoverMenuItem>
 
-        <MenuItem className='material-icons' top={49.59} onMouseEnter={handleShowTwo} onMouseLeave={handleShowTwo}>
+        <MenuItem
+          className='material-icons'
+          top={49.59}
+          onMouseEnter={handleShowTwo}
+          onMouseLeave={handleShowTwo}
+          to='/refresh'>
           &#xe042;
         </MenuItem>
 
@@ -34,7 +38,12 @@ export const MenuAside = () => {
           Refresh
         </HoverMenuItem>
 
-        <MenuItem className='material-icons' top={60.16} onMouseEnter={handleShowThree} onMouseLeave={handleShowThree}>
+        <MenuItem
+          className='material-icons'
+          top={60.16}
+          onMouseEnter={handleShowThree}
+          onMouseLeave={handleShowThree}
+          to='/inventary'>
           &#xe85c;
         </MenuItem>
 
