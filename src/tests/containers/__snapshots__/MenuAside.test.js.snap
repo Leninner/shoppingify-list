@@ -1,0 +1,111 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Debe encontrar los elementos correctos en el DOM Debe encontrar el componente en el documento 1`] = `
+<styled.div>
+  <Link
+    to="/"
+  >
+    <LogoComponent />
+  </Link>
+  <styled.div>
+    <Styled(NavLink)
+      className="material-icons"
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      to="/items"
+      top={40.34}
+    >
+      
+      <styled.span
+        isShow={false}
+        top={40.34}
+      >
+        Items
+      </styled.span>
+    </Styled(NavLink)>
+    <Styled(NavLink)
+      className="material-icons"
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      to="/refresh"
+      top={49.59}
+    >
+      
+      <styled.span
+        isShow={false}
+        top={49.59}
+      >
+        Refresh
+      </styled.span>
+    </Styled(NavLink)>
+    <Styled(NavLink)
+      className="material-icons"
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      to="/inventary"
+      top={60.16}
+    >
+      
+      <styled.span
+        isShow={false}
+        top={60.16}
+      >
+        Inventary
+      </styled.span>
+    </Styled(NavLink)>
+  </styled.div>
+  <ShoppingCart
+    WrapperComponent={
+      Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "attrs": Array [],
+        "componentStyle": e {
+          "baseHash": -1179868038,
+          "baseStyle": undefined,
+          "componentId": "sc-dkPtRN",
+          "isStatic": false,
+          "rules": Array [
+            "
+  width: 100%;
+  text-align: center;
+  height: 16.25px;
+  color: #454545;
+  cursor: pointer;
+  text-decoration: none;
+  margin: 25px 0;
+  position: relative;
+
+  &[aria-current] {
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      width: 6px;
+      top: -10px;
+      height: 45.98px;
+      background: #f9a109;
+      font-size: 34px;
+      color: black;
+      border-radius: 0px 4px 4px 0px;
+    }
+  }
+",
+          ],
+          "staticRulesId": "",
+        },
+        "foldedComponentIds": Array [],
+        "render": [Function],
+        "shouldForwardProp": undefined,
+        "styledComponentId": "sc-dkPtRN",
+        "target": Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "render": [Function],
+        },
+        "toString": [Function],
+        "warnTooManyClasses": [Function],
+        "withComponent": [Function],
+      }
+    }
+  />
+</styled.div>
+`;

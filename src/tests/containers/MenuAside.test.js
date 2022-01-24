@@ -1,7 +1,7 @@
-import { MenuAside } from '../../components/MenuAside';
+import { MenuAside } from '../../containers/MenuAside';
 import { shallow } from 'enzyme';
 import '@testing-library/jest-dom';
-import { MenuItem } from '../../components/MenuAside/styles';
+import { MenuItem } from '../../containers/MenuAside/styles';
 
 describe('Debe encontrar los elementos correctos en el DOM', () => {
   test('Debe encontrar el componente en el documento', () => {
