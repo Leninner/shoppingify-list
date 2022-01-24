@@ -1,6 +1,6 @@
 import { StyledAddItemContainer, BoxInput, Form, ButtonAddItem } from './styles';
 
-export const AddItem = () => {
+export const AddItemButton = () => {
   return (
     <StyledAddItemContainer>
       <Form>

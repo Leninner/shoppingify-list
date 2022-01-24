@@ -12,4 +12,27 @@ export default createGlobalStyle`
     -webkit-user-select: none; /* Chrome, Safari, and Opera */
     -webkit-touch-callout: none; /* Disable Android and iOS callouts*/
   }
+
+
+  ::-webkit-scrollbar {
+      -webkit-appearance: none;
+  }
+
+  ::-webkit-scrollbar:vertical {
+      width:10px;
+  }
+
+  ::-webkit-scrollbar-button:increment,::-webkit-scrollbar-button {
+      display: none;
+  }
+
+  ::-webkit-scrollbar-thumb {
+      background-color: #828282;
+      border-radius: 20px;
+      border: 3px solid #f1f2f3;
+  }
+
+  ::-webkit-scrollbar-track {
+      border-radius: 10px;
+  }
 `;

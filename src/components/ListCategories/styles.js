@@ -26,3 +26,29 @@ export const Img = styled.img`
   width: 50%;
   z-index: 1;
 `;
+
+export const ShoppingListContainer = styled.div`
+  width: 79.37%;
+  left: calc(50% - 39.69%);
+  position: absolute;
+  height: 100%;
+`;
+
+export const ShoppingListTittle = styled.div`
+  display: flex;
+  justify-content: space-between;
+
+  h2 {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 30px;
+    color: #34333a;
+  }
+`;
+
+export const CategoriesContainer = styled.div`
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+`;
