@@ -14,12 +14,16 @@ import { connect } from 'react-redux';
 const ListCategories = ({ categories }) => {
   const [isEmpty, setIsEmpty] = useState(false);
 
+  const handleEmpty = () => {
+    setIsEmpty(true);
+  };
+
   return (
     <StyledListItems>
       {isEmpty ? (
         <>
           <FeedBack>No items</FeedBack>
-          <Img src={CartEmptyIcon} alt='' />
+          <Img src={CartEmptyIcon} alt='' onClick={handleEmpty} />
         </>
       ) : (
         <ShoppingListContainer>
