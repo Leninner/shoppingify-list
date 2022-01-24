@@ -1,4 +1,4 @@
-import { InteractiveAside } from '../../containers/InteractiveAside';
+import InteractiveAside from '../../containers/InteractiveAside';
 
 export const Items = () => {
   return <InteractiveAside />;

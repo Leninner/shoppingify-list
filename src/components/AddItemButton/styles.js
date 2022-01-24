@@ -4,9 +4,9 @@ export const StyledAddItemContainer = styled.div`
   position: absolute;
   width: 100%;
   height: 130.98px;
+  background-color: white;
   right: 0;
   bottom: 0;
-  background: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -15,6 +15,9 @@ export const StyledAddItemContainer = styled.div`
 export const Form = styled.form`
   position: relative;
   width: 83.99%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 export const BoxInput = styled.input`
@@ -55,4 +58,21 @@ export const ButtonAddItem = styled.button`
   &:disabled {
     background: #c1c1c4;
   }
+`;
+
+export const ButtonConfirm = styled.button`
+  width: 87.35px;
+  height: 61.25px;
+  border-radius: 12px;
+  border: none;
+  background: transparent;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 20px;
+
+  ${({ isCancel }) =>
+    isCancel
+      ? 'border: 1px solid #c0c0c0; color: #34333A; margin-right: 10px;'
+      : 'background: #F9A109;  color: #FFFFFF; margin-left: 10px;'}
 `;

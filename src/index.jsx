@@ -56,6 +56,7 @@ const initialState = {
       ],
     },
   ],
+  isAdding: false,
 };
 
 // conectar Redux devTools
