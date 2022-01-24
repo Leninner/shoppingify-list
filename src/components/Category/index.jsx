@@ -1,12 +1,14 @@
 import { ItemCategory } from '../ItemCategory';
 import { TitleCategory, StyledCategoryContainer } from './styles';
 
-export const Category = () => {
+export const Category = (category) => {
+  const { name, items } = category;
+
   return (
     <StyledCategoryContainer>
-      <TitleCategory>Fruit and Vegetables</TitleCategory>
-      {[1, 2].map((item) => (
-        <ItemCategory key={item} />
+      <TitleCategory>{name}</TitleCategory>
+      {items.map((item) => (
+        <ItemCategory key={item.id} {...item} />
       ))}
     </StyledCategoryContainer>
   );

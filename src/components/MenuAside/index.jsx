@@ -2,6 +2,7 @@ import { MenuContainer, DivItems, MenuItem, HoverMenuItem } from './styles';
 import { LogoComponent } from '../Logo';
 import { ShoppingCart } from '../ShoppingCart';
 import { useHoverShow } from '../../hooks/useHoverShow';
+import { Link } from 'react-router-dom';
 
 export const MenuAside = () => {
   const [isShowOne, handleShowOne] = useHoverShow();
@@ -10,7 +11,10 @@ export const MenuAside = () => {
 
   return (
     <MenuContainer>
-      <LogoComponent />
+      <Link to='/'>
+        <LogoComponent />
+      </Link>
+
       <DivItems>
         <MenuItem
           className='material-icons'

@@ -9,8 +9,9 @@ import {
 } from './styles';
 import { Category } from '../Category';
 import { useState } from 'react';
+import { connect } from 'react-redux';
 
-export const ListCategories = () => {
+const ListCategories = ({ categories }) => {
   const [isEmpty, setIsEmpty] = useState(false);
 
   return (
@@ -26,9 +27,10 @@ export const ListCategories = () => {
             <h2>Shopping List</h2>
             <span className='material-icons'>edit</span>
           </ShoppingListTittle>
+
           <CategoriesContainer>
-            {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((item) => (
-              <Category key={item} />
+            {categories.map((item) => (
+              <Category key={item.id} {...item} />
             ))}
           </CategoriesContainer>
         </ShoppingListContainer>
@@ -36,3 +38,11 @@ export const ListCategories = () => {
     </StyledListItems>
   );
 };
+
+const mapStateToProps = (state) => () => {
+  return {
+    categories: state.categories,
+  };
+};
+
+export default connect(mapStateToProps, null)(ListCategories);
