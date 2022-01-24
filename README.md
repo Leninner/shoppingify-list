@@ -10,6 +10,7 @@ This project is a shopping list application: https://devchallenges.io/challenges
 - Styled Components
 - Proptypes
 - Testing with Jest and Enzyme
+- Update
 
 ## This project is made with ❤ by **Leninner**
 
