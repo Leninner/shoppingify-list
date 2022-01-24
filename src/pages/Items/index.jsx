@@ -1,5 +1,13 @@
 import InteractiveAside from '../../containers/InteractiveAside';
+import { Helmet } from 'react-helmet';
 
 export const Items = () => {
-  return <InteractiveAside />;
+  return (
+    <>
+      <Helmet>
+        <title>Items</title>
+      </Helmet>
+      <InteractiveAside />
+    </>
+  );
 };
