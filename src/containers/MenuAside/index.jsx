@@ -1,6 +1,6 @@
 import { MenuContainer, DivItems, MenuItem, HoverMenuItem } from './styles';
-import { LogoComponent } from '../Logo';
-import { ShoppingCart } from '../ShoppingCart';
+import { LogoComponent } from '../../components/Logo';
+import { ShoppingCart } from '../../components/ShoppingCart';
 import { useHoverShow } from '../../hooks/useHoverShow';
 import { Link } from 'react-router-dom';
 
