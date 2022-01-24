@@ -6,27 +6,35 @@ export const MenuContainer = styled.div`
   width: 6.88%;
   height: 100vh;
   background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 0 15px 0;
 `;
 
 export const DivItems = styled.div`
   width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 `;
 
 export const MenuItem = styled(NavLink)`
-  position: absolute;
-  left: 35.83%;
-  top: ${({ top }) => `${top}%`};
-  width: 20.04px; */
+  width: 100%;
+  text-align: center;
   height: 16.25px;
   color: #454545;
   cursor: pointer;
   text-decoration: none;
+  margin: 25px 0;
+  position: relative;
 
   &[aria-current] {
     &::before {
       content: '';
       position: absolute;
-      left: -170%;
+      left: 0;
       width: 6px;
       top: -10px;
       height: 45.98px;
@@ -46,8 +54,8 @@ export const HoverMenuItem = styled.span`
   border-radius: 4px;
   font-size: 12px;
   color: #ffffff;
-  top: ${({ top }) => `${top}%`};
-  left: 75.83%;
+  left: 85%;
+  top: 0;
   display: ${({ isShow }) => (isShow ? 'flex' : 'none')};
   justify-content: center;
   align-items: center;

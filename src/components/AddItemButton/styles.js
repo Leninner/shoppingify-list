@@ -14,10 +14,11 @@ export const StyledAddItemContainer = styled.div`
 
 export const Form = styled.form`
   position: relative;
+  width: 83.99%;
 `;
 
 export const BoxInput = styled.input`
-  width: 309.89px;
+  width: 100%;
   height: 61.25px;
   border: 2px solid #f9a109;
   border-radius: 12px;

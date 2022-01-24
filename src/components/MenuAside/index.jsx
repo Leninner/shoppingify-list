@@ -23,11 +23,10 @@ export const MenuAside = () => {
           onMouseLeave={handleShowOne}
           to='/items'>
           &#xe896;
+          <HoverMenuItem top={40.34} isShow={isShowOne}>
+            Items
+          </HoverMenuItem>
         </MenuItem>
-
-        <HoverMenuItem top={40.34} isShow={isShowOne}>
-          Items
-        </HoverMenuItem>
 
         <MenuItem
           className='material-icons'
@@ -36,11 +35,10 @@ export const MenuAside = () => {
           onMouseLeave={handleShowTwo}
           to='/refresh'>
           &#xe042;
+          <HoverMenuItem top={49.59} isShow={isShowTwo}>
+            Refresh
+          </HoverMenuItem>
         </MenuItem>
-
-        <HoverMenuItem top={49.59} isShow={isShowTwo}>
-          Refresh
-        </HoverMenuItem>
 
         <MenuItem
           className='material-icons'
@@ -49,11 +47,10 @@ export const MenuAside = () => {
           onMouseLeave={handleShowThree}
           to='/inventary'>
           &#xe85c;
+          <HoverMenuItem top={60.16} isShow={isShowThree}>
+            Inventary
+          </HoverMenuItem>
         </MenuItem>
-
-        <HoverMenuItem top={60.16} isShow={isShowThree}>
-          Inventary
-        </HoverMenuItem>
       </DivItems>
       <ShoppingCart WrapperComponent={MenuItem} />
     </MenuContainer>
