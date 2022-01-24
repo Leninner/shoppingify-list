@@ -13,6 +13,7 @@ export const StyledAddItemForm = styled.form`
   padding-top: 20px;
 
   h3 {
+    margin-left: 20px;
     font-style: normal;
     font-weight: 500;
     font-size: 24px;
