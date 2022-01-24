@@ -10,50 +10,17 @@ const initialState = {
     {
       id: 1,
       name: 'Fruits And Vegetables',
-      items: [
-        {
-          id: 1,
-          name: 'Avocado',
-          quantity: 3,
-        },
-        {
-          id: 2,
-          name: 'Pre-cooked',
-          quantity: 5,
-        },
-      ],
+      items: [],
     },
     {
       id: 2,
       name: 'Meet',
-      items: [
-        {
-          id: 1,
-          name: 'Avocado',
-          quantity: 1,
-        },
-        {
-          id: 2,
-          name: 'Pre-cooked',
-          quantity: 2,
-        },
-      ],
+      items: [],
     },
     {
       id: 3,
       name: 'The friends',
-      items: [
-        {
-          id: 1,
-          name: 'Avocado',
-          quantity: 3,
-        },
-        {
-          id: 2,
-          name: 'Pre-cooked',
-          quantity: 3,
-        },
-      ],
+      items: [],
     },
   ],
   isAdding: false,

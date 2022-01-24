@@ -8,22 +8,17 @@ import {
   CategoriesContainer,
 } from './styles';
 import { Category } from '../Category';
-import { useState } from 'react';
-import { connect } from 'react-redux';
 
-const ListCategories = ({ categories }) => {
-  const [isEmpty, setIsEmpty] = useState(false);
-
-  const handleEmpty = () => {
-    setIsEmpty(true);
-  };
+export const ShoppingList = ({ categories }) => {
+  const categoriesFiltered = categories.filter((value) => value.items.length > 0);
+  const isEmpty = categoriesFiltered.length === 0;
 
   return (
     <StyledListItems>
       {isEmpty ? (
         <>
           <FeedBack>No items</FeedBack>
-          <Img src={CartEmptyIcon} alt='' onClick={handleEmpty} />
+          <Img src={CartEmptyIcon} alt='' />
         </>
       ) : (
         <ShoppingListContainer>
@@ -33,7 +28,7 @@ const ListCategories = ({ categories }) => {
           </ShoppingListTittle>
 
           <CategoriesContainer>
-            {categories.map((item) => (
+            {categoriesFiltered.map((item) => (
               <Category key={item.id} {...item} />
             ))}
           </CategoriesContainer>
@@ -42,11 +37,3 @@ const ListCategories = ({ categories }) => {
     </StyledListItems>
   );
 };
-
-const mapStateToProps = (state) => () => {
-  return {
-    categories: state.categories,
-  };
-};
-
-export default connect(mapStateToProps, null)(ListCategories);

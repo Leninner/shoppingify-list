@@ -1,14 +1,12 @@
 import { StyledInteractiveAside } from './styles';
 import { BoxFeedback } from '../../components/BoxFeedback';
 import { AddItemButton } from '../../components/AddItemButton';
-import ListCategories from '../../components/ListCategories';
+import { ShoppingList } from '../../components/ShoppingList';
 import { connect } from 'react-redux';
 import { HandleAddItem } from '../../actions';
 import { AddItemForm } from '../../components/AddItemForm';
 
-const InteractiveAside = ({ isAdding, HandleAddItem }) => {
-  console.log(HandleAddItem);
-
+const InteractiveAside = ({ isAdding, HandleAddItem, categories }) => {
   return (
     <StyledInteractiveAside>
       {isAdding ? (
@@ -16,11 +14,11 @@ const InteractiveAside = ({ isAdding, HandleAddItem }) => {
       ) : (
         <>
           <BoxFeedback handleAddItem={HandleAddItem} />
-          <ListCategories />
+          <ShoppingList categories={categories} />
         </>
       )}
 
-      <AddItemButton isAdding={isAdding} handleAddItem={HandleAddItem} />
+      <AddItemButton isAdding={isAdding} handleAddItem={HandleAddItem} categories={categories} />
     </StyledInteractiveAside>
   );
 };
@@ -28,6 +26,7 @@ const InteractiveAside = ({ isAdding, HandleAddItem }) => {
 const mapStateToProps = (state) => {
   return {
     isAdding: state.isAdding,
+    categories: state.categories,
   };
 };
 
