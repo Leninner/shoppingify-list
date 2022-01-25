@@ -1,5 +1,5 @@
-import InteractiveAside from '../../containers/InteractiveAside';
 import { Helmet } from 'react-helmet';
+import { ItemsView } from '../../containers/ItemsView';
 
 export const Items = () => {
   return (
@@ -7,7 +7,7 @@ export const Items = () => {
       <Helmet>
         <title>Items</title>
       </Helmet>
-      <InteractiveAside />
+      <ItemsView />
     </>
   );
 };
