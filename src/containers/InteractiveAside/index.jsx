@@ -5,6 +5,7 @@ import { ShoppingList } from '../../components/ShoppingList';
 import { connect } from 'react-redux';
 import { HandleAddItem } from '../../actions';
 import { AddItemForm } from '../../components/AddItemForm';
+import PropTypes from 'prop-types';
 
 const InteractiveAside = ({ isAdding, HandleAddItem, categories }) => {
   return (
@@ -35,3 +36,9 @@ const mapDispatchToProps = {
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(InteractiveAside);
+
+InteractiveAside.propTypes = {
+  isAdding: PropTypes.bool,
+  HandleAddItem: PropTypes.func.isRequired,
+  categories: PropTypes.arrayOf(PropTypes.object).isRequired,
+};

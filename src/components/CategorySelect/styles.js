@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+export const Container = styled.div`
+  position: relative;
+`;
+
 export const ContainerOptions = styled.div`
   margin-top: 10px;
   width: 309.89px;
@@ -14,4 +18,11 @@ export const ContainerOptions = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 10px 0;
+`;
+
+export const Close = styled.span`
+  position: absolute;
+  top: 22.58px;
+  right: 10px;
+  color: #979797;
 `;
