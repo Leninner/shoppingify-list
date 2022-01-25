@@ -1,3 +1,9 @@
-export const CategoryOptions = () => {
-  return <h2>Lenin</h2>;
+import { Option } from './styles';
+
+export const CategoryOptions = ({ category }) => {
+  return (
+    <Option>
+      <span>{category}</span>
+    </Option>
+  );
 };

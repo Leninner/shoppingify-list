@@ -1,12 +1,16 @@
 import { CategoryOptions } from '../CategoryOption';
+import { ContainerOptions } from './styles';
 
-export const CategorySelect = ({ WrapperInput }) => {
+export const CategorySelect = ({ WrapperInput, categories }) => {
   return (
     <>
       <WrapperInput type='text' placeholder='Ingresa una categoría' />
-      {[1, 2, 3].map((i) => (
-        <CategoryOptions key={i} />
-      ))}
+      <ContainerOptions>
+        {categories.map((elemento) => {
+          const { id, name } = elemento;
+          return <CategoryOptions key={id} category={name} />;
+        })}
+      </ContainerOptions>
     </>
   );
 };

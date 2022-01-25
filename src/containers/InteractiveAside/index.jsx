@@ -10,7 +10,7 @@ const InteractiveAside = ({ isAdding, HandleAddItem, categories }) => {
   return (
     <StyledInteractiveAside>
       {isAdding ? (
-        <AddItemForm />
+        <AddItemForm categories={categories} />
       ) : (
         <>
           <BoxFeedback handleAddItem={HandleAddItem} />

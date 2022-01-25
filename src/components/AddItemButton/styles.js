@@ -70,9 +70,10 @@ export const ButtonConfirm = styled.button`
   font-weight: bold;
   font-size: 16px;
   line-height: 20px;
+  transition: all 0.2s ease 0s;
 
   ${({ isCancel }) =>
     isCancel
-      ? 'border: 1px solid #c0c0c0; color: #34333A; margin-right: 10px;'
+      ? 'color: #34333A; margin-right: 10px; background: rgb(227, 227, 227); &:hover { background: rgb(221, 221, 221); }'
       : 'background: #F9A109;  color: #FFFFFF; margin-left: 10px;'}
 `;
