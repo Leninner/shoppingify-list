@@ -18,6 +18,7 @@ export const ItemInfoContainer = styled.div`
     color: #000000;
     height: 20px;
     max-width: 118px;
+    height: auto;
   }
 
   .material-icons {
