@@ -2,14 +2,15 @@ import { MenuAside } from '../MenuAside';
 import InteractiveAside from '../InteractiveAside';
 import { connect } from 'react-redux';
 import { HandleAddItem } from '../../actions';
+import { StyledLayout } from './styles';
 
 const Layout = ({ children, isAdding, HandleAddItem, categories }) => {
   return (
-    <>
+    <StyledLayout>
       <MenuAside />
       {children}
       <InteractiveAside HandleAddItem={HandleAddItem} isAdding={isAdding} categories={categories} />
-    </>
+    </StyledLayout>
   );
 };
 
