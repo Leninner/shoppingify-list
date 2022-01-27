@@ -1,5 +1,5 @@
 import { StyledItemsContainer } from './styles';
-import { ItemsCategoryInfo } from '../ItemsCategoryInfo';
+import { ItemsCategoryInfo } from '../../components/ItemsCategoryInfo';
 
 export const ItemsContainer = () => {
   return (
