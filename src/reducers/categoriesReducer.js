@@ -1,4 +1,4 @@
-import { HANDLE_ADD_ITEM } from '../types';
+import { TOGGLE_ADD_ITEM } from '../types';
 
 const initalState = {
   categories: [
@@ -45,7 +45,7 @@ const initalState = {
           name: 'Apples',
           note: '',
           image: '',
-          isItemInfo: true,
+          isItemInfo: false,
         },
         {
           id: 2,
@@ -76,7 +76,7 @@ const initalState = {
 
 export const categoriesReducer = (state = initalState, action) => {
   switch (action.type) {
-    case HANDLE_ADD_ITEM:
+    case TOGGLE_ADD_ITEM:
       return {
         ...state,
         isAdding: !state.isAdding,

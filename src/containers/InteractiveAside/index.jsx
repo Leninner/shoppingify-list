@@ -14,7 +14,7 @@ const InteractiveAside = ({ isAdding, HandleAddItem, shoppingCart, categories })
       {!isItemToShow ? (
         <>
           {isAdding ? (
-            <AddItemForm shoppingCart={shoppingCart}>
+            <AddItemForm categories={categories}>
               <AddItemButton isAdding={isAdding} handleAddItem={HandleAddItem} shoppingCart={shoppingCart} />
             </AddItemForm>
           ) : (

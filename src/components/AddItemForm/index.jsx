@@ -2,7 +2,7 @@ import { StyledAddItemForm, Campo, Entrada, EntradaNote, Section, Error } from '
 import { CategorySelect } from '../CategorySelect';
 import { useFormik } from 'formik';
 
-export const AddItemForm = ({ shoppingCart, children }) => {
+export const AddItemForm = ({ categories, children }) => {
   const validate = (values) => {
     const errors = {};
 
@@ -65,7 +65,7 @@ export const AddItemForm = ({ shoppingCart, children }) => {
         </Campo>
         <Campo>
           <span>Category *</span>
-          <CategorySelect WrapperInput={Entrada} shoppingCart={shoppingCart} />
+          <CategorySelect WrapperInput={Entrada} categories={categories} />
         </Campo>
 
         {children}

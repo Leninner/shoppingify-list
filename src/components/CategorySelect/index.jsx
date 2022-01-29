@@ -3,16 +3,31 @@ import { ContainerOptions, Container, Close } from './styles';
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 
-export const CategorySelect = ({ WrapperInput, shoppingCart }) => {
+// FIXME: This componentes has some errors. Fuck!!!!
+
+export const CategorySelect = ({ WrapperInput, categories }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState('');
 
   const handleFocus = () => {
     isOpen ? setIsOpen(false) : setIsOpen(true);
   };
 
+  const handleClick = (category) => {
+    setSelectedCategory(category);
+  };
+
+  console.log(selectedCategory);
+
   return (
     <Container>
-      <WrapperInput type='text' placeholder='Ingresa una categoría' onFocus={handleFocus} onBlur={handleFocus} />
+      <WrapperInput
+        type='text'
+        placeholder='Selecciona una categoría'
+        onFocus={handleFocus}
+        value={selectedCategory}
+        onChange={() => {}}
+      />
 
       {isOpen && (
         <>
@@ -20,9 +35,10 @@ export const CategorySelect = ({ WrapperInput, shoppingCart }) => {
             close
           </Close>
           <ContainerOptions>
-            {shoppingCart.map((elemento) => {
+            {categories.map((elemento) => {
               const { id, name } = elemento;
-              return <CategoryOptions key={id} category={name} />;
+              console.log(name);
+              return <CategoryOptions key={id} category={name} onClick={() => handleClick(name)} />;
             })}
           </ContainerOptions>
         </>
@@ -33,5 +49,5 @@ export const CategorySelect = ({ WrapperInput, shoppingCart }) => {
 
 CategorySelect.propTypes = {
   WrapperInput: PropTypes.elementType.isRequired,
-  shoppingCart: PropTypes.arrayOf(PropTypes.object).isRequired,
+  categories: PropTypes.arrayOf(PropTypes.object).isRequired,
 };

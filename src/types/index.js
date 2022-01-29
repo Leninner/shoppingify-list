@@ -1,1 +1,1 @@
-export const HANDLE_ADD_ITEM = 'HANDLE_ADD_ITEM';
+export const TOGGLE_ADD_ITEM = 'TOGGLE_ADD_ITEM';

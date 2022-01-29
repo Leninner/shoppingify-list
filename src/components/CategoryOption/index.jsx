@@ -1,8 +1,8 @@
 import { Option } from './styles';
 
-export const CategoryOptions = ({ category }) => {
+export const CategoryOptions = ({ category, onClick }) => {
   return (
-    <Option>
+    <Option onClick={onClick}>
       <span>{category}</span>
     </Option>
   );
