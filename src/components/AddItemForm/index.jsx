@@ -1,9 +1,14 @@
 import { StyledAddItemForm, Campo, Entrada, EntradaNote, Section } from './styles';
 import { CategorySelect } from '../CategorySelect';
 
-export const AddItemForm = ({ shoppingCart }) => {
+export const AddItemForm = ({ shoppingCart, children }) => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log('enviado');
+  };
+
   return (
-    <StyledAddItemForm>
+    <StyledAddItemForm onSubmit={handleSubmit}>
       <h3>Add a new item</h3>
       <Section>
         <Campo>
@@ -22,6 +27,7 @@ export const AddItemForm = ({ shoppingCart }) => {
           <span>Category</span>
           <CategorySelect WrapperInput={Entrada} shoppingCart={shoppingCart} />
         </Campo>
+        {children}
       </Section>
     </StyledAddItemForm>
   );

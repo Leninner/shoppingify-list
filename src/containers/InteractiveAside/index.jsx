@@ -9,15 +9,16 @@ const InteractiveAside = ({ isAdding, HandleAddItem, shoppingCart }) => {
   return (
     <StyledInteractiveAside>
       {isAdding ? (
-        <AddItemForm shoppingCart={shoppingCart} />
+        <AddItemForm shoppingCart={shoppingCart}>
+          <AddItemButton isAdding={isAdding} handleAddItem={HandleAddItem} shoppingCart={shoppingCart} />
+        </AddItemForm>
       ) : (
         <>
           <BoxFeedback handleAddItem={HandleAddItem} />
           <ShoppingList shoppingCart={shoppingCart} />
+          <AddItemButton isAdding={isAdding} handleAddItem={HandleAddItem} shoppingCart={shoppingCart} />
         </>
       )}
-
-      <AddItemButton isAdding={isAdding} handleAddItem={HandleAddItem} shoppingCart={shoppingCart} />
     </StyledInteractiveAside>
   );
 };

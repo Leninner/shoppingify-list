@@ -12,6 +12,14 @@ export const StyledAddItemContainer = styled.div`
   justify-content: center;
 `;
 
+export const Div = styled.div`
+  position: relative;
+  width: 83.99%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
 export const Form = styled.form`
   position: relative;
   width: 83.99%;
@@ -75,5 +83,5 @@ export const ButtonConfirm = styled.button`
   ${({ isCancel }) =>
     isCancel
       ? 'color: #34333A; margin-right: 10px; background: rgb(227, 227, 227); &:hover { background: rgb(221, 221, 221); }'
-      : 'background: #F9A109;  color: #FFFFFF; margin-left: 10px;'}
+      : 'background: #F9A109;  color: #FFFFFF; margin-right: 10px;'}
 `;

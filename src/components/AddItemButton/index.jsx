@@ -1,4 +1,4 @@
-import { StyledAddItemContainer, BoxInput, Form, ButtonAddItem, ButtonConfirm } from './styles';
+import { StyledAddItemContainer, BoxInput, Form, ButtonAddItem, ButtonConfirm, Div } from './styles';
 
 export const AddItemButton = ({ isAdding, handleAddItem, shoppingCart }) => {
   const handleClick = (e) => {
@@ -10,21 +10,19 @@ export const AddItemButton = ({ isAdding, handleAddItem, shoppingCart }) => {
 
   return (
     <StyledAddItemContainer>
-      <Form>
-        {isAdding ? (
-          <>
-            <ButtonConfirm isCancel onClick={handleClick}>
-              Cancel
-            </ButtonConfirm>
-            <ButtonConfirm>Save</ButtonConfirm>
-          </>
-        ) : (
-          <>
-            <BoxInput type='text' name='item' placeholder='Enter a name' disabled={isEmpty} />
-            <ButtonAddItem disabled={isEmpty}>Save</ButtonAddItem>
-          </>
-        )}
-      </Form>
+      {isAdding ? (
+        <Div>
+          <ButtonConfirm>Save</ButtonConfirm>
+          <ButtonConfirm isCancel onClick={handleClick}>
+            Cancel
+          </ButtonConfirm>
+        </Div>
+      ) : (
+        <Form>
+          <BoxInput type='text' name='item' placeholder='Enter a name' disabled={isEmpty} />
+          <ButtonAddItem disabled={isEmpty}>Save</ButtonAddItem>
+        </Form>
+      )}
     </StyledAddItemContainer>
   );
 };

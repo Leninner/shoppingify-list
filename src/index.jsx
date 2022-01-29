@@ -102,13 +102,7 @@ const initialState = {
     {
       id: 1,
       name: 'Fruits And Vegetables',
-      items: [
-        {
-          id: 1,
-          name: 'Apples',
-          quantity: 3,
-        },
-      ],
+      items: [],
     },
     {
       id: 2,
