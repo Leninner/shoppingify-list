@@ -5,14 +5,19 @@ import { StyledLayout } from './styles';
 import { HandleAddItem } from '../../actions';
 
 const Layout = ({ children, shoppingCartReducer, categoriesReducer, HandleAddItem }) => {
-  const { isAdding } = categoriesReducer;
+  const { isAdding, categories } = categoriesReducer;
   const { shoppingCart } = shoppingCartReducer;
 
   return (
     <StyledLayout>
       <MenuAside />
       {children}
-      <InteractiveAside isAdding={isAdding} shoppingCart={shoppingCart} HandleAddItem={HandleAddItem} />
+      <InteractiveAside
+        isAdding={isAdding}
+        shoppingCart={shoppingCart}
+        HandleAddItem={HandleAddItem}
+        categories={categories}
+      />
     </StyledLayout>
   );
 };
