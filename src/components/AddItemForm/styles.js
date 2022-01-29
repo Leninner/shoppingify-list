@@ -28,6 +28,7 @@ export const Campo = styled.label`
   display: flex;
   flex-direction: column;
   margin: 18px 0;
+  position: relative;
 
   &:focus-within > span {
     color: #f9a109;
@@ -84,4 +85,14 @@ export const Section = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
+`;
+
+export const Error = styled.span`
+  ${mainStyles}
+  color: red;
+  margin-top: 10px;
+  text-align: center;
+  position: absolute;
+  bottom: -20px;
+  left: 0;
 `;
