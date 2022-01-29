@@ -14,19 +14,88 @@ const initialState = {
         {
           id: 1,
           name: 'Apples',
-          quantity: 3,
+        },
+        {
+          id: 2,
+          name: 'Bananas',
+        },
+        {
+          id: 3,
+          name: 'Pineapples',
+        },
+        {
+          id: 4,
+          name: 'Tomatoes',
+        },
+        {
+          id: 5,
+          name: 'Potatoes',
+        },
+        {
+          id: 6,
+          name: 'Onions',
         },
       ],
     },
     {
       id: 2,
       name: 'Meet and Fish',
-      items: [],
+      items: [
+        {
+          id: 1,
+          name: 'Apples',
+        },
+        {
+          id: 2,
+          name: 'Bananas',
+        },
+        {
+          id: 3,
+          name: 'Pineapples',
+        },
+        {
+          id: 4,
+          name: 'Tomatoes',
+        },
+        {
+          id: 5,
+          name: 'Potatoes',
+        },
+        {
+          id: 6,
+          name: 'Onions',
+        },
+      ],
     },
     {
       id: 3,
       name: 'Beverages',
-      items: [],
+      items: [
+        {
+          id: 1,
+          name: 'Apples',
+        },
+        {
+          id: 2,
+          name: 'Bananas',
+        },
+        {
+          id: 3,
+          name: 'Pineapples',
+        },
+        {
+          id: 4,
+          name: 'Tomatoes',
+        },
+        {
+          id: 5,
+          name: 'Potatoes',
+        },
+        {
+          id: 6,
+          name: 'Onions',
+        },
+      ],
     },
   ],
   shoppingCart: [

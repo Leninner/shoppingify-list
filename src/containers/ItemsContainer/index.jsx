@@ -1,11 +1,12 @@
 import { StyledItemsContainer } from './styles';
 import { ItemsCategoryInfo } from '../../components/ItemsCategoryInfo';
 
-export const ItemsContainer = () => {
+export const ItemsContainer = ({ categories }) => {
   return (
     <StyledItemsContainer>
-      {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((item) => {
-        return <ItemsCategoryInfo key={item} />;
+      {categories.map((item) => {
+        const { id } = item;
+        return <ItemsCategoryInfo key={id} {...item} />;
       })}
     </StyledItemsContainer>
   );
