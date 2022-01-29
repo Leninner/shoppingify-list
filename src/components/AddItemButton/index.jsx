@@ -1,12 +1,12 @@
 import { StyledAddItemContainer, BoxInput, Form, ButtonAddItem, ButtonConfirm } from './styles';
 
-export const AddItemButton = ({ isAdding, handleAddItem, categories }) => {
+export const AddItemButton = ({ isAdding, handleAddItem, shoppingCart }) => {
   const handleClick = (e) => {
     e.preventDefault();
     handleAddItem();
   };
 
-  const isEmpty = categories.every((category) => category.items.length === 0);
+  const isEmpty = shoppingCart.every((category) => category.items.length === 0);
 
   return (
     <StyledAddItemContainer>

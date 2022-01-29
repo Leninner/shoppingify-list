@@ -1,7 +1,7 @@
 import { StyledAddItemForm, Campo, Entrada, EntradaNote, Section } from './styles';
 import { CategorySelect } from '../CategorySelect';
 
-export const AddItemForm = ({ categories }) => {
+export const AddItemForm = ({ shoppingCart }) => {
   return (
     <StyledAddItemForm>
       <h3>Add a new item</h3>
@@ -20,7 +20,7 @@ export const AddItemForm = ({ categories }) => {
         </Campo>
         <Campo>
           <span>Category</span>
-          <CategorySelect WrapperInput={Entrada} categories={categories} />
+          <CategorySelect WrapperInput={Entrada} shoppingCart={shoppingCart} />
         </Campo>
       </Section>
     </StyledAddItemForm>

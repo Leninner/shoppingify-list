@@ -5,19 +5,19 @@ import { ShoppingList } from '../../components/ShoppingList';
 import { AddItemForm } from '../../components/AddItemForm';
 import PropTypes from 'prop-types';
 
-const InteractiveAside = ({ isAdding, HandleAddItem, categories }) => {
+const InteractiveAside = ({ isAdding, HandleAddItem, shoppingCart }) => {
   return (
     <StyledInteractiveAside>
       {isAdding ? (
-        <AddItemForm categories={categories} />
+        <AddItemForm shoppingCart={shoppingCart} />
       ) : (
         <>
           <BoxFeedback handleAddItem={HandleAddItem} />
-          <ShoppingList categories={categories} />
+          <ShoppingList shoppingCart={shoppingCart} />
         </>
       )}
 
-      <AddItemButton isAdding={isAdding} handleAddItem={HandleAddItem} categories={categories} />
+      <AddItemButton isAdding={isAdding} handleAddItem={HandleAddItem} shoppingCart={shoppingCart} />
     </StyledInteractiveAside>
   );
 };
@@ -27,5 +27,5 @@ export default InteractiveAside;
 InteractiveAside.propTypes = {
   isAdding: PropTypes.bool,
   HandleAddItem: PropTypes.func.isRequired,
-  categories: PropTypes.arrayOf(PropTypes.object).isRequired,
+  shoppingCart: PropTypes.arrayOf(PropTypes.object).isRequired,
 };

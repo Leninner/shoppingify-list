@@ -10,16 +10,45 @@ const initialState = {
     {
       id: 1,
       name: 'Fruits And Vegetables',
-      items: [],
+      items: [
+        {
+          id: 1,
+          name: 'Apples',
+          quantity: 3,
+        },
+      ],
     },
     {
       id: 2,
-      name: 'Meet',
+      name: 'Meet and Fish',
       items: [],
     },
     {
       id: 3,
-      name: 'The friends',
+      name: 'Beverages',
+      items: [],
+    },
+  ],
+  shoppingCart: [
+    {
+      id: 1,
+      name: 'Fruits And Vegetables',
+      items: [
+        {
+          id: 1,
+          name: 'Apples',
+          quantity: 3,
+        },
+      ],
+    },
+    {
+      id: 2,
+      name: 'Meet and Fish',
+      items: [],
+    },
+    {
+      id: 3,
+      name: 'Beverages',
       items: [],
     },
   ],

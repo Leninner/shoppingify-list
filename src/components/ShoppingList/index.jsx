@@ -9,9 +9,9 @@ import {
 } from './styles';
 import { Category } from '../Category';
 
-export const ShoppingList = ({ categories }) => {
-  const categoriesFiltered = categories.filter((value) => value.items.length > 0);
-  const isEmpty = categoriesFiltered.length === 0;
+export const ShoppingList = ({ shoppingCart }) => {
+  const shoppingCartFiltered = shoppingCart.filter((value) => value.items.length > 0);
+  const isEmpty = shoppingCartFiltered.length === 0;
 
   return (
     <StyledListItems>
@@ -28,7 +28,7 @@ export const ShoppingList = ({ categories }) => {
           </ShoppingListTittle>
 
           <CategoriesContainer>
-            {categoriesFiltered.map((item) => (
+            {shoppingCartFiltered.map((item) => (
               <Category key={item.id} {...item} />
             ))}
           </CategoriesContainer>

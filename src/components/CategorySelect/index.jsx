@@ -3,7 +3,7 @@ import { ContainerOptions, Container, Close } from './styles';
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 
-export const CategorySelect = ({ WrapperInput, categories }) => {
+export const CategorySelect = ({ WrapperInput, shoppingCart }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleFocus = () => {
@@ -20,7 +20,7 @@ export const CategorySelect = ({ WrapperInput, categories }) => {
             close
           </Close>
           <ContainerOptions>
-            {categories.map((elemento) => {
+            {shoppingCart.map((elemento) => {
               const { id, name } = elemento;
               return <CategoryOptions key={id} category={name} />;
             })}
