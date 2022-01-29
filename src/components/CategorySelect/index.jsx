@@ -33,5 +33,5 @@ export const CategorySelect = ({ WrapperInput, shoppingCart }) => {
 
 CategorySelect.propTypes = {
   WrapperInput: PropTypes.elementType.isRequired,
-  categories: PropTypes.arrayOf(PropTypes.object).isRequired,
+  shoppingCart: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
