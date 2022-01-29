@@ -2,7 +2,9 @@ import { Helmet } from 'react-helmet';
 import { ItemsView } from '../../containers/ItemsView';
 import { connect } from 'react-redux';
 
-const Items = ({ categories }) => {
+const Items = ({ categoriesReducer }) => {
+  const { categories } = categoriesReducer;
+
   return (
     <>
       <Helmet>
@@ -15,7 +17,7 @@ const Items = ({ categories }) => {
 
 const mapStateToProps = (state) => {
   return {
-    categories: state.categories,
+    categoriesReducer: state.categoriesReducer,
   };
 };
 

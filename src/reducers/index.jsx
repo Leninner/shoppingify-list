@@ -1,13 +1,5 @@
-import { HANDLE_ADD_ITEM } from '../types';
+import { combineReducers } from 'redux';
+import { categoriesReducer } from './categoriesReducer';
+import { shoppingCartReducer } from './shoppingCartReducer';
 
-export const reducer = (state, action) => {
-  switch (action.type) {
-    case HANDLE_ADD_ITEM:
-      return {
-        ...state,
-        isAdding: !state.isAdding,
-      };
-    default:
-      return state;
-  }
-};
+export const reducer = combineReducers({ categoriesReducer, shoppingCartReducer });

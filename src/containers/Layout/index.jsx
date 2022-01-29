@@ -1,24 +1,26 @@
 import { MenuAside } from '../MenuAside';
 import InteractiveAside from '../InteractiveAside';
 import { connect } from 'react-redux';
-import { HandleAddItem } from '../../actions';
 import { StyledLayout } from './styles';
+import { HandleAddItem } from '../../actions';
 
-const Layout = ({ children, isAdding, HandleAddItem, shoppingCart }) => {
+const Layout = ({ children, shoppingCartReducer, categoriesReducer, HandleAddItem }) => {
+  const { isAdding } = categoriesReducer;
+  const { shoppingCart } = shoppingCartReducer;
+
   return (
     <StyledLayout>
       <MenuAside />
       {children}
-      <InteractiveAside HandleAddItem={HandleAddItem} isAdding={isAdding} shoppingCart={shoppingCart} />
+      <InteractiveAside isAdding={isAdding} shoppingCart={shoppingCart} HandleAddItem={HandleAddItem} />
     </StyledLayout>
   );
 };
 
 const mapStateToProps = (state) => {
   return {
-    isAdding: state.isAdding,
-    categories: state.categories,
-    shoppingCart: state.shoppingCart,
+    categoriesReducer: state.categoriesReducer,
+    shoppingCartReducer: state.shoppingCartReducer,
   };
 };
 
