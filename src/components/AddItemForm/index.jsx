@@ -8,6 +8,16 @@ export const AddItemForm = ({ categories, children }) => {
 
     if (!values.itemName || values.itemName.trim() === '') {
       errors.itemName = 'Reguired';
+    } else if (values.itemName.length > 30 || values.itemName.length < 3) {
+      errors.itemName = 'Must be between 3 and 30 characters';
+    }
+
+    if (values.itemName.match(/\d/g)) {
+      errors.itemName = 'No numbers allowed';
+    }
+
+    if (!values.category) {
+      errors.category = 'Required';
     }
 
     return errors;
@@ -20,9 +30,14 @@ export const AddItemForm = ({ categories, children }) => {
       image: '',
       category: '',
     },
+
     onSubmit: (values) => {
       console.log(values);
+      setTimeout(() => {
+        formik.resetForm();
+      }, 1500);
     },
+
     validate,
   });
 
@@ -49,7 +64,6 @@ export const AddItemForm = ({ categories, children }) => {
             placeholder='Enter a note'
             onChange={formik.handleChange}
             value={formik.values.note}
-            onBlur={formik.handleBlur}
           />
         </Campo>
         <Campo>
@@ -60,12 +74,17 @@ export const AddItemForm = ({ categories, children }) => {
             placeholder='Enter a url'
             onChange={formik.handleChange}
             value={formik.values.image}
-            onBlur={formik.handleBlur}
           />
         </Campo>
         <Campo>
           <span>Category *</span>
-          <CategorySelect WrapperInput={Entrada} categories={categories} />
+          <CategorySelect
+            WrapperInput={Entrada}
+            categories={categories}
+            onChange={formik.handleChange}
+            value={formik.values.category}
+            onBlur={formik.handleBlur}
+          />
         </Campo>
 
         {children}

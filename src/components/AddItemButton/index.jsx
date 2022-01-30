@@ -14,10 +14,10 @@ export const AddItemButton = ({ isAdding, handleAddItem, shoppingCart, isItemInf
         <>
           {isAdding ? (
             <Div>
-              <ButtonConfirm>Save</ButtonConfirm>
-              <ButtonConfirm isCancel onClick={handleClick}>
+              <ButtonConfirm isCancel onClick={handleClick} type='button'>
                 Cancel
               </ButtonConfirm>
+              <ButtonConfirm type='submit'>Save</ButtonConfirm>
             </Div>
           ) : (
             <Form>

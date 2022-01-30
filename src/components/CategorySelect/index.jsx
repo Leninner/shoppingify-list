@@ -1,44 +1,45 @@
 import { CategoryOptions } from '../CategoryOption';
 import { ContainerOptions, Container, Close } from './styles';
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 // FIXME: This componentes has some errors. Fuck!!!!
 
-export const CategorySelect = ({ WrapperInput, categories }) => {
+export const CategorySelect = ({ WrapperInput, categories, onChange, value }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedCategory, setSelectedCategory] = useState('');
+  const elementRef = useRef(null);
 
-  const handleFocus = () => {
-    isOpen ? setIsOpen(false) : setIsOpen(true);
-  };
+  useEffect(() => {
+    if (elementRef.current && isOpen) {
+      elementRef.current.scrollIntoView();
+    }
+  }, [elementRef, isOpen]);
 
-  const handleClick = (category) => {
-    setSelectedCategory(category);
-  };
-
-  console.log(selectedCategory);
+  const categoriesFiltered = categories.filter((category) => category.name.includes(value));
 
   return (
     <Container>
       <WrapperInput
         type='text'
         placeholder='Selecciona una categoría'
-        onFocus={handleFocus}
-        value={selectedCategory}
-        onChange={() => {}}
+        onFocus={() => setIsOpen(true)}
+        value={value}
+        onChange={onChange}
+        name='category'
+        autoComplete='off'
+        onBlur={() => setIsOpen(false)}
       />
 
       {isOpen && (
         <>
-          <Close className='material-icons' onClick={handleFocus}>
+          <Close className='material-icons' onClick={() => setIsOpen(false)}>
             close
           </Close>
-          <ContainerOptions>
-            {categories.map((elemento) => {
+
+          <ContainerOptions ref={elementRef}>
+            {categoriesFiltered.map((elemento) => {
               const { id, name } = elemento;
-              console.log(name);
-              return <CategoryOptions key={id} category={name} onClick={() => handleClick(name)} />;
+              return <CategoryOptions key={id} category={name} />;
             })}
           </ContainerOptions>
         </>
