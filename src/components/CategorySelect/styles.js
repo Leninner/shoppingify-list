@@ -26,4 +26,5 @@ export const Close = styled.span`
   top: 22.58px;
   right: 10px;
   color: #979797;
+  z-index: 1;
 `;

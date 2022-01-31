@@ -7,6 +7,8 @@ import PropTypes from 'prop-types';
 
 export const CategorySelect = ({ WrapperInput, categories, onChange, value }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [selected = value, setSelected] = useState(value);
+
   const elementRef = useRef(null);
 
   useEffect(() => {
@@ -15,33 +17,42 @@ export const CategorySelect = ({ WrapperInput, categories, onChange, value }) =>
     }
   }, [elementRef, isOpen]);
 
-  const categoriesFiltered = categories.filter((category) => category.name.toLowerCase().includes(value.toLowerCase()));
+  const categoriesFiltered = categories.filter((category) =>
+    category.name.toLowerCase().includes(value.toLowerCase().trim())
+  );
+
+  const handleClick = (category) => {
+    setSelected(category);
+  };
+
+  const handleChange = (e) => {
+    setSelected(e.target.value);
+  };
 
   return (
     <Container>
       <WrapperInput
         type='text'
-        placeholder='Selecciona una categoría'
-        onFocus={() => setIsOpen(true)}
-        value={value}
-        onChange={onChange}
+        placeholder='Select a category or create a new one'
+        value={selected}
+        onClick={() => setIsOpen(!isOpen)}
+        onChange={onChange ? onChange : handleChange}
         name='category'
         autoComplete='off'
-        onBlur={() => setIsOpen(false)}
       />
 
       {isOpen && (
         <>
-          <Close className='material-icons' onClick={() => setIsOpen(false)}>
-            close
-          </Close>
+          <Close className='material-icons'>close</Close>
 
           <ContainerOptions ref={elementRef}>
             {categoriesFiltered.map((elemento) => {
               const { id, name } = elemento;
-              return <CategoryOptions key={id} category={name} />;
+              return <CategoryOptions key={id} category={name} onClick={() => handleClick(name)} />;
             })}
-            {!categoriesFiltered.length && <CategoryOptions category='No hay resultados' />}
+            {!categoriesFiltered.length && (
+              <CategoryOptions category={`+ Añadir ${value}`} onClick={() => handleClick(value)} />
+            )}
           </ContainerOptions>
         </>
       )}

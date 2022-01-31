@@ -7,7 +7,7 @@ export const AddItemForm = ({ categories, children }) => {
     const errors = {};
 
     if (!values.itemName || values.itemName.trim() === '') {
-      errors.itemName = 'Reguired';
+      errors.itemName = 'Required';
     } else if (values.itemName.length > 30 || values.itemName.length < 3) {
       errors.itemName = 'Must be between 3 and 30 characters';
     }
@@ -35,7 +35,7 @@ export const AddItemForm = ({ categories, children }) => {
       console.log(values);
       setTimeout(() => {
         formik.resetForm();
-      }, 1500);
+      }, 1000);
     },
 
     validate,
