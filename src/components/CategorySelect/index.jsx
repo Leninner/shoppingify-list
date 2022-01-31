@@ -15,7 +15,7 @@ export const CategorySelect = ({ WrapperInput, categories, onChange, value }) =>
     }
   }, [elementRef, isOpen]);
 
-  const categoriesFiltered = categories.filter((category) => category.name.includes(value));
+  const categoriesFiltered = categories.filter((category) => category.name.toLowerCase().includes(value.toLowerCase()));
 
   return (
     <Container>
@@ -41,6 +41,7 @@ export const CategorySelect = ({ WrapperInput, categories, onChange, value }) =>
               const { id, name } = elemento;
               return <CategoryOptions key={id} category={name} />;
             })}
+            {!categoriesFiltered.length && <CategoryOptions category='No hay resultados' />}
           </ContainerOptions>
         </>
       )}
