@@ -1,12 +1,15 @@
 import { StyledAddItemForm, Campo, Entrada, EntradaNote, Section, Error } from './styles';
 import { CategorySelect } from '../CategorySelect';
 import { useFormik } from 'formik';
+import { useState } from 'react';
 
 export const AddItemForm = ({ categories, children }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
   const validate = (values) => {
     const errors = {};
 
-    if (!values.itemName || values.itemName.trim() === '') {
+    if (!values.itemName || !values.itemName.trim()) {
       errors.itemName = 'Required';
     } else if (values.itemName.length > 30 || values.itemName.length < 3) {
       errors.itemName = 'Must be between 3 and 30 characters';
@@ -79,11 +82,13 @@ export const AddItemForm = ({ categories, children }) => {
         <Campo>
           <span>Category *</span>
           <CategorySelect
-            WrapperInput={Entrada}
             categories={categories}
+            isOpen={isOpen}
+            onClick={() => setIsOpen(!isOpen)}
             onChange={formik.handleChange}
             value={formik.values.category}
-            onBlur={formik.handleBlur}
+            WrapperInput={Entrada}
+            setIsOpen={setIsOpen}
           />
         </Campo>
 

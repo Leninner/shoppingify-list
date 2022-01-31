@@ -1,14 +1,11 @@
 import { CategoryOptions } from '../CategoryOption';
 import { ContainerOptions, Container, Close } from './styles';
-import { useState, useRef, useEffect } from 'react';
+import { useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 // FIXME: This componentes has some errors. Fuck!!!!
 
-export const CategorySelect = ({ WrapperInput, categories, onChange, value }) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [selected = value, setSelected] = useState(value);
-
+const useNearScreen = (isOpen) => {
   const elementRef = useRef(null);
 
   useEffect(() => {
@@ -17,16 +14,18 @@ export const CategorySelect = ({ WrapperInput, categories, onChange, value }) =>
     }
   }, [elementRef, isOpen]);
 
+  return elementRef;
+};
+
+export const CategorySelect = ({ WrapperInput, categories, isOpen, setIsOpen, onClick, onChange, value }) => {
+  const elementRef = useNearScreen(isOpen);
+
   const categoriesFiltered = categories.filter((category) =>
     category.name.toLowerCase().includes(value.toLowerCase().trim())
   );
 
   const handleClick = (category) => {
-    setSelected(category);
-  };
-
-  const handleChange = (e) => {
-    setSelected(e.target.value);
+    console.log(category);
   };
 
   return (
@@ -34,22 +33,23 @@ export const CategorySelect = ({ WrapperInput, categories, onChange, value }) =>
       <WrapperInput
         type='text'
         placeholder='Select a category or create a new one'
-        value={selected}
-        onClick={() => setIsOpen(!isOpen)}
-        onChange={onChange ? onChange : handleChange}
         name='category'
         autoComplete='off'
+        value={value}
+        onChange={onChange}
+        onClick={onClick}
       />
+
+      {value && <Close className='material-icons'>close</Close>}
 
       {isOpen && (
         <>
-          <Close className='material-icons'>close</Close>
-
           <ContainerOptions ref={elementRef}>
             {categoriesFiltered.map((elemento) => {
               const { id, name } = elemento;
               return <CategoryOptions key={id} category={name} onClick={() => handleClick(name)} />;
             })}
+
             {!categoriesFiltered.length && (
               <CategoryOptions category={`+ Añadir ${value}`} onClick={() => handleClick(value)} />
             )}
@@ -61,6 +61,5 @@ export const CategorySelect = ({ WrapperInput, categories, onChange, value }) =>
 };
 
 CategorySelect.propTypes = {
-  WrapperInput: PropTypes.elementType.isRequired,
   categories: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
