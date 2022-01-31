@@ -1,7 +1,3 @@
-This project is a shopping list application: https://devchallenges.io/challenges/mGd5VpbO4JnzU6I9l96x
-
-> https://www.figma.com/file/kX8FNpYFVLI4ivuEQ6yGgS/Shopping-List
-
 <!-- Please update value in the {}  -->
 
 <h1 align="center">Shoppingify List</h1>
@@ -96,5 +92,9 @@ $ npm start
 ## Contact
 
 - Website [your-website.com](https://leninner.vercel.app/)
-- GitHub [@your-username](https://{github.com/leninner)
-- Twitter [@your-twitter](https://twitter.com/_leninner)
+- GitHub [@leninner](https://github.com/leninner)
+- Twitter [@\_leninner](https://twitter.com/_leninner)
+
+This project is a shopping list application: https://devchallenges.io/challenges/mGd5VpbO4JnzU6I9l96x
+
+> https://www.figma.com/file/kX8FNpYFVLI4ivuEQ6yGgS/Shopping-List
