@@ -1,6 +1,9 @@
 import { useFormik } from 'formik';
+import { useEffect, useState } from 'react';
 
 export const useFormikHook = () => {
+  const [selected, setSelected] = useState('');
+
   const validate = (values) => {
     const errors = {};
 
@@ -26,11 +29,12 @@ export const useFormikHook = () => {
       itemName: '',
       note: '',
       image: '',
-      category: '',
+
+      category: selected,
     },
 
     onSubmit: (values) => {
-      console.log(values);
+      alert(JSON.stringify(values, null, 2));
       setTimeout(() => {
         formik.resetForm();
       }, 1000);
@@ -39,5 +43,13 @@ export const useFormikHook = () => {
     validate,
   });
 
-  return formik;
+  useEffect(() => {
+    if (selected) {
+      formik.setFieldValue('category', selected);
+    }
+  }, [selected]); //eslint-disable-line
+
+  console.log({ selected, formik: formik.values.category });
+
+  return { formik, selected, setSelected };
 };

@@ -4,18 +4,28 @@ import PropTypes from 'prop-types';
 import { useNearScreen } from '../../hooks/useNearScreen';
 import { useState } from 'react';
 
-export const CategorySelect = ({ WrapperInput, categories, isOpen, setIsOpen, onChange, value }) => {
+export const CategorySelect = ({ WrapperInput, categories, isOpen, setIsOpen, selected, setSelected }) => {
   const elementRef = useNearScreen(isOpen);
   const [disabled, setDisabled] = useState(false);
 
   const categoriesFiltered = categories.filter((category) =>
-    category.name.toLowerCase().includes(value.toLowerCase().trim())
+    category.name.toLowerCase().includes(selected.toLowerCase().trim())
   );
 
+  const handleChange = (e) => {
+    setSelected(e.target.value);
+  };
+
   const handleClick = (category) => {
-    console.log(category);
+    setSelected(category);
     setDisabled(true);
     setIsOpen(false);
+  };
+
+  const handleCancel = () => {
+    setIsOpen(false);
+    setDisabled(false);
+    setSelected('');
   };
 
   return (
@@ -25,14 +35,14 @@ export const CategorySelect = ({ WrapperInput, categories, isOpen, setIsOpen, on
         placeholder='Select a category or create a new one'
         name='category'
         autoComplete='off'
-        value={value}
-        onChange={onChange}
+        value={selected}
+        onChange={handleChange}
         onClick={() => setIsOpen(true)}
         disabled={disabled}
       />
 
-      {value && (
-        <Close className='material-icons' onClick={() => setDisabled(false)}>
+      {disabled && (
+        <Close className='material-icons' onClick={handleCancel}>
           close
         </Close>
       )}
@@ -45,7 +55,7 @@ export const CategorySelect = ({ WrapperInput, categories, isOpen, setIsOpen, on
           })}
 
           {!categoriesFiltered.length && (
-            <CategoryOptions category={`+ Añadir ${value}`} onClick={() => handleClick(value)} />
+            <CategoryOptions category={`+ Añadir ${selected}`} onClick={() => handleClick(selected)} />
           )}
         </ContainerOptions>
       )}
