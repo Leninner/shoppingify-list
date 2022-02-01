@@ -1,24 +1,12 @@
 import { CategoryOptions } from '../CategoryOption';
 import { ContainerOptions, Container, Close } from './styles';
-import { useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { useNearScreen } from '../../hooks/useNearScreen';
+import { useState } from 'react';
 
-// FIXME: This componentes has some errors. Fuck!!!!
-
-const useNearScreen = (isOpen) => {
-  const elementRef = useRef(null);
-
-  useEffect(() => {
-    if (elementRef.current && isOpen) {
-      elementRef.current.scrollIntoView();
-    }
-  }, [elementRef, isOpen]);
-
-  return elementRef;
-};
-
-export const CategorySelect = ({ WrapperInput, categories, isOpen, setIsOpen, onClick, onChange, value }) => {
+export const CategorySelect = ({ WrapperInput, categories, isOpen, setIsOpen, onChange, value }) => {
   const elementRef = useNearScreen(isOpen);
+  const [disabled, setDisabled] = useState(false);
 
   const categoriesFiltered = categories.filter((category) =>
     category.name.toLowerCase().includes(value.toLowerCase().trim())
@@ -26,6 +14,8 @@ export const CategorySelect = ({ WrapperInput, categories, isOpen, setIsOpen, on
 
   const handleClick = (category) => {
     console.log(category);
+    setDisabled(true);
+    setIsOpen(false);
   };
 
   return (
@@ -37,24 +27,27 @@ export const CategorySelect = ({ WrapperInput, categories, isOpen, setIsOpen, on
         autoComplete='off'
         value={value}
         onChange={onChange}
-        onClick={onClick}
+        onClick={() => setIsOpen(true)}
+        disabled={disabled}
       />
 
-      {value && <Close className='material-icons'>close</Close>}
+      {value && (
+        <Close className='material-icons' onClick={() => setDisabled(false)}>
+          close
+        </Close>
+      )}
 
       {isOpen && (
-        <>
-          <ContainerOptions ref={elementRef}>
-            {categoriesFiltered.map((elemento) => {
-              const { id, name } = elemento;
-              return <CategoryOptions key={id} category={name} onClick={() => handleClick(name)} />;
-            })}
+        <ContainerOptions ref={elementRef}>
+          {categoriesFiltered.map((elemento) => {
+            const { id, name } = elemento;
+            return <CategoryOptions key={id} category={name} onClick={() => handleClick(name)} />;
+          })}
 
-            {!categoriesFiltered.length && (
-              <CategoryOptions category={`+ Añadir ${value}`} onClick={() => handleClick(value)} />
-            )}
-          </ContainerOptions>
-        </>
+          {!categoriesFiltered.length && (
+            <CategoryOptions category={`+ Añadir ${value}`} onClick={() => handleClick(value)} />
+          )}
+        </ContainerOptions>
       )}
     </Container>
   );

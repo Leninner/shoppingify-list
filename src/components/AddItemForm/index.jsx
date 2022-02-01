@@ -1,48 +1,11 @@
 import { StyledAddItemForm, Campo, Entrada, EntradaNote, Section, Error } from './styles';
 import { CategorySelect } from '../CategorySelect';
-import { useFormik } from 'formik';
 import { useState } from 'react';
+import { useFormikHook } from '../../hooks/useFormikHook';
 
 export const AddItemForm = ({ categories, children }) => {
   const [isOpen, setIsOpen] = useState(false);
-
-  const validate = (values) => {
-    const errors = {};
-
-    if (!values.itemName || !values.itemName.trim()) {
-      errors.itemName = 'Required';
-    } else if (values.itemName.length > 30 || values.itemName.length < 3) {
-      errors.itemName = 'Must be between 3 and 30 characters';
-    }
-
-    if (values.itemName.match(/\d/g)) {
-      errors.itemName = 'No numbers allowed';
-    }
-
-    if (!values.category) {
-      errors.category = 'Required';
-    }
-
-    return errors;
-  };
-
-  const formik = useFormik({
-    initialValues: {
-      itemName: '',
-      note: '',
-      image: '',
-      category: '',
-    },
-
-    onSubmit: (values) => {
-      console.log(values);
-      setTimeout(() => {
-        formik.resetForm();
-      }, 1000);
-    },
-
-    validate,
-  });
+  const formik = useFormikHook();
 
   return (
     <StyledAddItemForm onSubmit={formik.handleSubmit}>
@@ -84,11 +47,10 @@ export const AddItemForm = ({ categories, children }) => {
           <CategorySelect
             categories={categories}
             isOpen={isOpen}
-            onClick={() => setIsOpen(!isOpen)}
+            setIsOpen={setIsOpen}
             onChange={formik.handleChange}
             value={formik.values.category}
             WrapperInput={Entrada}
-            setIsOpen={setIsOpen}
           />
         </Campo>
 
