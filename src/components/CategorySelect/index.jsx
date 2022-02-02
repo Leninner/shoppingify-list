@@ -2,11 +2,18 @@ import { CategoryOptions } from '../CategoryOption';
 import { ContainerOptions, Container, Close } from './styles';
 import PropTypes from 'prop-types';
 import { useNearScreen } from '../../hooks/useNearScreen';
-import { useState } from 'react';
 
-export const CategorySelect = ({ WrapperInput, categories, isOpen, setIsOpen, selected, setSelected }) => {
+export const CategorySelect = ({
+  WrapperInput,
+  categories,
+  isOpen,
+  setIsOpen,
+  selected,
+  setSelected,
+  disabled,
+  setDisabled,
+}) => {
   const elementRef = useNearScreen(isOpen);
-  const [disabled, setDisabled] = useState(false);
 
   const categoriesFiltered = categories.filter((category) =>
     category.name.toLowerCase().includes(selected.toLowerCase().trim())
@@ -41,7 +48,7 @@ export const CategorySelect = ({ WrapperInput, categories, isOpen, setIsOpen, se
         disabled={disabled}
       />
 
-      {disabled && (
+      {selected && (
         <Close className='material-icons' onClick={handleCancel}>
           close
         </Close>

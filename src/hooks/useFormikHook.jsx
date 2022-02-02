@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 
 export const useFormikHook = () => {
   const [selected, setSelected] = useState('');
+  const [disabled, setDisabled] = useState(false);
 
   const validate = (values) => {
     const errors = {};
@@ -37,6 +38,8 @@ export const useFormikHook = () => {
       alert(JSON.stringify(values, null, 2));
       setTimeout(() => {
         formik.resetForm();
+        setSelected('');
+        setDisabled(false);
       }, 1000);
     },
 
@@ -51,5 +54,5 @@ export const useFormikHook = () => {
 
   console.log({ selected, formik: formik.values.category });
 
-  return { formik, selected, setSelected };
+  return { formik, selected, setSelected, disabled, setDisabled };
 };

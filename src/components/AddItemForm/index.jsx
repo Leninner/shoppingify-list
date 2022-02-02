@@ -5,7 +5,7 @@ import { useFormikHook } from '../../hooks/useFormikHook';
 
 export const AddItemForm = ({ categories, children }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const { formik, selected, setSelected } = useFormikHook();
+  const { formik, selected, setSelected, disabled, setDisabled } = useFormikHook();
 
   return (
     <StyledAddItemForm onSubmit={formik.handleSubmit}>
@@ -53,6 +53,8 @@ export const AddItemForm = ({ categories, children }) => {
             WrapperInput={Entrada}
             selected={selected}
             setSelected={setSelected}
+            disabled={disabled}
+            setDisabled={setDisabled}
           />
         </Campo>
 
