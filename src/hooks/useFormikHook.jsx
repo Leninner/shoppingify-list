@@ -29,20 +29,18 @@ export const useFormikHook = () => {
     initialValues: {
       itemName: '',
       note: '',
-      image: '',
-
+      imageURL: '',
       category: selected,
     },
 
     onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
+      console.log(values);
       setTimeout(() => {
         formik.resetForm();
         setSelected('');
         setDisabled(false);
       }, 1000);
     },
-
     validate,
   });
 
@@ -51,8 +49,6 @@ export const useFormikHook = () => {
       formik.setFieldValue('category', selected);
     }
   }, [selected]); //eslint-disable-line
-
-  console.log({ selected, formik: formik.values.category });
 
   return { formik, selected, setSelected, disabled, setDisabled };
 };

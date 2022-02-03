@@ -80,7 +80,7 @@ export const EntradaNote = styled.textarea`
 
 export const Section = styled.section`
   width: 100%;
-  height: 75%;
+  height: 73%;
   overflow-y: auto;
   display: flex;
   flex-direction: column;

@@ -12,6 +12,7 @@ export const CategorySelect = ({
   setSelected,
   disabled,
   setDisabled,
+  onBlur,
 }) => {
   const elementRef = useNearScreen(isOpen);
 
@@ -46,6 +47,7 @@ export const CategorySelect = ({
         onChange={handleChange}
         onClick={() => setIsOpen(true)}
         disabled={disabled}
+        onBlur={onBlur}
       />
 
       {selected && (

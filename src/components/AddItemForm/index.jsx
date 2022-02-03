@@ -35,15 +35,17 @@ export const AddItemForm = ({ categories, children }) => {
         <Campo>
           <span>Image (optional)</span>
           <Entrada
-            type='url'
-            name='url'
+            type='text'
+            name='imageURL'
             placeholder='Enter a url'
             onChange={formik.handleChange}
-            value={formik.values.image}
+            value={formik.values.imageURL}
           />
         </Campo>
         <Campo>
           <span>Category *</span>
+          {formik.errors.category && <Error>{formik.errors.category}</Error>}
+
           <CategorySelect
             categories={categories}
             isOpen={isOpen}
@@ -55,6 +57,7 @@ export const AddItemForm = ({ categories, children }) => {
             setSelected={setSelected}
             disabled={disabled}
             setDisabled={setDisabled}
+            onBlur={formik.handleBlur}
           />
         </Campo>
 
