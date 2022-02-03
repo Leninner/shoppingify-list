@@ -2,6 +2,7 @@ import GlobalStyles from '../styles/GlobalStyles';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Layout from '../containers/Layout';
 import Items from '../pages/Items';
+import { Home } from '../pages/Home';
 
 export const App = () => {
   return (
@@ -9,10 +10,10 @@ export const App = () => {
       <GlobalStyles />
       <Layout>
         <Routes>
-          <Route path='/' element={<Items />} />
+          <Route path='/' element={<Home />} />
           <Route path='/items' element={<Items />} />
-          <Route path='/inventary' element={<Items />} />
-          <Route path='/refresh' element={<Items />} />
+          <Route path='/inventary' element={<Home />} />
+          <Route path='/refresh' element={<Home />} />
         </Routes>
       </Layout>
     </BrowserRouter>
