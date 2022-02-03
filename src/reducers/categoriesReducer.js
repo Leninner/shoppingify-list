@@ -1,4 +1,4 @@
-import { TOGGLE_ADD_ITEM } from '../types';
+import { TOGGLE_ADD_ITEM, ADD_ITEM_TO_CATEGORY } from '../types';
 
 const initalState = {
   categories: [
@@ -8,28 +8,14 @@ const initalState = {
       items: [
         {
           id: 1,
-          name: 'Apples',
+          itemName: 'Apples',
           note: '',
           image: '',
           isItemInfo: false,
         },
         {
           id: 2,
-          name: 'Bananas',
-          note: '',
-          image: '',
-          isItemInfo: false,
-        },
-        {
-          id: 3,
-          name: 'Pineapples',
-          note: '',
-          image: '',
-          isItemInfo: false,
-        },
-        {
-          id: 4,
-          name: 'Tomatoes',
+          itemName: 'Bananas',
           note: '',
           image: '',
           isItemInfo: false,
@@ -42,28 +28,14 @@ const initalState = {
       items: [
         {
           id: 1,
-          name: 'Apples',
+          itemName: 'Apples',
           note: '',
           image: '',
           isItemInfo: false,
         },
         {
           id: 2,
-          name: 'Bananas',
-          note: '',
-          image: '',
-          isItemInfo: false,
-        },
-        {
-          id: 3,
-          name: 'Pineapples',
-          note: '',
-          image: '',
-          isItemInfo: false,
-        },
-        {
-          id: 4,
-          name: 'Tomatoes',
+          itemName: 'Bananas',
           note: '',
           image: '',
           isItemInfo: false,
@@ -80,6 +52,24 @@ export const categoriesReducer = (state = initalState, action) => {
       return {
         ...state,
         isAdding: !state.isAdding,
+      };
+    case ADD_ITEM_TO_CATEGORY:
+      const categoriesUpdated = [...state.categories];
+      const category = categoriesUpdated.find((value) => value.name === action.payload.category).items;
+
+      const itemToAdd = {
+        id: category.length + 1,
+        ...action.payload,
+        isItemInfo: false,
+      };
+
+      category.push(itemToAdd);
+
+      console.log(state.categories);
+
+      return {
+        ...state,
+        categories: [...categoriesUpdated],
       };
     default:
       return state;

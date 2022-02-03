@@ -1,9 +1,13 @@
 import { useFormik } from 'formik';
 import { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { HandleAddItemToCategories } from '../actions';
 
 export const useFormikHook = () => {
   const [selected, setSelected] = useState('');
   const [disabled, setDisabled] = useState(false);
+
+  const dispatch = useDispatch();
 
   const validate = (values) => {
     const errors = {};
@@ -34,13 +38,12 @@ export const useFormikHook = () => {
     },
 
     onSubmit: (values) => {
-      console.log(values);
-      setTimeout(() => {
-        formik.resetForm();
-        setSelected('');
-        setDisabled(false);
-      }, 1000);
+      dispatch(HandleAddItemToCategories(values));
+      formik.resetForm();
+      setSelected('');
+      setDisabled(false);
     },
+
     validate,
   });
 

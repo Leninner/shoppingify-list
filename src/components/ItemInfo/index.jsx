@@ -1,9 +1,9 @@
 import { ItemInfoContainer } from './styles';
 
-export const ItemInfo = ({ name }) => {
+export const ItemInfo = ({ itemName }) => {
   return (
     <ItemInfoContainer>
-      <span>{name}</span>
+      <span>{itemName}</span>
       <span className='material-icons'>add</span>
     </ItemInfoContainer>
   );

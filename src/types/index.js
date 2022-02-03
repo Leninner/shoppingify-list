@@ -1,1 +1,3 @@
 export const TOGGLE_ADD_ITEM = 'TOGGLE_ADD_ITEM';
+
+export const ADD_ITEM_TO_CATEGORY = 'ADD_ITEM_TO_CATEGORY';
