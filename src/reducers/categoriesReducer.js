@@ -94,9 +94,21 @@ export const categoriesReducer = (state = initalState, action) => {
       };
 
     case SEE_INFO_ITEM:
-      console.log(action.payload);
+      const { item: itemClicked, category: categoryToShow } = action.payload;
+      const categoriesUpdated2 = [...state.categories];
+
+      categoriesUpdated2.map((value) => {
+        if (value.name === categoryToShow) {
+          const itemToShow = value.items.find((item) => item.id === itemClicked.id);
+          itemToShow.isItemInfo = true;
+        }
+
+        return value;
+      });
+
       return {
         ...state,
+        categories: [...categoriesUpdated2],
       };
 
     default:

@@ -3,7 +3,7 @@ import { ItemInfo } from '../ItemInfo';
 
 const ItemsCategoryInfo = ({ name, items, SeeInfo }) => {
   const handleClick = (item) => {
-    SeeInfo(item);
+    SeeInfo({ item, category: name });
   };
 
   return (
