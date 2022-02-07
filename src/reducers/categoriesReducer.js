@@ -55,17 +55,36 @@ export const categoriesReducer = (state = initalState, action) => {
       };
     case ADD_ITEM_TO_CATEGORY:
       const categoriesUpdated = [...state.categories];
-      const category = categoriesUpdated.find((value) => value.name === action.payload.category).items;
 
-      const itemToAdd = {
-        id: category.length + 1,
-        ...action.payload,
-        isItemInfo: false,
-      };
+      const { category } = action.payload;
 
-      category.push(itemToAdd);
+      console.log({ categoriesUpdated, action: action.payload.category });
 
-      console.log(state.categories);
+      if (categoriesUpdated.some(({ name }) => name === category)) {
+        const categoryFind = categoriesUpdated.find((value) => value.name === category).items;
+
+        const itemToAdd = {
+          id: categoryFind.length + 1,
+          ...action.payload,
+          isItemInfo: false,
+        };
+
+        categoryFind.push({
+          ...itemToAdd,
+        });
+      } else {
+        categoriesUpdated.push({
+          id: categoriesUpdated.length + 1,
+          name: category,
+          items: [
+            {
+              id: 1,
+              ...action.payload,
+              isItemInfo: false,
+            },
+          ],
+        });
+      }
 
       return {
         ...state,
