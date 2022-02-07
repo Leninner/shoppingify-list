@@ -1,4 +1,4 @@
-import { TOGGLE_ADD_ITEM, ADD_ITEM_TO_CATEGORY, SEE_INFO_ITEM } from '../types';
+import { TOGGLE_ADD_ITEM, ADD_ITEM_TO_CATEGORY, SEE_INFO_ITEM, BACK_TO_SHOPPING_LIST } from '../types';
 
 const initalState = {
   categories: [
@@ -109,6 +109,16 @@ export const categoriesReducer = (state = initalState, action) => {
       return {
         ...state,
         categories: [...categoriesUpdated2],
+      };
+
+    case BACK_TO_SHOPPING_LIST:
+      const categoriesUpdated3 = [...state.categories];
+      const { idItem, idCategory } = action.payload;
+      categoriesUpdated3[idCategory - 1].items[idItem - 1].isItemInfo = false;
+
+      return {
+        ...state,
+        categories: [...categoriesUpdated3],
       };
 
     default:

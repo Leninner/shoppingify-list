@@ -6,7 +6,7 @@ import { AddItemForm } from '../../components/AddItemForm';
 import { CardCategoryItemInfo } from '../../components/CardCategoryItemInfo';
 import PropTypes from 'prop-types';
 
-const InteractiveAside = ({ isAdding, HandleAddItem, shoppingCart, categories }) => {
+const InteractiveAside = ({ isAdding, HandleAddItem, shoppingCart, categories, BackToShoppingList }) => {
   const isItemToShow = categories.find((category) => category.items.find((item) => item.isItemInfo));
 
   let itemToShow = null;
@@ -32,7 +32,10 @@ const InteractiveAside = ({ isAdding, HandleAddItem, shoppingCart, categories })
           )}
         </>
       ) : (
-        <CardCategoryItemInfo {...itemToShow}>
+        <CardCategoryItemInfo
+          itemToShow={itemToShow}
+          isItemToShow={isItemToShow}
+          BackToShoppingList={BackToShoppingList}>
           <AddItemButton isItemInfo handleAddItem={HandleAddItem} shoppingCart={shoppingCart} />
         </CardCategoryItemInfo>
       )}

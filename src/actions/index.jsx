@@ -13,9 +13,10 @@ export const HandleAddItemToCategories = (payload) => {
   };
 };
 
-export const BackToShoppingList = () => {
+export const BackToShoppingList = (payload) => {
   return {
     type: BACK_TO_SHOPPING_LIST,
+    payload,
   };
 };
 

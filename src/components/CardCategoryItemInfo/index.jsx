@@ -3,10 +3,17 @@ import { StyledCardCategoryItemInfo, Return, ImgItem, ContainerInfo } from './st
 const imageDefault =
   'https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=775&q=80';
 
-export const CardCategoryItemInfo = ({ children, itemName, image }) => {
+export const CardCategoryItemInfo = ({ children, BackToShoppingList, itemToShow, isItemToShow }) => {
+  const { itemName, image, id } = itemToShow;
+  const { name, id: idCategoryShowing } = isItemToShow;
+
+  const handleClick = () => {
+    BackToShoppingList({ idItem: id, categoryName: name, idCategory: idCategoryShowing });
+  };
+
   return (
     <StyledCardCategoryItemInfo>
-      <Return onClick={() => console.log('Back')}>
+      <Return onClick={handleClick}>
         <span className='material-icons'>arrow_back</span> Back
       </Return>
 
@@ -19,7 +26,7 @@ export const CardCategoryItemInfo = ({ children, itemName, image }) => {
 
       <ContainerInfo>
         <span>category</span>
-        <p>Fruit And Vegetables</p>
+        <p>{name}</p>
       </ContainerInfo>
 
       <ContainerInfo>
