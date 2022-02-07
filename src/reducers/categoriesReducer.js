@@ -94,17 +94,10 @@ export const categoriesReducer = (state = initalState, action) => {
       };
 
     case SEE_INFO_ITEM:
-      const { item: itemClicked, category: categoryToShow } = action.payload;
       const categoriesUpdated2 = [...state.categories];
+      const { idItem: idSeeItem, idCategory: idSeeCategory } = action.payload;
 
-      categoriesUpdated2.map((value) => {
-        if (value.name === categoryToShow) {
-          const itemToShow = value.items.find((item) => item.id === itemClicked.id);
-          itemToShow.isItemInfo = true;
-        }
-
-        return value;
-      });
+      categoriesUpdated2[idSeeCategory - 1].items[idSeeItem - 1].isItemInfo = true;
 
       return {
         ...state,

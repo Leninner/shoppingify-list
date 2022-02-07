@@ -1,9 +1,9 @@
 import { StyledItemsCategoryInfo, TitleCategory, CategoryContainer } from './styles';
 import { ItemInfo } from '../ItemInfo';
 
-const ItemsCategoryInfo = ({ name, items, SeeInfo }) => {
-  const handleClick = (item) => {
-    SeeInfo({ item, category: name });
+const ItemsCategoryInfo = ({ name, items, SeeInfo, id }) => {
+  const handleClick = (item, idItem) => {
+    SeeInfo({ item, category: name, idCategory: id, idItem });
   };
 
   return (
@@ -11,7 +11,7 @@ const ItemsCategoryInfo = ({ name, items, SeeInfo }) => {
       <TitleCategory>{name}</TitleCategory>
       <CategoryContainer>
         {items.map((item) => (
-          <ItemInfo key={item.id} {...item} onClick={() => handleClick(item)} />
+          <ItemInfo key={item.id} {...item} onClick={() => handleClick(item, item.id)} />
         ))}
       </CategoryContainer>
     </StyledItemsCategoryInfo>
