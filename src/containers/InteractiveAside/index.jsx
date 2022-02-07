@@ -9,6 +9,12 @@ import PropTypes from 'prop-types';
 const InteractiveAside = ({ isAdding, HandleAddItem, shoppingCart, categories }) => {
   const isItemToShow = categories.find((category) => category.items.find((item) => item.isItemInfo));
 
+  let itemToShow = null;
+
+  if (isItemToShow) {
+    itemToShow = isItemToShow.items.find((item) => item.isItemInfo);
+  }
+
   return (
     <StyledInteractiveAside>
       {!isItemToShow ? (
@@ -26,7 +32,7 @@ const InteractiveAside = ({ isAdding, HandleAddItem, shoppingCart, categories })
           )}
         </>
       ) : (
-        <CardCategoryItemInfo>
+        <CardCategoryItemInfo {...itemToShow}>
           <AddItemButton isItemInfo handleAddItem={HandleAddItem} shoppingCart={shoppingCart} />
         </CardCategoryItemInfo>
       )}
