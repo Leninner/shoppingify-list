@@ -1,14 +1,12 @@
 import { StyledItemsContainer } from './styles';
-import { ItemsCategoryInfo } from '../../components/ItemsCategoryInfo';
+import ItemsCategoryInfo from '../../components/ItemsCategoryInfo';
 
-export const ItemsContainer = ({ categories }) => {
-  console.log('categories', categories);
-
+export const ItemsContainer = ({ categories, SeeInfo }) => {
   return (
     <StyledItemsContainer>
       {categories.map((item) => {
         const { id } = item;
-        return <ItemsCategoryInfo key={id} {...item} />;
+        return <ItemsCategoryInfo key={id} {...item} SeeInfo={SeeInfo} />;
       })}
     </StyledItemsContainer>
   );

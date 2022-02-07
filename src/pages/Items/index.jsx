@@ -1,8 +1,9 @@
 import { Helmet } from 'react-helmet';
 import { ItemsView } from '../../containers/ItemsView';
 import { connect } from 'react-redux';
+import { SeeInfo } from '../../actions';
 
-const Items = ({ categoriesReducer }) => {
+const Items = ({ categoriesReducer, SeeInfo }) => {
   const { categories } = categoriesReducer;
 
   return (
@@ -10,7 +11,7 @@ const Items = ({ categoriesReducer }) => {
       <Helmet>
         <title>Items</title>
       </Helmet>
-      <ItemsView categories={categories} />
+      <ItemsView categories={categories} SeeInfo={SeeInfo} />
     </>
   );
 };
@@ -21,4 +22,8 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, null)(Items);
+const mapDispatchToProps = {
+  SeeInfo,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Items);

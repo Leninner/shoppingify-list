@@ -1,4 +1,4 @@
-import { TOGGLE_ADD_ITEM, ADD_ITEM_TO_CATEGORY } from '../types';
+import { TOGGLE_ADD_ITEM, ADD_ITEM_TO_CATEGORY, SEE_INFO_ITEM } from '../types';
 
 const initalState = {
   categories: [
@@ -10,14 +10,14 @@ const initalState = {
           id: 1,
           itemName: 'Apples',
           note: '',
-          image: '',
+          imageURL: '',
           isItemInfo: false,
         },
         {
           id: 2,
           itemName: 'Bananas',
           note: '',
-          image: '',
+          imageURL: '',
           isItemInfo: false,
         },
       ],
@@ -30,14 +30,14 @@ const initalState = {
           id: 1,
           itemName: 'Apples',
           note: '',
-          image: '',
+          imageURL: '',
           isItemInfo: false,
         },
         {
           id: 2,
           itemName: 'Bananas',
           note: '',
-          image: '',
+          imageURL: '',
           isItemInfo: false,
         },
       ],
@@ -58,14 +58,14 @@ export const categoriesReducer = (state = initalState, action) => {
 
       const { category } = action.payload;
 
-      console.log({ categoriesUpdated, action: action.payload.category });
-
       if (categoriesUpdated.some(({ name }) => name === category)) {
         const categoryFind = categoriesUpdated.find((value) => value.name === category).items;
 
         const itemToAdd = {
           id: categoryFind.length + 1,
-          ...action.payload,
+          note: action.payload.note,
+          imageURL: action.payload.imageURL,
+          itemName: action.payload.itemName,
           isItemInfo: false,
         };
 
@@ -79,7 +79,9 @@ export const categoriesReducer = (state = initalState, action) => {
           items: [
             {
               id: 1,
-              ...action.payload,
+              note: action.payload.note,
+              imageURL: action.payload.imageURL,
+              itemName: action.payload.itemName,
               isItemInfo: false,
             },
           ],
@@ -90,6 +92,13 @@ export const categoriesReducer = (state = initalState, action) => {
         ...state,
         categories: [...categoriesUpdated],
       };
+
+    case SEE_INFO_ITEM:
+      console.log(action.payload);
+      return {
+        ...state,
+      };
+
     default:
       return state;
   }
