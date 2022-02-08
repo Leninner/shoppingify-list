@@ -28,16 +28,18 @@ const initalState = {
       items: [
         {
           id: 1,
-          itemName: 'Apples',
-          note: '',
-          imageURL: '',
+          itemName: 'Carne de res',
+          note: 'La carne es algo riquísimo',
+          imageURL:
+            'https://images.unsplash.com/photo-1612871689353-cccf581d667b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80',
           isItemInfo: false,
         },
         {
           id: 2,
-          itemName: 'Bananas',
-          note: '',
-          imageURL: '',
+          itemName: 'Pescado',
+          note: 'El pescado es un alimento muy rico en proteinas',
+          imageURL:
+            'https://images.unsplash.com/photo-1524704796725-9fc3044a58b2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8ZmlzaHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60',
           isItemInfo: false,
         },
       ],
@@ -96,6 +98,15 @@ export const categoriesReducer = (state = initalState, action) => {
     case SEE_INFO_ITEM:
       const categoriesUpdated2 = [...state.categories];
       const { idItem: idSeeItem, idCategory: idSeeCategory } = action.payload;
+
+      // Buscar una mejor manera de volver el valor de isItemInfo a false
+      categoriesUpdated2.map((value) => {
+        value.items.map((item) => {
+          item.isItemInfo = false;
+          return item;
+        });
+        return value;
+      });
 
       categoriesUpdated2[idSeeCategory - 1].items[idSeeItem - 1].isItemInfo = true;
 
