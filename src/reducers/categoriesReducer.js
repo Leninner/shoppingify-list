@@ -118,7 +118,20 @@ export const categoriesReducer = (state = initalState, action) => {
 
     case DELETE_ITEM_FROM_CATEGORIES:
       console.log(action.payload);
-      return state;
+      const { idItem: idItemToDelete, categoryName } = action.payload;
+      const categoriesUpdated4 = [...state.categories];
+
+      categoriesUpdated4.map((value) => {
+        if (value.name === categoryName) {
+          value.items.splice(idItemToDelete - 1, 1);
+        }
+        return value;
+      });
+
+      return {
+        ...state,
+        categories: [...categoriesUpdated4],
+      };
 
     default:
       return state;

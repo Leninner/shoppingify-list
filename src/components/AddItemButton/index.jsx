@@ -1,13 +1,22 @@
 import { StyledAddItemContainer, BoxInput, Form, ButtonAddItem, ButtonConfirm, Div } from './styles';
 
-export const AddItemButton = ({ isAdding, handleAddItem, shoppingCart, isItemInfo, DeleteItemFromCategories }) => {
+export const AddItemButton = ({
+  isAdding,
+  handleAddItem,
+  shoppingCart,
+  isItemInfo,
+  idItem,
+  DeleteItemFromCategories,
+  categoryName,
+  idCategory,
+}) => {
   const handleClick = (e) => {
     e.preventDefault();
     handleAddItem();
   };
 
   const handleDeleteItemFromCategories = () => {
-    DeleteItemFromCategories('Yep');
+    DeleteItemFromCategories({ idItem, categoryName, idCategory });
   };
 
   const isEmpty = shoppingCart.every((category) => category.items.length === 0);
