@@ -1,11 +1,34 @@
-import { TOGGLE_ADD_ITEM, ADD_ITEM_TO_CATEGORY, SEE_INFO_ITEM, BACK_TO_SHOPPING_LIST } from '../types';
+import {
+  TOGGLE_ADD_ITEM,
+  ADD_ITEM_TO_CATEGORY,
+  SEE_INFO_ITEM,
+  BACK_TO_SHOPPING_LIST,
+  DELETE_ITEM_FROM_CATEGORIES,
+} from '../types';
 
 const initalState = {
   categories: [
     {
       id: 1,
       name: 'Fruits And Vegetables',
-      items: [],
+      items: [
+        {
+          id: 1,
+          itemName: 'Carne de res',
+          note: 'La carne es algo riquísimo',
+          imageURL:
+            'https://images.unsplash.com/photo-1612871689353-cccf581d667b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80',
+          isItemInfo: false,
+        },
+        {
+          id: 2,
+          itemName: 'Pescado',
+          note: 'El pescado es un alimento muy rico en proteinas',
+          imageURL:
+            'https://images.unsplash.com/photo-1524704796725-9fc3044a58b2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8ZmlzaHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60',
+          isItemInfo: false,
+        },
+      ],
     },
     {
       id: 2,
@@ -15,23 +38,6 @@ const initalState = {
   ],
   isAdding: false,
 };
-
-// {
-//   id: 1,
-//   itemName: 'Carne de res',
-//   note: 'La carne es algo riquísimo',
-//   imageURL:
-//     'https://images.unsplash.com/photo-1612871689353-cccf581d667b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80',
-//   isItemInfo: false,
-// },
-// {
-//   id: 2,
-//   itemName: 'Pescado',
-//   note: 'El pescado es un alimento muy rico en proteinas',
-//   imageURL:
-//     'https://images.unsplash.com/photo-1524704796725-9fc3044a58b2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8ZmlzaHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60',
-//   isItemInfo: false,
-// },
 
 export const categoriesReducer = (state = initalState, action) => {
   switch (action.type) {
@@ -109,6 +115,10 @@ export const categoriesReducer = (state = initalState, action) => {
         ...state,
         categories: [...categoriesUpdated3],
       };
+
+    case DELETE_ITEM_FROM_CATEGORIES:
+      console.log(action.payload);
+      return state;
 
     default:
       return state;

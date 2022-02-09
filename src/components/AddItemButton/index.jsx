@@ -1,9 +1,13 @@
 import { StyledAddItemContainer, BoxInput, Form, ButtonAddItem, ButtonConfirm, Div } from './styles';
 
-export const AddItemButton = ({ isAdding, handleAddItem, shoppingCart, isItemInfo }) => {
+export const AddItemButton = ({ isAdding, handleAddItem, shoppingCart, isItemInfo, DeleteItemFromCategories }) => {
   const handleClick = (e) => {
     e.preventDefault();
     handleAddItem();
+  };
+
+  const handleDeleteItemFromCategories = () => {
+    DeleteItemFromCategories('Yep');
   };
 
   const isEmpty = shoppingCart.every((category) => category.items.length === 0);
@@ -28,7 +32,9 @@ export const AddItemButton = ({ isAdding, handleAddItem, shoppingCart, isItemInf
         </>
       ) : (
         <Div>
-          <ButtonConfirm isCancel>Delete</ButtonConfirm>
+          <ButtonConfirm isCancel onClick={handleDeleteItemFromCategories}>
+            Delete
+          </ButtonConfirm>
           <ButtonConfirm>Add to list</ButtonConfirm>
         </Div>
       )}
