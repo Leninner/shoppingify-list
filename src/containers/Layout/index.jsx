@@ -2,7 +2,7 @@ import { MenuAside } from '../MenuAside';
 import InteractiveAside from '../InteractiveAside';
 import { connect } from 'react-redux';
 import { StyledLayout } from './styles';
-import { HandleAddItem, BackToShoppingList, DeleteItemFromCategories } from '../../actions';
+import { HandleAddItem, BackToShoppingList, DeleteItemFromCategories, AddToCurrentList } from '../../actions';
 
 const Layout = ({
   children,
@@ -11,6 +11,7 @@ const Layout = ({
   HandleAddItem,
   BackToShoppingList,
   DeleteItemFromCategories,
+  AddToCurrentList,
 }) => {
   const { isAdding, categories } = categoriesReducer;
   const { shoppingCart } = shoppingCartReducer;
@@ -26,6 +27,7 @@ const Layout = ({
         categories={categories}
         BackToShoppingList={BackToShoppingList}
         DeleteItemFromCategories={DeleteItemFromCategories}
+        AddToCurrentList={AddToCurrentList}
       />
     </StyledLayout>
   );
@@ -42,6 +44,7 @@ const mapDispatchToProps = {
   HandleAddItem,
   BackToShoppingList,
   DeleteItemFromCategories,
+  AddToCurrentList,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Layout);

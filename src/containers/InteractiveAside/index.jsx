@@ -13,6 +13,7 @@ const InteractiveAside = ({
   categories,
   BackToShoppingList,
   DeleteItemFromCategories,
+  AddToCurrentList,
 }) => {
   const isItemToShow = categories.find((category) => category.items.find((item) => item.isItemInfo));
 
@@ -48,6 +49,7 @@ const InteractiveAside = ({
             handleAddItem={HandleAddItem}
             shoppingCart={shoppingCart}
             DeleteItemFromCategories={DeleteItemFromCategories}
+            AddToCurrentList={AddToCurrentList}
           />
         </CardCategoryItemInfo>
       )}

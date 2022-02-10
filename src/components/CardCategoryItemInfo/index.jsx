@@ -8,13 +8,13 @@ export const CardCategoryItemInfo = ({ children, BackToShoppingList, itemToShow,
   const { itemName, imageURL, id, note } = itemToShow;
   const { name, id: idCategoryShowing } = isItemToShow;
 
-  const handleClick = () => {
+  const handleReturn = () => {
     BackToShoppingList({ idItem: id, categoryName: name, idCategory: idCategoryShowing });
   };
 
   return (
     <StyledCardCategoryItemInfo>
-      <Return onClick={handleClick}>
+      <Return onClick={handleReturn}>
         <span className='material-icons'>arrow_back</span> Back
       </Return>
 

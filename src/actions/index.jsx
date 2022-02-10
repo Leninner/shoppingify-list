@@ -4,6 +4,7 @@ import {
   BACK_TO_SHOPPING_LIST,
   SEE_INFO_ITEM,
   DELETE_ITEM_FROM_CATEGORIES,
+  ADD_TO_CURRENT_LIST,
 } from '../types';
 
 export const HandleAddItem = () => {
@@ -38,4 +39,14 @@ export const DeleteItemFromCategories = (payload) => {
     type: DELETE_ITEM_FROM_CATEGORIES,
     payload,
   };
+};
+
+// NOTE: Uso de middleware para obtener el estado actual de toda la aplicación
+export const AddToCurrentList = (actionData) => async (dispatch, getState) => {
+  const { categoriesReducer } = getState();
+  dispatch({
+    type: ADD_TO_CURRENT_LIST,
+    data: actionData,
+    state: categoriesReducer,
+  });
 };

@@ -9,6 +9,7 @@ export const AddItemButton = ({
   DeleteItemFromCategories,
   categoryName,
   idCategory,
+  AddToCurrentList,
 }) => {
   const handleClick = (e) => {
     e.preventDefault();
@@ -17,6 +18,10 @@ export const AddItemButton = ({
 
   const handleDeleteItemFromCategories = () => {
     DeleteItemFromCategories({ idItem, categoryName, idCategory });
+  };
+
+  const handleAddToCurrentList = () => {
+    AddToCurrentList({ idItem, categoryName, idCategory });
   };
 
   const isEmpty = shoppingCart.every((category) => category.items.length === 0);
@@ -44,7 +49,7 @@ export const AddItemButton = ({
           <ButtonConfirm isCancel onClick={handleDeleteItemFromCategories}>
             Delete
           </ButtonConfirm>
-          <ButtonConfirm>Add to list</ButtonConfirm>
+          <ButtonConfirm onClick={handleAddToCurrentList}>Add to list</ButtonConfirm>
         </Div>
       )}
     </StyledAddItemContainer>
