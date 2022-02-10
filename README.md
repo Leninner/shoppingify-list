@@ -88,6 +88,8 @@ $ npm start
 - [Steps to replicate a design with only HTML and CSS](https://devchallenges-blogs.web.app/how-to-replicate-design/)
 - [Node.js](https://nodejs.org/)
 - [Marked - a markdown parser](https://github.com/chjj/marked)
+- [Share data between two reducers](https://qastack.mx/programming/39257740/how-to-access-state-inside-redux-reducer)
+- [FAQs Redux](https://redux.js.org/faq/reducers/#how-do-i-share-state-between-two-reducers-do-i-have-to-use-combinereducers)
 
 ## Contact
 
