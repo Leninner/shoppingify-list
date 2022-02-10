@@ -7,7 +7,7 @@ import {
   ShoppingListContainer,
   CategoriesContainer,
 } from './styles';
-import { Category } from '../Category';
+import { ShoppingListCategory } from '../ShoppingListCategory';
 
 export const ShoppingList = ({ shoppingCart }) => {
   const shoppingCartFiltered = shoppingCart.filter((value) => value.items.length > 0);
@@ -29,7 +29,7 @@ export const ShoppingList = ({ shoppingCart }) => {
 
           <CategoriesContainer>
             {shoppingCartFiltered.map((item) => (
-              <Category key={item.id} {...item} />
+              <ShoppingListCategory key={item.id} {...item} />
             ))}
           </CategoriesContainer>
         </ShoppingListContainer>

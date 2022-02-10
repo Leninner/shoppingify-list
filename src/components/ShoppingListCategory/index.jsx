@@ -1,14 +1,14 @@
-import { ItemCategory } from '../ItemCategory';
+import { ShoppingListItem } from '../ShoppingListItem';
 import { TitleCategory, StyledCategoryContainer } from './styles';
 
-export const Category = (category) => {
+export const ShoppingListCategory = (category) => {
   const { name, items } = category;
 
   return (
     <StyledCategoryContainer>
       <TitleCategory>{name}</TitleCategory>
       {items.map((item) => (
-        <ItemCategory key={item.id} {...item} />
+        <ShoppingListItem key={item.id} {...item} />
       ))}
     </StyledCategoryContainer>
   );

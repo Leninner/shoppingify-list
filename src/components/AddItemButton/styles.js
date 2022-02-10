@@ -69,7 +69,8 @@ export const ButtonAddItem = styled.button`
 `;
 
 export const ButtonConfirm = styled.button`
-  width: 87.35px;
+  min-width: 87.35px;
+  padding: 0 2vh;
   height: 61.25px;
   border-radius: 12px;
   border: none;

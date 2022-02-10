@@ -1,11 +1,11 @@
 import { BoxCategory } from './styles';
 
-export const ItemCategory = (item) => {
-  const { name, quantity } = item;
+export const ShoppingListItem = (item) => {
+  const { itemName, quantity = 1 } = item;
 
   return (
     <BoxCategory>
-      <h3>{name}</h3>
+      <h3>{itemName}</h3>
       <button>{quantity} pcs</button>
     </BoxCategory>
   );
