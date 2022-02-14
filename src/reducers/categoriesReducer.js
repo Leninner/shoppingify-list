@@ -38,7 +38,7 @@ const initalState = {
         },
         {
           id: 4,
-          itemName: 'Pollo',
+          itemName: 'Huesos de pollo',
           note: 'La carne es algo riquísimo',
           imageURL:
             'https://images.unsplash.com/photo-1612871689353-cccf581d667b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80',
@@ -141,7 +141,9 @@ export const categoriesReducer = (state = initalState, action) => {
       categoriesUpdated4.map((value) => {
         if (value.name === categoryName) {
           value.items.splice(idItemToDelete - 1, 1);
+          value.items.map((item, index) => (item.id = index + 1));
         }
+
         return value;
       });
 

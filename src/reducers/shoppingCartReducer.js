@@ -18,22 +18,20 @@ const initialState = {
 export const shoppingCartReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_TO_CURRENT_LIST:
-      const { data, globalState } = action;
-      const { categories } = globalState;
+      const { payload, categories } = action;
+      const { idItem, idCategory } = payload;
 
-      const { idItem, idCategory } = data;
-
+      console.log(state);
       const newShoppingCart = [...state.shoppingCart];
       newShoppingCart[idCategory - 1].items.push(categories[idCategory - 1].items[idItem - 1]);
 
       const categoriesUpdated = [...categories];
-
       categoriesUpdated[idCategory - 1].items[idItem - 1].isItemInfo = false;
 
       return {
         ...state,
         shoppingCart: newShoppingCart,
-        globalState: [...categoriesUpdated],
+        categories: [...categoriesUpdated],
       };
 
     default:

@@ -34,20 +34,23 @@ export const SeeInfo = (payload) => {
   };
 };
 
-export const DeleteItemFromCategories = (payload) => {
-  return {
+export const DeleteItemFromCategories = (payload) => async (dispatch, getState) => {
+  const { shoppingCart } = getState().shoppingCartReducer;
+
+  dispatch({
     type: DELETE_ITEM_FROM_CATEGORIES,
     payload,
-  };
+    shoppingCart,
+  });
 };
 
 // NOTE: Uso de middleware para obtener el estado actual de toda la aplicación
-export const AddToCurrentList = (actionData) => async (dispatch, getState) => {
-  const { categoriesReducer } = getState();
+export const AddToCurrentList = (payload) => async (dispatch, getState) => {
+  const { categories } = getState().categoriesReducer;
 
   dispatch({
     type: ADD_TO_CURRENT_LIST,
-    data: actionData,
-    globalState: categoriesReducer,
+    payload,
+    categories,
   });
 };
