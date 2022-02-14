@@ -18,7 +18,7 @@ export const AddItemButton = ({
   };
 
   const handleDeleteItemFromCategories = () => {
-    DeleteItemFromCategories({ idItem, categoryName, idCategory });
+    DeleteItemFromCategories({ idItem, categoryName, idCategory, itemName });
   };
 
   const handleAddToCurrentList = () => {
@@ -32,8 +32,6 @@ export const AddItemButton = ({
       return item.id === idItem && item.itemName === itemName ? true : false;
     })
   );
-
-  console.log(itemName);
 
   return (
     <StyledAddItemContainer>

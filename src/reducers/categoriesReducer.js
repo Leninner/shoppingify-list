@@ -133,10 +133,19 @@ export const categoriesReducer = (state = initalState, action) => {
       };
 
     case DELETE_ITEM_FROM_CATEGORIES:
-      console.log(action.payload);
-      console.log({ state });
-      const { idItem: idItemToDelete, categoryName } = action.payload;
       const categoriesUpdated4 = [...state.categories];
+      const { payload, shoppingCart } = action;
+
+      const { idItem: idItemToDelete, categoryName, itemName, idCategory: idCategoryToDelete } = payload;
+
+      // Método para eliminar un item de una categoría y actualizar los items de shopping cart
+      shoppingCart[idCategoryToDelete - 1].items.map((item, index) => {
+        if (item.itemName === itemName) {
+          shoppingCart[idCategoryToDelete - 1].items.splice(index, 1);
+        }
+
+        return item;
+      });
 
       categoriesUpdated4.map((value) => {
         if (value.name === categoryName) {
