@@ -10,6 +10,7 @@ export const AddItemButton = ({
   categoryName,
   idCategory,
   AddToCurrentList,
+  categories,
 }) => {
   const handleClick = (e) => {
     e.preventDefault();
@@ -24,7 +25,9 @@ export const AddItemButton = ({
     AddToCurrentList({ idItem, categoryName, idCategory });
   };
 
-  const isEmpty = shoppingCart.every((category) => category.items.length === 0);
+  const isCurrentListEmpty = shoppingCart.every((category) => category.items.length === 0);
+
+  const isAddedToCurrentList = shoppingCart.some((category) => category.items.some((item) => item.id === idItem));
 
   return (
     <StyledAddItemContainer>
@@ -39,8 +42,8 @@ export const AddItemButton = ({
             </Div>
           ) : (
             <Form>
-              <BoxInput type='text' name='item' placeholder='Enter a name' disabled={isEmpty} />
-              <ButtonAddItem disabled={isEmpty}>Save</ButtonAddItem>
+              <BoxInput type='text' name='item' placeholder='Enter a name' disabled={isCurrentListEmpty} />
+              <ButtonAddItem disabled={isCurrentListEmpty}>Save</ButtonAddItem>
             </Form>
           )}
         </>
@@ -49,7 +52,7 @@ export const AddItemButton = ({
           <ButtonConfirm isCancel onClick={handleDeleteItemFromCategories}>
             Delete
           </ButtonConfirm>
-          <ButtonConfirm onClick={handleAddToCurrentList}>Add to list</ButtonConfirm>
+          {isAddedToCurrentList ? null : <ButtonConfirm onClick={handleAddToCurrentList}>Add to list</ButtonConfirm>}
         </Div>
       )}
     </StyledAddItemContainer>

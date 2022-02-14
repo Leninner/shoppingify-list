@@ -50,6 +50,7 @@ const InteractiveAside = ({
             shoppingCart={shoppingCart}
             DeleteItemFromCategories={DeleteItemFromCategories}
             AddToCurrentList={AddToCurrentList}
+            categories={categories}
           />
         </CardCategoryItemInfo>
       )}
