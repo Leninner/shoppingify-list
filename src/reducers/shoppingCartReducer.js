@@ -23,7 +23,9 @@ export const shoppingCartReducer = (state = initialState, action) => {
 
       console.log(state);
       const newShoppingCart = [...state.shoppingCart];
-      newShoppingCart[idCategory - 1].items.push(categories[idCategory - 1].items[idItem - 1]);
+      const itemToAdd = categories[idCategory - 1].items[idItem - 1];
+      itemToAdd.quantity = 1;
+      newShoppingCart[idCategory - 1].items.push(itemToAdd);
 
       const categoriesUpdated = [...categories];
       categoriesUpdated[idCategory - 1].items[idItem - 1].isItemInfo = false;

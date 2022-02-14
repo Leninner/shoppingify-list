@@ -46,6 +46,7 @@ const InteractiveAside = ({
           BackToShoppingList={BackToShoppingList}>
           <AddItemButton
             isItemInfo
+            itemToShow={itemToShow}
             handleAddItem={HandleAddItem}
             shoppingCart={shoppingCart}
             DeleteItemFromCategories={DeleteItemFromCategories}

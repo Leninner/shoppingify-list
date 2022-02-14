@@ -10,7 +10,7 @@ export const AddItemButton = ({
   categoryName,
   idCategory,
   AddToCurrentList,
-  categories,
+  itemName,
 }) => {
   const handleClick = (e) => {
     e.preventDefault();
@@ -27,7 +27,13 @@ export const AddItemButton = ({
 
   const isCurrentListEmpty = shoppingCart.every((category) => category.items.length === 0);
 
-  const isAddedToCurrentList = shoppingCart.some((category) => category.items.some((item) => item.id === idItem));
+  const isAddedToCurrentList = shoppingCart.some((category) =>
+    category.items.some((item) => {
+      return item.id === idItem && item.itemName === itemName ? true : false;
+    })
+  );
+
+  console.log(itemName);
 
   return (
     <StyledAddItemContainer>

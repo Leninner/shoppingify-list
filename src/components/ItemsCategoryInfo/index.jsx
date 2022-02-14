@@ -11,7 +11,7 @@ const ItemsCategoryInfo = ({ name, items, SeeInfo, id }) => {
       <TitleCategory>{name}</TitleCategory>
       <CategoryContainer>
         {items.map((item) => (
-          <ItemInfo key={item.id} {...item} onClick={() => handleClick(item, item.id)} />
+          <ItemInfo key={item.itemName} {...item} onClick={() => handleClick(item, item.id)} />
         ))}
       </CategoryContainer>
     </StyledItemsCategoryInfo>

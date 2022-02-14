@@ -37,7 +37,7 @@ export const CardCategoryItemInfo = ({ children, BackToShoppingList, itemToShow,
             'Nutrient-dense foods are those that provide substantial amounts of vitamins, minerals and other nutrients with relatively few calories. One-third of a medium avocado (50 g) has 80 calories and contributes nearly 20'}
         </p>
       </ContainerInfo>
-      {cloneElement(children, { idItem: id, categoryName: name, idCategory: idCategoryShowing })}
+      {cloneElement(children, { idItem: id, categoryName: name, idCategory: idCategoryShowing, itemName })}
     </StyledCardCategoryItemInfo>
   );
 };

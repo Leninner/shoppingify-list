@@ -8,7 +8,7 @@ export const ShoppingListCategory = (category) => {
     <StyledCategoryContainer>
       <TitleCategory>{name}</TitleCategory>
       {items.map((item) => (
-        <ShoppingListItem key={item.id} {...item} />
+        <ShoppingListItem key={item.itemName} {...item} />
       ))}
     </StyledCategoryContainer>
   );
