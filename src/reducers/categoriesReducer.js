@@ -22,10 +22,26 @@ const initalState = {
         },
         {
           id: 2,
-          itemName: 'Pescado',
-          note: 'El pescado es un alimento muy rico en proteinas',
+          itemName: 'Carne de hueso',
+          note: 'La carne es algo riquísimo',
           imageURL:
-            'https://images.unsplash.com/photo-1524704796725-9fc3044a58b2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8ZmlzaHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60',
+            'https://images.unsplash.com/photo-1612871689353-cccf581d667b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80',
+          isItemInfo: false,
+        },
+        {
+          id: 3,
+          itemName: 'Chuleta de cerdo',
+          note: 'La carne es algo riquísimo',
+          imageURL:
+            'https://images.unsplash.com/photo-1612871689353-cccf581d667b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80',
+          isItemInfo: false,
+        },
+        {
+          id: 4,
+          itemName: 'Pollo',
+          note: 'La carne es algo riquísimo',
+          imageURL:
+            'https://images.unsplash.com/photo-1612871689353-cccf581d667b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80',
           isItemInfo: false,
         },
       ],
