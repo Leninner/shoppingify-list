@@ -30,8 +30,23 @@ const initialState = {
 export const shoppingCartReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_TO_CURRENT_LIST:
-      console.log({ action, state });
-      return state;
+      const { data, globalState } = action;
+      const { categories } = globalState;
+
+      const newCategoriesReducer = categories.map((category) => {
+        category.added = false;
+        return category;
+      });
+
+      console.log(data, categories);
+      return {
+        ...state,
+        globalState: {
+          ...globalState,
+          categories: newCategoriesReducer,
+        },
+      };
+
     default:
       return state;
   }

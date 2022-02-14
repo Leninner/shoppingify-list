@@ -44,9 +44,10 @@ export const DeleteItemFromCategories = (payload) => {
 // NOTE: Uso de middleware para obtener el estado actual de toda la aplicación
 export const AddToCurrentList = (actionData) => async (dispatch, getState) => {
   const { categoriesReducer } = getState();
+
   dispatch({
     type: ADD_TO_CURRENT_LIST,
     data: actionData,
-    state: categoriesReducer,
+    globalState: categoriesReducer,
   });
 };
