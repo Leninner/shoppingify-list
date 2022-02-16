@@ -66,3 +66,7 @@ export const CategoriesContainer = styled.div`
     padding-bottom: 15%;
   }
 `;
+
+export const ToggleContainer = styled.div`
+  position: absolute;
+`;

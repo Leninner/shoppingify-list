@@ -6,10 +6,12 @@ import {
   ShoppingListTittle,
   ShoppingListContainer,
   CategoriesContainer,
+  ToggleContainer,
 } from './styles';
 import { ShoppingListCategory } from '../ShoppingListCategory';
 import { useSelector, useDispatch } from 'react-redux';
 import { useState } from 'react';
+import { ToggleEditOrComplete } from '../ToggleEditOrComplete';
 
 export const ShoppingList = ({ shoppingCart }) => {
   const shoppingCartFiltered = shoppingCart.filter((value) => value.items.length > 0);
@@ -47,6 +49,9 @@ export const ShoppingList = ({ shoppingCart }) => {
         <ShoppingListContainer>
           <ShoppingListTittle>
             <input type='text' value={listName} onChange={handleUpdateName} disabled={!edit} />
+            <ToggleContainer>
+              <ToggleEditOrComplete />
+            </ToggleContainer>
 
             {!edit ? (
               <span className='material-icons' onClick={() => setEdit(true)}>
