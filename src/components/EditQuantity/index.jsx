@@ -2,7 +2,7 @@ import { StyledEditContainer, StyledBoxTrash } from './styles';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 
-export const Edit = ({ itemName, idCategory, id: idItem, setEdit, quantity }) => {
+export const EditQuantity = ({ itemName, idCategory, id: idItem, setEdit, quantity }) => {
   console.log({ itemName, idCategory, idItem });
 
   const dispatch = useDispatch();
@@ -31,9 +31,22 @@ export const Edit = ({ itemName, idCategory, id: idItem, setEdit, quantity }) =>
     });
   };
 
+  const handleDelete = () => {
+    setEdit(false);
+
+    dispatch({
+      type: 'DELETE_ITEM_FROM_CURRENT_LIST',
+      payload: {
+        idCategory,
+        idItem,
+        itemName,
+      },
+    });
+  };
+
   return (
     <StyledEditContainer>
-      <StyledBoxTrash>
+      <StyledBoxTrash onClick={handleDelete}>
         <span className='material-icons-outlined'>delete</span>
       </StyledBoxTrash>
 

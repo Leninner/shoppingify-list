@@ -1,4 +1,4 @@
-import { ADD_TO_CURRENT_LIST, EDIT_ITEM_QUANTITY } from '../types';
+import { ADD_TO_CURRENT_LIST, EDIT_ITEM_QUANTITY, DELETE_ITEM_FROM_CURRENT_LIST } from '../types';
 
 const initialState = {
   shoppingCart: [
@@ -52,6 +52,27 @@ export const shoppingCartReducer = (state = initialState, action) => {
         shoppingCart: [...newShoppingCart2],
       };
 
+    case DELETE_ITEM_FROM_CURRENT_LIST:
+      console.log(action.payload);
+      const { idCategory: idCategoryToDelete, idItem: idItemToDelete, itemName: itemNameToDelete } = action.payload;
+
+      const newShoppingCart3 = [...state.shoppingCart];
+
+      newShoppingCart3[idCategoryToDelete - 1].items.map((item) => {
+        if (item.id === idItemToDelete && item.itemName === itemNameToDelete) {
+          newShoppingCart3[idCategoryToDelete - 1].items.splice(
+            newShoppingCart3[idCategoryToDelete - 1].items.indexOf(item),
+            1
+          );
+        }
+
+        return item;
+      });
+
+      return {
+        ...state,
+        shoppingCart: [...newShoppingCart3],
+      };
     default:
       return state;
   }

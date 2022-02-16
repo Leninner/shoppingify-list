@@ -1,5 +1,5 @@
 import { BoxCategory } from './styles';
-import { Edit } from '../Edit';
+import { EditQuantity } from '../EditQuantity';
 import { useState } from 'react';
 
 export const ShoppingListItem = (item) => {
@@ -12,7 +12,7 @@ export const ShoppingListItem = (item) => {
     <BoxCategory>
       <h3>{itemName}</h3>
 
-      {edit ? <Edit {...item} setEdit={setEdit} /> : <button onClick={handleClick}>{quantity} pcs</button>}
+      {edit ? <EditQuantity {...item} setEdit={setEdit} /> : <button onClick={handleClick}>{quantity} pcs</button>}
     </BoxCategory>
   );
 };
