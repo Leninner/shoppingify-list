@@ -13,11 +13,16 @@ export const HandleAddItem = () => {
   };
 };
 
-export const HandleAddItemToCategories = (payload) => {
-  return {
+export const HandleAddItemToCategories = (payload) => async (dispatch, getState) => {
+  const { shoppingCart } = getState().shoppingCartReducer;
+
+  dispatch({
     type: ADD_ITEM_TO_CATEGORY,
-    payload,
-  };
+    data: {
+      payload,
+      shoppingCart,
+    },
+  });
 };
 
 export const BackToShoppingList = (payload) => {

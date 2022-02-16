@@ -49,12 +49,14 @@ export const categoriesReducer = (state = initalState, action) => {
 
   if (action.type === ADD_ITEM_TO_CATEGORY) {
     const categoriesUpdated = [...state.categories];
+    const { payload, shoppingCart } = action.data;
 
-    const { category } = action.payload;
+    const { category } = payload;
+    console.log(shoppingCart);
 
-    const { note, imageURL, itemName } = action.payload;
+    const { note, imageURL, itemName } = payload;
 
-    if (categoriesUpdated.some(({ name }) => name === category)) {
+    if (categoriesUpdated.some((value) => value.name === category)) {
       const categoryFind = categoriesUpdated.find((value) => value.name === category).items;
 
       const itemToAdd = {
@@ -82,11 +84,18 @@ export const categoriesReducer = (state = initalState, action) => {
           },
         ],
       });
+
+      shoppingCart.push({
+        id: shoppingCart.length + 1,
+        name: category,
+        items: [],
+      });
     }
 
     return {
       ...state,
       categories: [...categoriesUpdated],
+      shoppingCart: [...shoppingCart],
     };
   }
 
