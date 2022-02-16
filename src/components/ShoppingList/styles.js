@@ -38,11 +38,21 @@ export const ShoppingListTittle = styled.div`
   display: flex;
   justify-content: space-between;
 
-  h2 {
+  input[type='text'] {
     font-style: normal;
     font-weight: bold;
     font-size: 20px;
     line-height: 30px;
+    color: #34333a;
+    outline: none;
+    border: none;
+
+    &:disabled {
+      background-color: transparent;
+    }
+  }
+
+  span {
     color: #34333a;
   }
 `;

@@ -1,6 +1,12 @@
-import { ADD_TO_CURRENT_LIST, EDIT_ITEM_QUANTITY, DELETE_ITEM_FROM_CURRENT_LIST } from '../types';
+import {
+  ADD_TO_CURRENT_LIST,
+  EDIT_ITEM_QUANTITY,
+  DELETE_ITEM_FROM_CURRENT_LIST,
+  UPDATE_SHOPPING_LIST_NAME,
+} from '../types';
 
 const initialState = {
+  shoppingListName: '',
   shoppingCart: [
     {
       id: 1,
@@ -16,6 +22,13 @@ const initialState = {
 };
 
 export const shoppingCartReducer = (state = initialState, action) => {
+  if (action.type === UPDATE_SHOPPING_LIST_NAME) {
+    return {
+      ...state,
+      shoppingListName: action.payload,
+    };
+  }
+
   if (action.type === ADD_TO_CURRENT_LIST) {
     const { payload, categories } = action;
     const { idItem, idCategory } = payload;
