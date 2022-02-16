@@ -35,7 +35,10 @@ export const shoppingCartReducer = (state = initialState, action) => {
 
     const newShoppingCart = [...state.shoppingCart];
     const itemToAdd = categories[idCategory - 1].items[idItem - 1];
+
     itemToAdd.quantity = 1;
+    itemToAdd.isObtained = false;
+
     newShoppingCart[idCategory - 1].items.push(itemToAdd);
 
     const categoriesUpdated = [...categories];
@@ -97,6 +100,7 @@ export const shoppingCartReducer = (state = initialState, action) => {
 //       imageURL:
 //         'https://images.unsplash.com/photo-1612871689353-cccf581d667b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80',
 //       quantity: 1,
+//       isObtained: false,
 //     },
 //   ],
 // },
