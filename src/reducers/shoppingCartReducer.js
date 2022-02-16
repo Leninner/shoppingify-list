@@ -1,4 +1,4 @@
-import { ADD_TO_CURRENT_LIST } from '../types';
+import { ADD_TO_CURRENT_LIST, EDIT_ITEM_QUANTITY } from '../types';
 
 const initialState = {
   shoppingCart: [
@@ -21,7 +21,6 @@ export const shoppingCartReducer = (state = initialState, action) => {
       const { payload, categories } = action;
       const { idItem, idCategory } = payload;
 
-      console.log(state);
       const newShoppingCart = [...state.shoppingCart];
       const itemToAdd = categories[idCategory - 1].items[idItem - 1];
       itemToAdd.quantity = 1;
@@ -32,8 +31,25 @@ export const shoppingCartReducer = (state = initialState, action) => {
 
       return {
         ...state,
-        shoppingCart: newShoppingCart,
+        shoppingCart: [...newShoppingCart],
         categories: [...categoriesUpdated],
+      };
+
+    case EDIT_ITEM_QUANTITY:
+      console.log(action.payload);
+      const { idCategory: idCategoryToUpdate, idItem: idItemToUpdate, itemName, newQuantity } = action.payload;
+      const newShoppingCart2 = [...state.shoppingCart];
+
+      newShoppingCart2[idCategoryToUpdate - 1].items.map((item) => {
+        if (item.id === idItemToUpdate && item.itemName === itemName) {
+          item.quantity = newQuantity;
+        }
+        return item;
+      });
+
+      return {
+        ...state,
+        shoppingCart: [...newShoppingCart2],
       };
 
     default:

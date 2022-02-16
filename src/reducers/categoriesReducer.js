@@ -192,6 +192,7 @@ export const categoriesReducer = (state = initalState, action) => {
       return {
         ...state,
         categories: [...categoriesUpdated4],
+        shoppingCart: [...shoppingCart],
       };
 
     default:
