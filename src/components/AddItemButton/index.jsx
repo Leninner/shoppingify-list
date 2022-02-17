@@ -1,9 +1,17 @@
-import { StyledAddItemContainer, BoxInput, Form, ButtonAddItem, ButtonConfirm, Div } from './styles';
+import {
+  StyledAddItemContainer,
+  BoxInput,
+  Form,
+  ButtonAddItem,
+  ButtonConfirm,
+  Div,
+  ButtonCompletingList,
+} from './styles';
+import { useSelector } from 'react-redux';
 
 export const AddItemButton = ({
   isAdding,
   handleAddItem,
-  shoppingCart,
   isItemInfo,
   idItem,
   DeleteItemFromCategories,
@@ -12,6 +20,8 @@ export const AddItemButton = ({
   AddToCurrentList,
   itemName,
 }) => {
+  const { shoppingCart, isCompleting } = useSelector((state) => state.shoppingCartReducer);
+
   const handleClick = (e) => {
     e.preventDefault();
     handleAddItem();
@@ -33,30 +43,43 @@ export const AddItemButton = ({
     })
   );
 
+  console.log(shoppingCart, isCompleting);
+
   return (
     <StyledAddItemContainer>
-      {!isItemInfo ? (
+      {!isCompleting ? (
         <>
-          {isAdding ? (
-            <Div>
-              <ButtonConfirm isCancel onClick={handleClick} type='button'>
-                Cancel
-              </ButtonConfirm>
-              <ButtonConfirm type='submit'>Save</ButtonConfirm>
-            </Div>
+          {!isItemInfo ? (
+            <>
+              {isAdding ? (
+                <Div>
+                  <ButtonConfirm isCancel onClick={handleClick} type='button'>
+                    Cancel
+                  </ButtonConfirm>
+                  <ButtonConfirm type='submit'>Save</ButtonConfirm>
+                </Div>
+              ) : (
+                <Form>
+                  <BoxInput type='text' name='item' placeholder='Enter a name' disabled={isCurrentListEmpty} />
+                  <ButtonAddItem disabled={isCurrentListEmpty}>Save</ButtonAddItem>
+                </Form>
+              )}
+            </>
           ) : (
-            <Form>
-              <BoxInput type='text' name='item' placeholder='Enter a name' disabled={isCurrentListEmpty} />
-              <ButtonAddItem disabled={isCurrentListEmpty}>Save</ButtonAddItem>
-            </Form>
+            <Div>
+              <ButtonConfirm isCancel onClick={handleDeleteItemFromCategories}>
+                Delete
+              </ButtonConfirm>
+              {isAddedToCurrentList ? null : (
+                <ButtonConfirm onClick={handleAddToCurrentList}>Add to list</ButtonConfirm>
+              )}
+            </Div>
           )}
         </>
       ) : (
         <Div>
-          <ButtonConfirm isCancel onClick={handleDeleteItemFromCategories}>
-            Delete
-          </ButtonConfirm>
-          {isAddedToCurrentList ? null : <ButtonConfirm onClick={handleAddToCurrentList}>Add to list</ButtonConfirm>}
+          <ButtonCompletingList isCancelList>Cancel</ButtonCompletingList>
+          <ButtonCompletingList>Complete</ButtonCompletingList>
         </Div>
       )}
     </StyledAddItemContainer>

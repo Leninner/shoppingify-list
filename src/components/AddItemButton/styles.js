@@ -86,3 +86,22 @@ export const ButtonConfirm = styled.button`
       ? 'color: #34333A; margin-right: 10px; background: rgb(227, 227, 227); &:hover { background: rgb(221, 221, 221); }'
       : 'background: #F9A109;  color: #FFFFFF; margin-right: 10px;'}
 `;
+
+export const ButtonCompletingList = styled.button`
+  min-width: 87.35px;
+  padding: 0 2vh;
+  height: 61.25px;
+  border-radius: 12px;
+  border: none;
+  background: transparent;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 20px;
+  transition: all 0.2s ease 0s;
+
+  ${({ isCancelList }) =>
+    isCancelList
+      ? 'color: #34333A; margin-right: 10px; background: rgb(227, 227, 227); &:hover { background: rgb(221, 221, 221); }'
+      : 'background: #56CCF2; border-radius: 12px; color: #FFFFFF;'}
+`;
