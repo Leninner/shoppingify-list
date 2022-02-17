@@ -19,7 +19,7 @@ export const BoxCategory = styled.div`
     align-items: center;
 
     h3 {
-      ${({ completed }) => completed && 'text-decoration: line-through;'}
+      ${({ isObtained }) => isObtained && 'text-decoration: line-through;'}
     }
 
     div {
@@ -33,7 +33,7 @@ export const BoxCategory = styled.div`
       span {
         display: none;
         color: #f9a109;
-        ${({ completed }) => completed && 'display: block'}
+        ${({ isObtained }) => isObtained && 'display: block'}
       }
     }
   }

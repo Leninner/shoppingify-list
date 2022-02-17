@@ -3,6 +3,7 @@ import {
   EDIT_ITEM_QUANTITY,
   DELETE_ITEM_FROM_CURRENT_LIST,
   UPDATE_SHOPPING_LIST_NAME,
+  OBTAIN_ITEM,
 } from '../types';
 
 const initialState = {
@@ -77,6 +78,23 @@ export const shoppingCartReducer = (state = initialState, action) => {
         newShoppingCart[idCategory - 1].items.splice(newShoppingCart[idCategory - 1].items.indexOf(item), 1);
       }
 
+      return item;
+    });
+
+    return {
+      ...state,
+      shoppingCart: [...newShoppingCart],
+    };
+  }
+
+  if (action.type === OBTAIN_ITEM) {
+    const { idCategory, idItem, itemName, isObtained } = action.payload;
+    const newShoppingCart = [...state.shoppingCart];
+
+    newShoppingCart[idCategory - 1].items.map((item) => {
+      if (item.id === idItem && item.itemName === itemName) {
+        item.isObtained = isObtained;
+      }
       return item;
     });
 

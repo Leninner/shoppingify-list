@@ -6,22 +6,20 @@ import {
   ShoppingListTittle,
   ShoppingListContainer,
   CategoriesContainer,
-  ToggleContainer,
+  ToggleEditOrComplete,
 } from './styles';
 import { ShoppingListCategory } from '../ShoppingListCategory';
 import { useSelector, useDispatch } from 'react-redux';
 import { useState } from 'react';
-import { ToggleEditOrComplete } from '../ToggleEditOrComplete';
 
 export const ShoppingList = ({ shoppingCart }) => {
   const shoppingCartFiltered = shoppingCart.filter((value) => value.items.length > 0);
   const isEmpty = shoppingCartFiltered.length === 0;
   const { shoppingListName } = useSelector((state) => state.shoppingCartReducer);
   const [edit, setEdit] = useState(false);
+  const [isCompleting, setIsCompleting] = useState(false);
 
-  const [listName, setListName] = useState('Shopping List');
-
-  console.log(shoppingListName);
+  const [listName, setListName] = useState(shoppingListName);
 
   const dispatch = useDispatch();
 
@@ -47,12 +45,10 @@ export const ShoppingList = ({ shoppingCart }) => {
         </>
       ) : (
         <ShoppingListContainer>
-          <ShoppingListTittle>
-            <input type='text' value={listName} onChange={handleUpdateName} disabled={!edit} />
-            <ToggleContainer>
-              <ToggleEditOrComplete />
-            </ToggleContainer>
-
+          <ToggleEditOrComplete>
+            <ShoppingListTittle onClick={() => setIsCompleting(!isCompleting)}>
+              <input type='text' value={listName || 'Leninner'} onChange={handleUpdateName} disabled={!edit} />
+            </ShoppingListTittle>
             {!edit ? (
               <span className='material-icons' onClick={() => setEdit(true)}>
                 edit
@@ -62,11 +58,11 @@ export const ShoppingList = ({ shoppingCart }) => {
                 done
               </span>
             )}
-          </ShoppingListTittle>
+          </ToggleEditOrComplete>
 
           <CategoriesContainer>
             {shoppingCartFiltered.map((item) => (
-              <ShoppingListCategory key={item.id} {...item} />
+              <ShoppingListCategory key={item.id} {...item} isCompleting={isCompleting} />
             ))}
           </CategoriesContainer>
         </ShoppingListContainer>

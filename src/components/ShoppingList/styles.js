@@ -67,6 +67,7 @@ export const CategoriesContainer = styled.div`
   }
 `;
 
-export const ToggleContainer = styled.div`
-  position: absolute;
+export const ToggleEditOrComplete = styled.div`
+  display: flex;
+  justify-content: space-between;
 `;
