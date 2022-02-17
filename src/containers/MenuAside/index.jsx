@@ -3,11 +3,13 @@ import { LogoComponent } from '../../components/Logo';
 import { ShoppingCart } from '../../components/ShoppingCart';
 import { useHoverShow } from '../../hooks/useHoverShow';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 export const MenuAside = () => {
   const [isShowOne, handleShowOne] = useHoverShow();
   const [isShowTwo, handleShowTwo] = useHoverShow();
   const [isShowThree, handleShowThree] = useHoverShow();
+  const { shoppingCart } = useSelector((state) => state.shoppingCartReducer);
 
   return (
     <MenuContainer>
@@ -52,7 +54,7 @@ export const MenuAside = () => {
           </HoverMenuItem>
         </MenuItem>
       </DivItems>
-      <ShoppingCart WrapperComponent={MenuItem} />
+      <ShoppingCart shoppingCart={shoppingCart} />
     </MenuContainer>
   );
 };
