@@ -2,6 +2,7 @@ import { Helmet } from 'react-helmet';
 import { ItemsView } from '../../containers/ItemsView';
 import { connect } from 'react-redux';
 import { SeeInfo } from '../../actions';
+import { Modal } from '../../containers/Modal';
 
 const Items = ({ categoriesReducer, SeeInfo }) => {
   const { categories } = categoriesReducer;
@@ -12,6 +13,7 @@ const Items = ({ categoriesReducer, SeeInfo }) => {
         <title>Items</title>
       </Helmet>
       <ItemsView categories={categories} SeeInfo={SeeInfo} />
+      <Modal />
     </>
   );
 };
