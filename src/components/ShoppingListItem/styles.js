@@ -12,6 +12,7 @@ export const BoxCategory = styled.div`
     font-size: 18px;
     line-height: 22px;
     color: #000000;
+    ${({ isObtained }) => isObtained && 'text-decoration: line-through;'}
   }
 
   button {
