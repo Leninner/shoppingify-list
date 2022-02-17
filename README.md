@@ -78,13 +78,13 @@ This application/site was created as a submission to a [DevChallenges](https://d
 
 - ✅ User story: I can save/update the list with a name (user can have only one active list at a time)
 
-- ⏳ User story: I can toggle between editing state and completing state
+- ✅ User story: I can toggle between editing state and completing state
 
-- User story: When I am at completing state, I can save my progress by selecting the item
+- ✅ User story: When I am at completing state, I can save my progress by selecting the item
 
-- User story: I can cancel the active list
+- ✅ User story: I can cancel the active list
 
-- User story: When I try to cancel a list, I can see a confirmation notification
+- ✅ User story: When I try to cancel a list, I can see a confirmation notification
 
 - User story: I can see my shopping history and I can see the details of it
 
