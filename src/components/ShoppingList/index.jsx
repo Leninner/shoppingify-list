@@ -15,13 +15,16 @@ import { useState } from 'react';
 export const ShoppingList = ({ shoppingCart }) => {
   const shoppingCartFiltered = shoppingCart.filter((value) => value.items.length > 0);
   const isEmpty = shoppingCartFiltered.length === 0;
-  const { shoppingListName } = useSelector((state) => state.shoppingCartReducer);
+  const { shoppingListName, isCompleting } = useSelector((state) => state.shoppingCartReducer);
   const [edit, setEdit] = useState(false);
-  const [isCompleting, setIsCompleting] = useState(false);
-
   const [listName, setListName] = useState(shoppingListName);
-
   const dispatch = useDispatch();
+
+  const handleToggleEdit = () => {
+    dispatch({
+      type: 'TOGGLE_EDIT',
+    });
+  };
 
   const handleUpdateName = (e) => {
     setListName(e.target.value);
@@ -46,7 +49,7 @@ export const ShoppingList = ({ shoppingCart }) => {
       ) : (
         <ShoppingListContainer>
           <ToggleEditOrComplete>
-            <ShoppingListTittle onClick={() => setIsCompleting(!isCompleting)}>
+            <ShoppingListTittle onClick={handleToggleEdit}>
               <input type='text' value={listName || 'Leninner'} onChange={handleUpdateName} disabled={!edit} />
             </ShoppingListTittle>
             {!edit ? (

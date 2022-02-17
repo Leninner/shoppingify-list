@@ -4,10 +4,12 @@ import {
   DELETE_ITEM_FROM_CURRENT_LIST,
   UPDATE_SHOPPING_LIST_NAME,
   OBTAIN_ITEM,
+  TOGGLE_EDIT,
 } from '../types';
 
 const initialState = {
   shoppingListName: '',
+  isCompleting: false,
   shoppingCart: [
     {
       id: 1,
@@ -101,6 +103,13 @@ export const shoppingCartReducer = (state = initialState, action) => {
     return {
       ...state,
       shoppingCart: [...newShoppingCart],
+    };
+  }
+
+  if (action.type === TOGGLE_EDIT) {
+    return {
+      ...state,
+      isCompleting: !state.isCompleting,
     };
   }
 
