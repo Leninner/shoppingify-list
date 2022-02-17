@@ -7,7 +7,7 @@ import {
   Div,
   ButtonCompletingList,
 } from './styles';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
 export const AddItemButton = ({
   isAdding,
@@ -21,6 +21,7 @@ export const AddItemButton = ({
   itemName,
 }) => {
   const { shoppingCart, isCompleting } = useSelector((state) => state.shoppingCartReducer);
+  const dispatch = useDispatch();
 
   const handleClick = (e) => {
     e.preventDefault();
@@ -42,6 +43,12 @@ export const AddItemButton = ({
       return item.id === idItem && item.itemName === itemName ? true : false;
     })
   );
+
+  const handleCancelDeleteList = () => {
+    dispatch({
+      type: 'CANCEL_DELETE_LIST',
+    });
+  };
 
   console.log(shoppingCart, isCompleting);
 
@@ -78,7 +85,9 @@ export const AddItemButton = ({
         </>
       ) : (
         <Div>
-          <ButtonCompletingList isCancelList>Cancel</ButtonCompletingList>
+          <ButtonCompletingList isCancelList onClick={handleCancelDeleteList}>
+            Cancel
+          </ButtonCompletingList>
           <ButtonCompletingList>Complete</ButtonCompletingList>
         </Div>
       )}

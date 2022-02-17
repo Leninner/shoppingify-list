@@ -10,6 +10,7 @@ import {
 const initialState = {
   shoppingListName: '',
   isCompleting: false,
+  isToCancel: false,
   shoppingCart: [
     {
       id: 1,
@@ -110,6 +111,31 @@ export const shoppingCartReducer = (state = initialState, action) => {
     return {
       ...state,
       isCompleting: !state.isCompleting,
+    };
+  }
+
+  // OJO AQUÍ
+  if (action.type === 'CANCEL_DELETE_LIST') {
+    return {
+      ...state,
+      isToCancel: !state.isToCancel,
+      isCompleting: !state.isCompleting,
+    };
+  }
+
+  if (action.type === 'DELETE_LIST') {
+    const newShoppingCart = [...state.shoppingCart];
+
+    newShoppingCart.map((category) => {
+      category.items = [];
+      return category;
+    });
+
+    return {
+      ...state,
+      shoppingCart: [...newShoppingCart],
+      isToCancel: false,
+      isCompleting: false,
     };
   }
 

@@ -3,9 +3,13 @@ import { ItemsView } from '../../containers/ItemsView';
 import { connect } from 'react-redux';
 import { SeeInfo } from '../../actions';
 import { Modal } from '../../containers/Modal';
+import { useSelector } from 'react-redux';
 
 const Items = ({ categoriesReducer, SeeInfo }) => {
   const { categories } = categoriesReducer;
+  const { isToCancel } = useSelector((state) => state.shoppingCartReducer);
+
+  console.log(isToCancel);
 
   return (
     <>
@@ -13,7 +17,7 @@ const Items = ({ categoriesReducer, SeeInfo }) => {
         <title>Items</title>
       </Helmet>
       <ItemsView categories={categories} SeeInfo={SeeInfo} />
-      <Modal />
+      {isToCancel && <Modal />}
     </>
   );
 };
