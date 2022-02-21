@@ -8,7 +8,7 @@ import {
 } from '../types';
 
 const initialState = {
-  shoppingListName: '',
+  shoppingListName: 'List Name',
   isCompleting: false,
   isToCancel: false,
   shoppingCart: [

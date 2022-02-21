@@ -1,5 +1,6 @@
 import { ConfirmListPopupWrapper, ConfirmListContainer, FeddbackButton } from './styles';
 import { useDispatch } from 'react-redux';
+import { AddToHistory } from '../../actions';
 
 export const ConfirmListPopup = () => {
   const dispatch = useDispatch();
@@ -13,6 +14,7 @@ export const ConfirmListPopup = () => {
   };
 
   const handleDeleteList = () => {
+    dispatch(AddToHistory(false));
     dispatch({
       type: 'DELETE_LIST',
     });

@@ -40,7 +40,6 @@
 
 ![screenshot](https://user-images.githubusercontent.com/67031243/154588181-41add8e3-e511-4878-9974-b82722fa5555.png)
 
-
 Introduce your projects by taking a screenshot or a gif. Try to tell visitors a story about your project by answering:
 
 - Where can I see your demo?
@@ -115,6 +114,7 @@ $ npm start
 <!-- This section should list any articles or add-ons/plugins that helps you to complete the project. This is optional but it will help you in the future. For example -->
 
 - [Steps to replicate a design with only HTML and CSS](https://devchallenges-blogs.web.app/how-to-replicate-design/)
+- [React-Redux Hooks: useSelector and useDispatch](https://levelup.gitconnected.com/react-redux-hooks-useselector-and-usedispatch-f7d8c7f75cdd)
 - [Node.js](https://nodejs.org/)
 - [Marked - a markdown parser](https://github.com/chjj/marked)
 - [Share data between two reducers](https://qastack.mx/programming/39257740/how-to-access-state-inside-redux-reducer)

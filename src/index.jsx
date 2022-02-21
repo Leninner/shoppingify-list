@@ -4,9 +4,12 @@ import { App } from './routes/App';
 import { Provider } from 'react-redux';
 import { reducer } from './reducers';
 import thunk from 'redux-thunk';
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 
-const store = createStore(reducer, applyMiddleware(thunk));
+const store = createStore(
+  reducer,
+  compose(applyMiddleware(thunk), window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+);
 
 ReactDOM.render(
   <Provider store={store}>

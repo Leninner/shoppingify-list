@@ -70,7 +70,7 @@ export const AddToCurrentList = (payload) => (dispatch, getState) => {
   });
 };
 
-export const AddToHistory = () => async (dispatch, getState) => {
+export const AddToHistory = (isCompleted) => async (dispatch, getState) => {
   const { shoppingCart, shoppingListName } = getState().shoppingCartReducer;
 
   const newShoppingCart = JSON.parse(JSON.stringify(shoppingCart));
@@ -80,6 +80,7 @@ export const AddToHistory = () => async (dispatch, getState) => {
     payload: {
       shoppingCart: newShoppingCart,
       shoppingListName,
+      isCompleted,
     },
   });
 

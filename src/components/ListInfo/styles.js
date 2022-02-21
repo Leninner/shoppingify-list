@@ -29,17 +29,17 @@ export const TitleList = styled.span`
 export const ListState = styled.div`
   width: 75.99px;
   height: 24px;
-  border: 1px solid #56ccf2;
   box-sizing: border-box;
   border-radius: 8px;
-  font-family: Quicksand;
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
   line-height: 15px;
   padding: 4.26px 7.14px;
-  color: #56ccf2;
   margin: 0 32.7px 0 26.2px;
+
+  ${({ isCompleted }) =>
+    isCompleted ? `border: 1px solid #56ccf2;  color: #56ccf2;` : `border: 1px solid #EB5757;  color: #EB5757;`}
 `;
 
 export const Icon = styled.span`
