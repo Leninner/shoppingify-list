@@ -14,15 +14,47 @@ const initalState = {
       items: [
         {
           id: 1,
-          itemName: 'Carne de res',
-          note: 'La carne es algo riquísimo',
+          itemName: 'Frutillas',
+          note: 'Las frutillas son realmente ricas',
           imageURL:
             'https://images.unsplash.com/photo-1612871689353-cccf581d667b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80',
           isItemInfo: false,
         },
         {
           id: 2,
-          itemName: 'Carne de hueso',
+          itemName: 'Uvas',
+          note: 'La carne es algo riquísimo',
+          imageURL:
+            'https://images.unsplash.com/photo-1612871689353-cccf581d667b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80',
+          isItemInfo: false,
+        },
+        {
+          id: 3,
+          itemName: 'Manzana',
+          note: 'La carne es algo riquísimo',
+          imageURL:
+            'https://images.unsplash.com/photo-1612871689353-cccf581d667b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80',
+          isItemInfo: false,
+        },
+        {
+          id: 4,
+          itemName: 'Plátano',
+          note: 'La carne es algo riquísimo',
+          imageURL:
+            'https://images.unsplash.com/photo-1612871689353-cccf581d667b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80',
+          isItemInfo: false,
+        },
+        {
+          id: 5,
+          itemName: 'Mandarina',
+          note: 'La carne es algo riquísimo',
+          imageURL:
+            'https://images.unsplash.com/photo-1612871689353-cccf581d667b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80',
+          isItemInfo: false,
+        },
+        {
+          id: 6,
+          itemName: 'Melón',
           note: 'La carne es algo riquísimo',
           imageURL:
             'https://images.unsplash.com/photo-1612871689353-cccf581d667b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80',
@@ -33,7 +65,110 @@ const initalState = {
     {
       id: 2,
       name: 'Meet and Fish',
-      items: [],
+      items: [
+        {
+          id: 1,
+          itemName: 'Pescado',
+          note: 'Las frutillas son realmente ricas',
+          imageURL:
+            'https://images.unsplash.com/photo-1612871689353-cccf581d667b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80',
+          isItemInfo: false,
+        },
+        {
+          id: 2,
+          itemName: 'Carne de Res',
+          note: 'La carne es algo riquísimo',
+          imageURL:
+            'https://images.unsplash.com/photo-1612871689353-cccf581d667b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80',
+          isItemInfo: false,
+        },
+        {
+          id: 3,
+          itemName: 'Pollo',
+          note: 'La carne es algo riquísimo',
+          imageURL:
+            'https://images.unsplash.com/photo-1612871689353-cccf581d667b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80',
+          isItemInfo: false,
+        },
+        {
+          id: 4,
+          itemName: 'Chuletas',
+          note: 'La carne es algo riquísimo',
+          imageURL:
+            'https://images.unsplash.com/photo-1612871689353-cccf581d667b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80',
+          isItemInfo: false,
+        },
+        {
+          id: 5,
+          itemName: 'Pargo',
+          note: 'La carne es algo riquísimo',
+          imageURL:
+            'https://images.unsplash.com/photo-1612871689353-cccf581d667b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80',
+          isItemInfo: false,
+        },
+        {
+          id: 6,
+          itemName: 'Albacora',
+          note: 'La carne es algo riquísimo',
+          imageURL:
+            'https://images.unsplash.com/photo-1612871689353-cccf581d667b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80',
+          isItemInfo: false,
+        },
+      ],
+    },
+    {
+      id: 3,
+      name: 'Cookies',
+      items: [
+        {
+          id: 1,
+          itemName: 'Galletas amor',
+          note: 'Las frutillas son realmente ricas',
+          imageURL:
+            'https://images.unsplash.com/photo-1612871689353-cccf581d667b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80',
+          isItemInfo: false,
+        },
+        {
+          id: 2,
+          itemName: 'Chips and Joy',
+          note: 'La carne es algo riquísimo',
+          imageURL:
+            'https://images.unsplash.com/photo-1612871689353-cccf581d667b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80',
+          isItemInfo: false,
+        },
+        {
+          id: 3,
+          itemName: 'Oreo',
+          note: 'La carne es algo riquísimo',
+          imageURL:
+            'https://images.unsplash.com/photo-1612871689353-cccf581d667b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80',
+          isItemInfo: false,
+        },
+        {
+          id: 4,
+          itemName: 'Coronitas',
+          note: 'La carne es algo riquísimo',
+          imageURL:
+            'https://images.unsplash.com/photo-1612871689353-cccf581d667b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80',
+          isItemInfo: false,
+        },
+        {
+          id: 5,
+          itemName: 'Wafles',
+          note: 'La carne es algo riquísimo',
+          imageURL:
+            'https://images.unsplash.com/photo-1612871689353-cccf581d667b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80',
+          isItemInfo: false,
+        },
+        {
+          id: 6,
+          itemName: 'Salticas',
+          note: 'La carne es algo riquísimo',
+          imageURL:
+            'https://images.unsplash.com/photo-1612871689353-cccf581d667b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80',
+          isItemInfo: false,
+        },
+      ],
     },
   ],
   isAdding: false,

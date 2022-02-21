@@ -9,8 +9,6 @@ const Items = ({ categoriesReducer, SeeInfo }) => {
   const { categories } = categoriesReducer;
   const { isToCancel } = useSelector((state) => state.shoppingCartReducer);
 
-  console.log(isToCancel);
-
   return (
     <>
       <Helmet>

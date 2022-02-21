@@ -19,8 +19,18 @@ export const AddItemButton = ({
   idCategory,
   AddToCurrentList,
   itemName,
+  AddToHistory,
 }) => {
-  const { shoppingCart, isCompleting } = useSelector((state) => state.shoppingCartReducer);
+  const { shoppingCartReducer, historialReducer, categoriesReducer } = useSelector((state) => state);
+
+  console.log({
+    shoppingCartReducer,
+    historialReducer,
+    categoriesReducer,
+  });
+
+  const { shoppingCart, isCompleting } = shoppingCartReducer;
+
   const dispatch = useDispatch();
 
   const handleClick = (e) => {
@@ -50,7 +60,10 @@ export const AddItemButton = ({
     });
   };
 
-  console.log(shoppingCart, isCompleting);
+  const handleCompleteList = () => {
+    console.log(AddToHistory);
+    AddToHistory();
+  };
 
   return (
     <StyledAddItemContainer>
@@ -88,7 +101,7 @@ export const AddItemButton = ({
           <ButtonCompletingList isCancelList onClick={handleCancelDeleteList}>
             Cancel
           </ButtonCompletingList>
-          <ButtonCompletingList>Complete</ButtonCompletingList>
+          <ButtonCompletingList onClick={handleCompleteList}>Complete</ButtonCompletingList>
         </Div>
       )}
     </StyledAddItemContainer>

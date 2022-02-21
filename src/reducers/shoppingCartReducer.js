@@ -22,40 +22,51 @@ const initialState = {
       name: 'Meet and Fish',
       items: [],
     },
+    {
+      id: 3,
+      name: 'Cookies',
+      items: [],
+    },
   ],
 };
 
 export const shoppingCartReducer = (state = initialState, action) => {
-  if (action.type === UPDATE_SHOPPING_LIST_NAME) {
+  const { type } = action;
+
+  if (type === UPDATE_SHOPPING_LIST_NAME) {
     return {
       ...state,
       shoppingListName: action.payload,
     };
   }
 
-  if (action.type === ADD_TO_CURRENT_LIST) {
-    const { payload, categories } = action;
+  if (type === ADD_TO_CURRENT_LIST) {
+    let { payload, categoriesReducer } = action;
+    const { categories } = categoriesReducer;
+
     const { idItem, idCategory } = payload;
+    const categoriesUpdated = JSON.parse(JSON.stringify(categories));
 
     const newShoppingCart = [...state.shoppingCart];
-    const itemToAdd = categories[idCategory - 1].items[idItem - 1];
-
+    const itemToAdd = categoriesUpdated[idCategory - 1].items[idItem - 1];
     itemToAdd.quantity = 1;
     itemToAdd.isObtained = false;
-
     newShoppingCart[idCategory - 1].items.push(itemToAdd);
-
-    const categoriesUpdated = [...categories];
     categoriesUpdated[idCategory - 1].items[idItem - 1].isItemInfo = false;
+
+    categoriesReducer = {
+      ...categoriesReducer,
+      categories: [...categoriesUpdated],
+      hopla: 'hopla',
+    };
 
     return {
       ...state,
       shoppingCart: [...newShoppingCart],
-      categories: [...categoriesUpdated],
     };
   }
 
-  if (action.type === EDIT_ITEM_QUANTITY) {
+  if (type === EDIT_ITEM_QUANTITY) {
     const { idCategory, idItem, itemName, newQuantity } = action.payload;
     const newShoppingCart = [...state.shoppingCart];
 
@@ -72,7 +83,7 @@ export const shoppingCartReducer = (state = initialState, action) => {
     };
   }
 
-  if (action.type === DELETE_ITEM_FROM_CURRENT_LIST) {
+  if (type === DELETE_ITEM_FROM_CURRENT_LIST) {
     const { idCategory, idItem, itemName } = action.payload;
     const newShoppingCart = [...state.shoppingCart];
 
@@ -90,7 +101,7 @@ export const shoppingCartReducer = (state = initialState, action) => {
     };
   }
 
-  if (action.type === OBTAIN_ITEM) {
+  if (type === OBTAIN_ITEM) {
     const { idCategory, idItem, itemName, isObtained } = action.payload;
     const newShoppingCart = [...state.shoppingCart];
 
@@ -107,7 +118,7 @@ export const shoppingCartReducer = (state = initialState, action) => {
     };
   }
 
-  if (action.type === TOGGLE_EDIT) {
+  if (type === TOGGLE_EDIT) {
     return {
       ...state,
       isCompleting: !state.isCompleting,
@@ -115,7 +126,7 @@ export const shoppingCartReducer = (state = initialState, action) => {
   }
 
   // OJO AQUÍ
-  if (action.type === 'CANCEL_DELETE_LIST') {
+  if (type === 'CANCEL_DELETE_LIST') {
     return {
       ...state,
       isToCancel: !state.isToCancel,
@@ -123,7 +134,7 @@ export const shoppingCartReducer = (state = initialState, action) => {
     };
   }
 
-  if (action.type === 'DELETE_LIST') {
+  if (type === 'DELETE_LIST') {
     const newShoppingCart = [...state.shoppingCart];
 
     newShoppingCart.map((category) => {

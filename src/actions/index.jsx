@@ -50,12 +50,40 @@ export const DeleteItemFromCategories = (payload) => async (dispatch, getState) 
 };
 
 // NOTE: Uso de middleware para obtener el estado actual de toda la aplicación
-export const AddToCurrentList = (payload) => async (dispatch, getState) => {
-  const { categories } = getState().categoriesReducer;
+export const AddToCurrentList = (payload) => (dispatch, getState) => {
+  const { categoriesReducer } = getState();
+  const { idItem, categoryName, idCategory } = payload;
 
   dispatch({
     type: ADD_TO_CURRENT_LIST,
     payload,
-    categories,
+    categoriesReducer,
+  });
+
+  dispatch({
+    type: BACK_TO_SHOPPING_LIST,
+    payload: {
+      idItem,
+      categoryName,
+      idCategory,
+    },
+  });
+};
+
+export const AddToHistory = () => async (dispatch, getState) => {
+  const { shoppingCart, shoppingListName } = getState().shoppingCartReducer;
+
+  const newShoppingCart = JSON.parse(JSON.stringify(shoppingCart));
+
+  await dispatch({
+    type: 'ADD_TO_HISTORY',
+    payload: {
+      shoppingCart: newShoppingCart,
+      shoppingListName,
+    },
+  });
+
+  await dispatch({
+    type: 'DELETE_LIST',
   });
 };

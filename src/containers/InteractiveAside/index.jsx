@@ -14,6 +14,7 @@ const InteractiveAside = ({
   BackToShoppingList,
   DeleteItemFromCategories,
   AddToCurrentList,
+  AddToHistory,
 }) => {
   const isItemToShow = categories.find((category) => category.items.find((item) => item.isItemInfo));
 
@@ -35,7 +36,12 @@ const InteractiveAside = ({
             <>
               <BoxFeedback handleAddItem={HandleAddItem} />
               <ShoppingList shoppingCart={shoppingCart} />
-              <AddItemButton isAdding={isAdding} handleAddItem={HandleAddItem} shoppingCart={shoppingCart} />
+              <AddItemButton
+                isAdding={isAdding}
+                handleAddItem={HandleAddItem}
+                shoppingCart={shoppingCart}
+                AddToHistory={AddToHistory}
+              />
             </>
           )}
         </>
