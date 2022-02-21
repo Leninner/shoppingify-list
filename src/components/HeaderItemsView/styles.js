@@ -37,7 +37,7 @@ export const SearchContainer = styled.form`
   input {
     width: 100%;
     height: 100%;
-    background: rgb(241, 241, 241);
+    background: #ffffff;
     box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.04);
     border-radius: 12px;
     outline: none;

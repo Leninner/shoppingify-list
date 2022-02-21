@@ -7,6 +7,7 @@ export const StyledViewMain = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
+  background: #fafafe;
 `;
 
 export const StyledContainerMain = styled.div`
