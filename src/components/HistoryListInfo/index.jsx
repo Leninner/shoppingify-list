@@ -11,15 +11,17 @@ export const HistoryListInfo = () => {
   return (
     <StyledItemsCategoryInfo>
       {historial.map((item) => {
-        console.log(item);
-        const { shoppingListName, id, shoppingList } = item;
+        const { id, dateCompleted } = item;
+        const month = dateCompleted.split(' ')[1];
+        const year = dateCompleted.split(' ')[3];
+
         return (
           <React.Fragment key={id}>
-            <TitleCategory>{shoppingListName}</TitleCategory>
+            <TitleCategory>
+              {month} {year}
+            </TitleCategory>
             <CategoryContainer>
-              {shoppingList.map((itemFromList) => (
-                <ListInfo key={itemFromList.id} {...itemFromList} {...item} />
-              ))}
+              <ListInfo {...item} />
             </CategoryContainer>
           </React.Fragment>
         );
