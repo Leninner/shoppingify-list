@@ -35,10 +35,10 @@ export const MenuAside = () => {
           top={49.59}
           onMouseEnter={handleShowTwo}
           onMouseLeave={handleShowTwo}
-          to='/refresh'>
+          to='/history'>
           &#xe042;
           <HoverMenuItem top={49.59} isShow={isShowTwo}>
-            Refresh
+            History
           </HoverMenuItem>
         </MenuItem>
 
