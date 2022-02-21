@@ -1,12 +1,19 @@
-import { StyledItemsView } from './styles';
+import { StyledViewMain, StyledContainerMain } from '../styles.js';
 import { HeaderItemsView } from '../../components/HeaderItemsView';
-import { ItemsContainer } from '../ItemsContainer';
+import ItemsCategoryInfo from '../../components/ItemsCategoryInfo';
 
 export const ItemsView = ({ categories, SeeInfo }) => {
+  const categoriesToRender = categories.filter((category) => category.items.length > 0) || [];
+
   return (
-    <StyledItemsView>
+    <StyledViewMain>
       <HeaderItemsView />
-      <ItemsContainer categories={categories} SeeInfo={SeeInfo} />
-    </StyledItemsView>
+      <StyledContainerMain>
+        {categoriesToRender.map((item) => {
+          const { id } = item;
+          return <ItemsCategoryInfo key={id} {...item} SeeInfo={SeeInfo} />;
+        })}
+      </StyledContainerMain>
+    </StyledViewMain>
   );
 };

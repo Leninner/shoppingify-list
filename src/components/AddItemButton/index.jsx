@@ -21,13 +21,13 @@ export const AddItemButton = ({
   itemName,
   AddToHistory,
 }) => {
-  const { shoppingCartReducer, historialReducer, categoriesReducer } = useSelector((state) => state);
+  const { shoppingCartReducer } = useSelector((state) => state);
 
-  console.log({
-    shoppingCartReducer,
-    historialReducer,
-    categoriesReducer,
-  });
+  // console.log({
+  //   shoppingCartReducer,
+  //   historialReducer,
+  //   categoriesReducer,
+  // });
 
   const { shoppingCart, isCompleting } = shoppingCartReducer;
 
