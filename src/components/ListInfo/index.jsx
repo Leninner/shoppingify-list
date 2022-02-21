@@ -3,7 +3,7 @@ import { ListInfoContainer, TitleList, Icon, ListState } from './styles';
 export const ListInfo = () => {
   return (
     <ListInfoContainer>
-      <TitleList>Grocery List dddddddddd</TitleList>
+      <TitleList>Grocery List</TitleList>
       <div>
         <Icon className='material-icons-outlined' color='#C1C1C4'>
           event_note
