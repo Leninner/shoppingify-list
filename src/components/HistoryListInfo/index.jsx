@@ -1,29 +1,27 @@
 import { StyledItemsCategoryInfo, TitleCategory, CategoryContainer } from './styles';
 import { ListInfo } from '../ListInfo';
 import { useSelector } from 'react-redux';
-import React from 'react';
+import { Fragment } from 'react';
 
 export const HistoryListInfo = () => {
-  const { historial } = useSelector((state) => state.historialReducer);
+  const { shoppingifyHistorial } = useSelector((state) => state.historialReducer);
 
-  console.log(historial);
+  console.log(shoppingifyHistorial);
 
   return (
     <StyledItemsCategoryInfo>
-      {historial.map((item) => {
-        const { id, dateCompleted } = item;
-        const month = dateCompleted.split(' ')[1];
-        const year = dateCompleted.split(' ')[3];
+      {Object.entries(shoppingifyHistorial).map(([date, dateHistorial]) => {
+        const { id, historial } = dateHistorial;
 
         return (
-          <React.Fragment key={id}>
-            <TitleCategory>
-              {month} {year}
-            </TitleCategory>
+          <Fragment key={id}>
+            <TitleCategory>{date}</TitleCategory>
             <CategoryContainer>
-              <ListInfo {...item} />
+              {historial.map((item) => {
+                return <ListInfo key={item.id} {...item} />;
+              })}
             </CategoryContainer>
-          </React.Fragment>
+          </Fragment>
         );
       })}
     </StyledItemsCategoryInfo>

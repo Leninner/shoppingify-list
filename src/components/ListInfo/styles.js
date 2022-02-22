@@ -1,4 +1,9 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+
+export const LinkListInfo = styled(Link)`
+  text-decoration: none;
+`;
 
 export const ListInfoContainer = styled.div`
   width: 811.96px;
