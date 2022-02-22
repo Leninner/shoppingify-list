@@ -61,7 +61,6 @@ export const AddItemButton = ({
   };
 
   const handleCompleteList = () => {
-    console.log(AddToHistory);
     AddToHistory(true);
   };
 

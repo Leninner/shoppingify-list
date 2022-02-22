@@ -1,8 +1,10 @@
 import { ListInfoContainer, TitleList, Icon, ListState, LinkListInfo } from './styles';
 
-export const ListInfo = ({ shoppingListName, isCompleted, dateCompleted }) => {
+export const ListInfo = (props) => {
+  const { shoppingListName, isCompleted, dateCompleted, month, id } = props;
+
   return (
-    <LinkListInfo to={`/history/info-list/${shoppingListName}`}>
+    <LinkListInfo to={`/history/${month[0]}/info-list/${id}/${shoppingListName}`}>
       <ListInfoContainer>
         <TitleList>{shoppingListName}</TitleList>
         <div>

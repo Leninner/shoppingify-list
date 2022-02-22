@@ -6,19 +6,18 @@ import { Fragment } from 'react';
 export const HistoryListInfo = () => {
   const { shoppingifyHistorial } = useSelector((state) => state.historialReducer);
 
-  console.log(shoppingifyHistorial);
-
   return (
     <StyledItemsCategoryInfo>
-      {Object.entries(shoppingifyHistorial).map(([date, dateHistorial]) => {
-        const { id, historial } = dateHistorial;
+      {Object.entries(shoppingifyHistorial).map((month) => {
+        const [date, dateHistorial] = month;
+        const { id: idMonth, historial } = dateHistorial;
 
         return (
-          <Fragment key={id}>
+          <Fragment key={idMonth}>
             <TitleCategory>{date}</TitleCategory>
             <CategoryContainer>
-              {historial.map((item) => {
-                return <ListInfo key={item.id} {...item} />;
+              {historial.map((list) => {
+                return <ListInfo key={list.id} {...list} month={month} />;
               })}
             </CategoryContainer>
           </Fragment>
