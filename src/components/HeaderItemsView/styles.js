@@ -5,7 +5,7 @@ export const Header = styled.header`
   height: 100px;
   display: flex;
   justify-content: space-between;
-  padding: 25px 50px 0 50px;
+  padding: 37.5px 50px 0 50px;
 
   h3 {
     width: 450.29px;
