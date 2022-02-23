@@ -67,7 +67,13 @@ export const CategoriesContainer = styled.div`
   }
 `;
 
-export const ToggleEditOrComplete = styled.div`
+export const ToggleEditOrComplete = styled.form`
   display: flex;
   justify-content: space-between;
+
+  button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+  }
 `;

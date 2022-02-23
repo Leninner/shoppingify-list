@@ -31,7 +31,8 @@ export const ShoppingList = ({ shoppingCart }) => {
     setListName(e.target.value);
   };
 
-  const handleSaveName = () => {
+  const handleSaveName = (e) => {
+    e.preventDefault();
     dispatch({
       type: 'UPDATE_SHOPPING_LIST_NAME',
       payload: listName,
@@ -62,9 +63,9 @@ export const ShoppingList = ({ shoppingCart }) => {
                 edit
               </span>
             ) : (
-              <span className='material-icons-outlined' onClick={handleSaveName}>
+              <button className='material-icons-outlined' onClick={handleSaveName}>
                 done
-              </span>
+              </button>
             )}
           </ToggleEditOrComplete>
 
