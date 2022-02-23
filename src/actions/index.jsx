@@ -13,15 +13,20 @@ export const HandleAddItem = () => {
   };
 };
 
-export const HandleAddItemToCategories = (payload) => async (dispatch, getState) => {
+export const HandleAddItemToCategories = (payload) => (dispatch, getState) => {
+  const { name } = payload;
   const { shoppingCart } = getState().shoppingCartReducer;
+
+  if (!shoppingCart.some((value) => value.name === name)) {
+    dispatch({
+      type: 'SINC_CATEGORIES_NAMES',
+      payload,
+    });
+  }
 
   dispatch({
     type: ADD_ITEM_TO_CATEGORY,
-    data: {
-      payload,
-      shoppingCart,
-    },
+    payload,
   });
 };
 

@@ -33,6 +33,22 @@ const initialState = {
 export const shoppingCartReducer = (state = initialState, action) => {
   const { type } = action;
 
+  if (type === 'SINC_CATEGORIES_NAMES') {
+    const shoppingCartUpdated = [...state.shoppingCart];
+    const { payload } = action;
+
+    shoppingCartUpdated.push({
+      id: shoppingCartUpdated.length + 1,
+      name: payload.category,
+      items: [],
+    });
+
+    return {
+      ...state,
+      shoppingCart: [...shoppingCartUpdated],
+    };
+  }
+
   if (type === UPDATE_SHOPPING_LIST_NAME) {
     return {
       ...state,

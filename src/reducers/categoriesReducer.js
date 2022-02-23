@@ -184,10 +184,9 @@ export const categoriesReducer = (state = initalState, action) => {
 
   if (action.type === ADD_ITEM_TO_CATEGORY) {
     const categoriesUpdated = [...state.categories];
-    const { payload, shoppingCart } = action.data;
+    const { payload } = action;
 
     const { category } = payload;
-    console.log(shoppingCart);
 
     const { note, imageURL, itemName } = payload;
 
@@ -220,17 +219,12 @@ export const categoriesReducer = (state = initalState, action) => {
         ],
       });
 
-      shoppingCart.push({
-        id: shoppingCart.length + 1,
-        name: category,
-        items: [],
-      });
+      // Aquí se tienen que sincronizar las categorias
     }
 
     return {
       ...state,
       categories: [...categoriesUpdated],
-      shoppingCart: [...shoppingCart],
     };
   }
 
