@@ -1,6 +1,6 @@
 import { ReturnButton, Header, MainInfo } from './styles';
 
-export const HeaderHistoryListInfoView = ({ dateCompleted, newListName }) => {
+export const HeaderHistoryListInfo = ({ dateCompleted, newListName }) => {
   return (
     <Header>
       <ReturnButton to='/history'>

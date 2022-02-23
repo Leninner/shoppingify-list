@@ -1,7 +1,8 @@
 import { StyledViewMain, StyledContainerMain } from '../styles.js';
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { HeaderHistoryListInfoView } from '../../components/HeaderHistoryListInfoView';
+import { HeaderHistoryListInfo } from '../../components/HeaderHistoryListInfo';
+import { ListInfoView } from '../../components/ListInfoView';
 
 export const HistoryListInfoView = () => {
   const { month, idList, listName } = useParams();
@@ -14,12 +15,14 @@ export const HistoryListInfoView = () => {
 
   console.log({ data: shoppingifyHistorial[newMonth].historial[idList - 1] });
 
-  const { dateCompleted } = shoppingifyHistorial[newMonth].historial[idList - 1];
+  const { dateCompleted, shoppingList } = shoppingifyHistorial[newMonth].historial[idList - 1];
 
   return (
     <StyledViewMain>
-      <HeaderHistoryListInfoView dateCompleted={dateCompleted} newListName={newListName} />
-      <StyledContainerMain></StyledContainerMain>
+      <HeaderHistoryListInfo dateCompleted={dateCompleted} newListName={newListName} />
+      <StyledContainerMain>
+        <ListInfoView shoppingList={shoppingList} />
+      </StyledContainerMain>
     </StyledViewMain>
   );
 };
