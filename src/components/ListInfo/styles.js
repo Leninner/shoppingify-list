@@ -6,8 +6,8 @@ export const LinkListInfo = styled(Link)`
 `;
 
 export const ListInfoContainer = styled.div`
-  width: 811.96px;
-  height: 63.45px;
+  width: 50rem;
+  height: 3.966rem;
   background: #ffffff;
   box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.05);
   border-radius: 12px;
