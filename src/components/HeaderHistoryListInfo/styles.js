@@ -20,7 +20,7 @@ export const Header = styled.header`
   height: auto;
   display: flex;
   flex-direction: column;
-  padding: 40px 50px 0 50px;
+  padding: 40px 50px 0 5rem;
 `;
 
 export const MainInfo = styled.div`

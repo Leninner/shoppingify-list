@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const StyledAddItemContainer = styled.div`
   position: absolute;
   width: 100%;
-  height: 130.98px;
+  height: 8.186rem;
   background-color: white;
   right: 0;
   bottom: 0;
@@ -12,29 +12,29 @@ export const StyledAddItemContainer = styled.div`
   justify-content: center;
 `;
 
+const SimilarStyles = `
+position: relative;
+width: 19.368rem;
+display: flex;
+align-items: center;
+justify-content: center;
+`;
+
 export const Div = styled.div`
-  position: relative;
-  width: 83.99%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  ${SimilarStyles}
 `;
 
 export const Form = styled.form`
-  position: relative;
-  width: 83.99%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  ${SimilarStyles}
 `;
 
 export const BoxInput = styled.input`
   width: 100%;
-  height: 61.25px;
+  height: 3.828rem;
   border: 2px solid #f9a109;
   border-radius: 12px;
   outline: none;
-  padding: 0px 17.63px;
+  padding: 0 1.102rem;
 
   &::placeholder {
     font-style: normal;
@@ -51,8 +51,8 @@ export const BoxInput = styled.input`
 
 export const ButtonAddItem = styled.button`
   position: absolute;
-  width: 87.35px;
-  height: 61.25px;
+  width: 5.459rem;
+  height: 3.828rem;
   background: #f9a109;
   border-radius: 12px;
   border: none;

@@ -2,8 +2,8 @@ import styled from 'styled-components';
 
 export const StyledBoxFeedback = styled.div`
   position: absolute;
-  width: 79.37%;
-  height: 129.91px;
+  width: 19.298rem;
+  height: 8.119rem;
   top: 43.7px;
   left: calc(50% - 39.69%);
   background: #80485b;
@@ -34,8 +34,8 @@ export const Description = styled.p`
 
 export const Button = styled.button`
   margin-top: 13.61px;
-  width: 120px;
-  height: 40px;
+  width: 7.5rem;
+  height: 2.5rem;
   background: #ffffff;
   box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.04);
   border-radius: 12px;

@@ -1,9 +1,8 @@
 import styled from 'styled-components';
 
 export const StyledViewMain = styled.div`
-  position: absolute;
-  width: 66.46%;
-  left: 6.88%;
+  position: relative;
+  width: calc(100% - 24.313rem - 5.87rem);
   height: 100%;
   display: flex;
   flex-direction: column;

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const ItemInfoContainer = styled.div`
-  width: 182px;
+  width: 11.375rem;
   background: #ffffff;
   box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.05);
   border-radius: 12px;

@@ -2,8 +2,7 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
 export const MenuContainer = styled.div`
-  position: absolute;
-  width: 6.88%;
+  width: 5.87rem;
   height: 100vh;
   background: #ffffff;
   display: flex;

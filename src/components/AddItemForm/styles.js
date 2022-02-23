@@ -36,8 +36,8 @@ export const Campo = styled.label`
 `;
 
 export const Entrada = styled.input`
-  width: 309.89px;
-  height: 61.25px;
+  width: 19.368rem;
+  height: 3.828rem;
   border: 2px solid #bdbdbd;
   border-radius: 12px;
   outline: none;
@@ -58,13 +58,13 @@ export const Entrada = styled.input`
 `;
 
 export const EntradaNote = styled.textarea`
-  width: 309.89px;
-  height: 100px;
+  width: 19.368rem;
+  height: 6.889rem;
   border: 2px solid #bdbdbd;
   border-radius: 12px;
   outline: none;
   resize: vertical;
-  max-height: 150px;
+  max-height: 9.375rem;
   padding: 10px 16px;
   margin-top: 10px;
 
