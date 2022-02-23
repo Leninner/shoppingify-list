@@ -3,7 +3,7 @@ import botella from '../../assets/source.svg';
 
 export const BoxFeedback = ({ handleAddItem }) => {
   const handleClick = () => {
-    handleAddItem();
+    handleAddItem(true);
   };
 
   return (

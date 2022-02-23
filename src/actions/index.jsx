@@ -7,9 +7,10 @@ import {
   ADD_TO_CURRENT_LIST,
 } from '../types';
 
-export const HandleAddItem = () => {
+export const HandleAddItem = (payload) => {
   return {
     type: TOGGLE_ADD_ITEM,
+    payload,
   };
 };
 
@@ -72,6 +73,11 @@ export const AddToCurrentList = (payload) => (dispatch, getState) => {
       categoryName,
       idCategory,
     },
+  });
+
+  dispatch({
+    type: TOGGLE_ADD_ITEM,
+    payload: false,
   });
 };
 

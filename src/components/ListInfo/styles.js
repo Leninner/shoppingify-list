@@ -6,7 +6,7 @@ export const LinkListInfo = styled(Link)`
 `;
 
 export const ListInfoContainer = styled.div`
-  width: 50rem;
+  width: 90%;
   height: 3.966rem;
   background: #ffffff;
   box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.05);

@@ -178,7 +178,7 @@ export const categoriesReducer = (state = initalState, action) => {
   if (action.type === TOGGLE_ADD_ITEM) {
     return {
       ...state,
-      isAdding: !state.isAdding,
+      isAdding: action.payload,
     };
   }
 

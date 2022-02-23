@@ -39,6 +39,12 @@ export const useFormikHook = () => {
 
     onSubmit: (values) => {
       dispatch(HandleAddItemToCategories(values));
+
+      dispatch({
+        type: 'TOGGLE_ADD_ITEM',
+        payload: false,
+      });
+
       formik.resetForm();
       setSelected('');
       setDisabled(false);
@@ -48,9 +54,17 @@ export const useFormikHook = () => {
   });
 
   useEffect(() => {
-    if (selected) {
-      formik.setFieldValue('category', selected);
+    let isMounted = true;
+
+    if (isMounted) {
+      if (selected) {
+        formik.setFieldValue('category', selected);
+      }
     }
+
+    return () => {
+      isMounted = false;
+    };
   }, [selected]); //eslint-disable-line
 
   return { formik, selected, setSelected, disabled, setDisabled };

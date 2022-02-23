@@ -35,7 +35,7 @@ export const AddItemButton = ({
 
   const handleClick = (e) => {
     e.preventDefault();
-    handleAddItem();
+    handleAddItem(false);
   };
 
   const handleDeleteItemFromCategories = () => {
