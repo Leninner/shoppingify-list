@@ -5,14 +5,17 @@ import { useSelector } from 'react-redux';
 export const HistoryListInfoView = () => {
   const { month, idList, listName } = useParams();
 
-  console.log({ month, idList, listName });
+  const newMonth = month.split('_').join(' ');
+  const newListName = listName.split('_').join(' ');
+
+  console.log({ newMonth, idList, newListName });
   const { shoppingifyHistorial } = useSelector((state) => state.historialReducer);
 
-  console.log({ data: shoppingifyHistorial[month].historial[idList - 1] });
+  console.log({ data: shoppingifyHistorial[newMonth].historial[idList - 1] });
 
   return (
     <StyledViewMain>
-      <StyledContainerMain>{listName}</StyledContainerMain>
+      <StyledContainerMain>{newListName}</StyledContainerMain>
     </StyledViewMain>
   );
 };

@@ -4,7 +4,8 @@ export const ListInfo = (props) => {
   const { shoppingListName, isCompleted, dateCompleted, month, id } = props;
 
   return (
-    <LinkListInfo to={`/history/${month[0]}/info-list/${id}/${shoppingListName}`}>
+    <LinkListInfo
+      to={`/history/${month[0].split(' ').join('_')}/info-list/${id}/${shoppingListName.split(' ').join('_')}`}>
       <ListInfoContainer>
         <TitleList>{shoppingListName}</TitleList>
         <div>
