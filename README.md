@@ -131,5 +131,3 @@ $ npm start
 This project is a shopping list application: https://devchallenges.io/challenges/mGd5VpbO4JnzU6I9l96x
 
 > https://www.figma.com/file/kX8FNpYFVLI4ivuEQ6yGgS/Shopping-List
-
-Vamos a hacer un pequeño cambio
