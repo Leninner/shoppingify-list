@@ -47,10 +47,10 @@ export const MenuAside = () => {
           top={60.16}
           onMouseEnter={handleShowThree}
           onMouseLeave={handleShowThree}
-          to='/inventary'>
+          to='/stadistics'>
           &#xe85c;
           <HoverMenuItem top={60.16} isShow={isShowThree}>
-            Inventary
+            Stadistics
           </HoverMenuItem>
         </MenuItem>
       </DivItems>
