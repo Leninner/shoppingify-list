@@ -18,7 +18,13 @@ export const CardCategoryItemInfo = ({ children, BackToShoppingList, itemToShow,
         <span className='material-icons'>arrow_back</span> Back
       </Return>
 
-      <ImgItem src={imageURL || imageDefault} alt='imageURL' />
+      <ImgItem
+        src={imageURL || imageDefault}
+        alt='imageURL'
+        onError={(e) => {
+          e.target.src = imageDefault;
+        }}
+      />
 
       <ContainerInfo>
         <span>name</span>

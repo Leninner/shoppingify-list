@@ -15,49 +15,49 @@ const initalState = {
         {
           id: 1,
           itemName: 'Frutillas',
-          note: 'Las frutillas son realmente ricas',
+          note: 'La frutilla es una fruta que, según la región, también se conoce como fresón o fresa.',
           imageURL:
-            'https://images.unsplash.com/photo-1612871689353-cccf581d667b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80',
+            'https://images.unsplash.com/photo-1614436164055-703ea06fc9bc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80',
           isItemInfo: false,
         },
         {
           id: 2,
           itemName: 'Uvas',
-          note: 'La carne es algo riquísimo',
+          note: 'La uva es la común denominación que reciben los frutos · racimos ; Pueden ser negras, moradas, verdes, amarillas, doradas, púrpura o rosadas',
           imageURL:
-            'https://images.unsplash.com/photo-1612871689353-cccf581d667b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80',
+            'https://images.unsplash.com/photo-1504868173-db962b7c3757?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8dXZhc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60',
           isItemInfo: false,
         },
         {
           id: 3,
           itemName: 'Manzana',
-          note: 'La carne es algo riquísimo',
+          note: 'La manzana es el fruto comestible de la especie Malus domestica, el manzano común. Es una fruta pomácea de forma redonda y sabor muy dulce.',
           imageURL:
-            'https://images.unsplash.com/photo-1612871689353-cccf581d667b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80',
+            'https://images.unsplash.com/photo-1591735179859-a049994205de?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fG1hbnphbmF8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60',
           isItemInfo: false,
         },
         {
           id: 4,
-          itemName: 'Plátano',
-          note: 'La carne es algo riquísimo',
+          itemName: 'Banano',
+          note: 'El banano moderno es un cultivo, probablemente originario de la región indomalaya. Desde Indonesia se propagaron hacia el sur y el este, alcanzando Hawái',
           imageURL:
-            'https://images.unsplash.com/photo-1612871689353-cccf581d667b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80',
+            'https://images.unsplash.com/photo-1528825871115-3581a5387919?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YmFuYW5hfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60',
           isItemInfo: false,
         },
         {
           id: 5,
           itemName: 'Mandarina',
-          note: 'La carne es algo riquísimo',
+          note: 'La mandarina es el fruto de las diferentes especies de cítricos llamados comúnmente mandarino, entre ellas Citrus reticulata, Citrus unshiu, Citrus reshni, así como sus híbridos, incluyendo Citrus tangerina, cuya taxonomía está discutida.',
           imageURL:
-            'https://images.unsplash.com/photo-1612871689353-cccf581d667b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80',
+            'https://images.unsplash.com/photo-1603812911324-4ed337529c1f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8bWFuZGFyaW5hfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60',
           isItemInfo: false,
         },
         {
           id: 6,
           itemName: 'Melón',
-          note: 'La carne es algo riquísimo',
+          note: 'Cucumis melo, llamado comúnmente melón, es una especie de la familia de las cucurbitáceas. Domesticada hace más de cuatro mil años en la región mediterránea oriental y Asia occidental, el origen exacto de la especie silvestre es aún desconocido.',
           imageURL:
-            'https://images.unsplash.com/photo-1612871689353-cccf581d667b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80',
+            'https://images.unsplash.com/photo-1571575173700-afb9492e6a50?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fG1lbCVDMyVCM258ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60',
           isItemInfo: false,
         },
       ],
@@ -68,10 +68,10 @@ const initalState = {
       items: [
         {
           id: 1,
-          itemName: 'Pescado',
-          note: 'Las frutillas son realmente ricas',
+          itemName: 'Pargo',
+          note: 'El pargo es una especie de pez perciforme de la familia Sparidae. Habita el Atlántico desde las islas Británicas hasta el sur de Argentina, prefiriendo las regiones subtropicales a baja y media profundidad, y se cría también en piscifactorías para su consumo.',
           imageURL:
-            'https://images.unsplash.com/photo-1612871689353-cccf581d667b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80',
+            'https://images.aws.nestle.recipes/resized/cd153cfbb9d153b1786c7d45adac52b2_Pargo-rojo-al-sarten_708_600.png',
           isItemInfo: false,
         },
         {

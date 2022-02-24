@@ -27,8 +27,8 @@ export const Return = styled.div`
 `;
 
 export const ImgItem = styled.img`
-  width: 300.43px;
-  height: 219.69px;
+  width: 100%;
+  height: 13.731rem;
   border-radius: 25px;
   object-fit: cover;
 `;
@@ -58,6 +58,5 @@ export const ContainerInfo = styled.div`
     font-size: 18px;
     line-height: 22px;
     color: #000000;
-    width: 296.23px;
   }
 `;
