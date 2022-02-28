@@ -5,6 +5,7 @@ import Items from '../pages/Items';
 import { Home } from '../pages/Home';
 import { History } from '../pages/History';
 import { HistoryListInfoView } from '../containers/HistoryListInfoView';
+import { Stadistics } from '../pages/Stadistics';
 
 export const App = () => {
   return (
@@ -16,7 +17,7 @@ export const App = () => {
           <Route path='/items' element={<Items />} />
           <Route path='/history' element={<History />} />
           <Route path='/history/:month/info-list/:idList/:listName' element={<HistoryListInfoView />} />
-          <Route path='/inventary' element={<Home />} />
+          <Route path='/stadistics' element={<Stadistics />} />
         </Routes>
       </Layout>
     </BrowserRouter>

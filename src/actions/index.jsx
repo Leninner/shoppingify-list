@@ -81,12 +81,13 @@ export const AddToCurrentList = (payload) => (dispatch, getState) => {
   });
 };
 
-export const AddToHistory = (isCompleted) => async (dispatch, getState) => {
+// NOTE: En este action, podemos utilizat async/await para controlar el flujo de la aplicación
+export const AddToHistory = (isCompleted) => (dispatch, getState) => {
   const { shoppingCart, shoppingListName } = getState().shoppingCartReducer;
 
   const newShoppingCart = JSON.parse(JSON.stringify(shoppingCart));
 
-  await dispatch({
+  dispatch({
     type: 'ADD_TO_HISTORY',
     payload: {
       shoppingCart: newShoppingCart,
@@ -95,7 +96,14 @@ export const AddToHistory = (isCompleted) => async (dispatch, getState) => {
     },
   });
 
-  await dispatch({
+  const { shoppingifyHistorial } = getState().historialReducer;
+
+  dispatch({
     type: 'DELETE_LIST',
+  });
+
+  dispatch({
+    type: 'BUILD_RESUME',
+    payload: shoppingifyHistorial,
   });
 };

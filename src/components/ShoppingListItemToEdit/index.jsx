@@ -1,13 +1,10 @@
 import { BoxCategory } from './styles';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 export const ShoppingListItemToEdit = ({ itemName, quantity, isObtained, idCategory, id }) => {
   const dispatch = useDispatch();
 
-  const state = useSelector((state) => state);
-
   const handleClick = () => {
-    console.log(state);
     dispatch({
       type: 'OBTAIN_ITEM',
       payload: {

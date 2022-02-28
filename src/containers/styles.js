@@ -7,6 +7,13 @@ export const StyledViewMain = styled.div`
   display: flex;
   flex-direction: column;
   background: #fafafe;
+
+  ${({ center }) =>
+    center &&
+    `
+    align-items: center;
+    overflow: auto;
+    `}
 `;
 
 export const StyledContainerMain = styled.div`
