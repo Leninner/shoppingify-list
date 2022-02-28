@@ -121,6 +121,7 @@ $ npm start
 - [FAQs Redux](https://redux.js.org/faq/reducers/#how-do-i-share-state-between-two-reducers-do-i-have-to-use-combinereducers)
 - [PX to REM Converter](https://nekocalc.com/es/px-a-rem-conversor)
 - [Warning: Can't perform a React state update on an unmounted component.](https://stackoverflow.com/questions/53949393/cant-perform-a-react-state-update-on-an-unmounted-component)
+- [Redux Persist](https://www.npmjs.com/package/redux-persist#basic-usage)
 
 ## Contact
 
