@@ -87,7 +87,7 @@ This application/site was created as a submission to a [DevChallenges](https://d
 
 - ✅ User story: I can see my shopping history and I can see the details of it
 
-- User story: I can see some statistics: top items, top categories, and monthly comparison. (Tips: use libraries like recharts for the graph)
+- ✅ User story: I can see some statistics: top items, top categories, and monthly comparison.
 
 - User story (optional): I can search for items
 
