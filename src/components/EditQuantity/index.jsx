@@ -3,10 +3,7 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 
 export const EditQuantity = ({ itemName, idCategory, id: idItem, setEdit, quantity }) => {
-  console.log({ itemName, idCategory, idItem });
-
   const dispatch = useDispatch();
-
   const [newQuantity, setNewQuantity] = useState(quantity);
 
   const handleIncrement = () => setNewQuantity(newQuantity + 1);

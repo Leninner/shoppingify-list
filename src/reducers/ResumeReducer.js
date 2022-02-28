@@ -89,8 +89,6 @@ export const ResumeReducer = (state = initialState, action) => {
       return setMonthQuantity(payload, state);
     }
 
-    console.log(state);
-
     return {
       ...state,
       data: [
