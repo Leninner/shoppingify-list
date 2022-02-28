@@ -127,7 +127,3 @@ $ npm start
 - Website [your-website.com](https://leninner.vercel.app/)
 - GitHub [@leninner](https://github.com/leninner)
 - Twitter [@\_leninner](https://twitter.com/_leninner)
-
-This project is a shopping list application: https://devchallenges.io/challenges/mGd5VpbO4JnzU6I9l96x
-
-> https://www.figma.com/file/kX8FNpYFVLI4ivuEQ6yGgS/Shopping-List
