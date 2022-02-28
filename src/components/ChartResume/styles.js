@@ -4,6 +4,7 @@ export const StyledChartResume = styled.div`
   width: 100%;
   padding: 0 5%;
   height: 100%;
+  margin-bottom: 150px;
 
   h1 {
     margin: 45px 0;

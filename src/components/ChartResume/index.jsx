@@ -1,26 +1,23 @@
-import { LineChart, Line, CartesianGrid, XAxis, YAxis, ResponsiveContainer } from 'recharts';
+import { LineChart, Line, CartesianGrid, XAxis, YAxis, ResponsiveContainer, Tooltip, Legend } from 'recharts';
 import { StyledChartResume } from './styles';
+import { useSelector } from 'react-redux';
 
-const data = [
-  { name: 'January', uv: 400, pv: 2400, amt: 2400 },
-  { name: 'February', uv: 300, pv: 2100, amt: 2000 },
-  { name: 'March', uv: 3000, pv: 200, amt: 2200 },
-  { name: 'April', uv: 200, pv: 2600, amt: 2200 },
-  { name: 'May', uv: 278, pv: 1500, amt: 2000 },
-  { name: 'June', uv: 189, pv: 2100, amt: 2200 },
-  { name: 'July', uv: 189, pv: 2100, amt: 2200 },
-];
+// Items => Cantidad de items per month
 
 export const ChartResume = () => {
+  const { data } = useSelector((state) => state.ResumeReducer);
+
   return (
     <StyledChartResume>
       <h1>Montly Summary</h1>
       <ResponsiveContainer width='100%' height='70%'>
         <LineChart data={data}>
-          <Line type='monotone' dataKey='uv' stroke='#F9A109' />
-          <CartesianGrid stroke='#E0E0E0' />
+          <Line type='monotone' dataKey='Items' stroke='#F9A109' />
+          <CartesianGrid stroke='#bbbbbb' strokeDasharray='3 3' />
           <XAxis dataKey='name' />
           <YAxis />
+          <Tooltip />
+          <Legend />
         </LineChart>
       </ResponsiveContainer>
     </StyledChartResume>
