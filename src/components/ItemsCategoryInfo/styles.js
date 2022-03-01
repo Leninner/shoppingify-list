@@ -5,7 +5,7 @@ export const StyledItemsCategoryInfo = styled.div`
   padding: 3.125rem;
 
   @media (max-width: 768px) {
-    padding: 3rem 0 0 1rem;
+    padding: 3rem 1rem;
   }
 `;
 

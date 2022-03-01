@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const ItemInfoContainer = styled.div`
-  width: 11.375rem;
   background: #ffffff;
   box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.05);
   border-radius: 12px;
@@ -26,9 +25,5 @@ export const ItemInfoContainer = styled.div`
     font-weight: 500;
     font-size: 14px;
     color: #c1c1c4;
-  }
-
-  @media (max-width: 768px) {
-    width: 100%;
   }
 `;
