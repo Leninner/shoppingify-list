@@ -62,42 +62,20 @@ const setTopCategories = (payload) => {
     .splice(0, 3);
 };
 
-const setMonthQuantity = (payload, state) => {
-  // Esta función se encarga de setear la cantidad de items de cada mes en el estado ResumeReducer
-  return {
-    ...state,
-    data: state.data.map((value) => {
-      if (Object.keys(payload).some((month) => month.split(' ')[0] === value.name)) {
-        return {
-          ...value,
-          Items: getQuantityOfItemsPerMonth(payload[value.name + ' ' + new Date().getFullYear()]),
-        };
-      }
-
-      return value;
-    }),
-    topItems: setTopItems(payload),
-    topCategories: setTopCategories(payload),
-  };
-};
-
 export const ResumeReducer = (state = initialState, action) => {
   const { type, payload } = action;
 
   if (type === 'BUILD_RESUME') {
-    if (state.data.some((value) => Object.keys(payload).some((month) => month.split(' ')[0] === value.name))) {
-      return setMonthQuantity(payload, state);
-    }
+    console.log(payload);
 
     return {
       ...state,
-      data: [
-        ...state.data,
-        {
-          name: Object.keys(payload)[0].split(' ')[0],
-          Items: getQuantityOfItemsPerMonth(payload[Object.keys(payload)[0]]),
-        },
-      ],
+      data: Object.entries(payload).map(([key, value]) => {
+        return {
+          name: key.split(' ')[0],
+          Items: getQuantityOfItemsPerMonth(value),
+        };
+      }),
       topItems: setTopItems(payload),
       topCategories: setTopCategories(payload),
     };
