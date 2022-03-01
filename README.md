@@ -54,6 +54,11 @@ Introduce your projects by taking a screenshot or a gif. Try to tell visitors a 
 - [React](https://reactjs.org/)
 - [Redux](https://redux.js.org/)
 - [Styled Components](https://styled-components.com/)
+- [Redux Persist](https://redux-persist.js.org/)
+- [React Router](https://reactrouter.com/)
+- [Redux Thunk](https://redux-thunk.js.org/)
+- [Google Icons](https://material.io/resources/icons/)
+- [Figma](https://www.figma.com/)
 
 ## Features
 
@@ -89,7 +94,7 @@ This application/site was created as a submission to a [DevChallenges](https://d
 
 - ✅ User story: I can see some statistics: top items, top categories, and monthly comparison.
 
-- User story (optional): I can search for items
+- ✅ User story (optional): I can search for items
 
 ## How To Use
 
@@ -125,6 +130,6 @@ $ npm start
 
 ## Contact
 
-- Website [leninner.vercel.app](https://leninner.vercel.app/)
+- Website [leninner.vercel.app](https://leninner.vercel.app/home)
 - GitHub [@leninner](https://github.com/leninner)
 - Twitter [@\_leninner](https://twitter.com/_leninner)

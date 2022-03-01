@@ -13,7 +13,6 @@ export const App = () => {
       <Layout>
         <Routes>
           <Route path='/' element={<Items />} />
-          <Route path='/items' element={<Items />} />
           <Route path='/history' element={<History />} />
           <Route path='/history/:month/info-list/:idList/:listName' element={<HistoryListInfoView />} />
           <Route path='/stadistics' element={<Stadistics />} />

@@ -23,7 +23,7 @@ export const MenuAside = () => {
           top={40.34}
           onMouseEnter={handleShowOne}
           onMouseLeave={handleShowOne}
-          to='/items'>
+          to='/'>
           &#xe896;
           <HoverMenuItem top={40.34} isShow={isShowOne}>
             Items
