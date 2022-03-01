@@ -5,4 +5,8 @@ export const StyledInteractiveAside = styled.div`
   width: 27.0138%;
   height: 100vh;
   position: relative;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;

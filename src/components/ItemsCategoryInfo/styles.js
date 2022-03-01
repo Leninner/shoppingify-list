@@ -3,6 +3,10 @@ import styled from 'styled-components';
 export const StyledItemsCategoryInfo = styled.div`
   width: 100%;
   padding: 3.125rem;
+
+  @media (max-width: 768px) {
+    padding: 3rem 0 0 1rem;
+  }
 `;
 
 export const TitleCategory = styled.h3`
@@ -19,4 +23,9 @@ export const CategoryContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 2fr));
   grid-gap: 40px 19.61px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    grid-gap: 20px 19.61px;
+  }
 `;

@@ -27,4 +27,8 @@ export const ItemInfoContainer = styled.div`
     font-size: 14px;
     color: #c1c1c4;
   }
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;

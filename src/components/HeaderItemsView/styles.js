@@ -20,6 +20,10 @@ export const Header = styled.header`
       color: #f9a109;
     }
   }
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 export const SearchContainer = styled.form`

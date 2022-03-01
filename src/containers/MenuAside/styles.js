@@ -10,6 +10,10 @@ export const MenuContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 30px 0 15px 0;
+
+  @media (max-width: 768px) {
+    width: 16.42%;
+  }
 `;
 
 export const DivItems = styled.div`
