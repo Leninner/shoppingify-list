@@ -1,12 +1,4 @@
-import {
-  StyledAddItemContainer,
-  BoxInput,
-  Form,
-  ButtonAddItem,
-  ButtonConfirm,
-  Div,
-  ButtonCompletingList,
-} from './styles';
+import { StyledAddItemContainer, ButtonConfirm, Div, ButtonCompletingList } from './styles';
 import { useSelector, useDispatch } from 'react-redux';
 
 export const AddItemButton = ({
@@ -22,12 +14,6 @@ export const AddItemButton = ({
   AddToHistory,
 }) => {
   const { shoppingCartReducer } = useSelector((state) => state);
-
-  // console.log({
-  //   shoppingCartReducer,
-  //   historialReducer,
-  //   categoriesReducer,
-  // });
 
   const { shoppingCart, isCompleting } = shoppingCartReducer;
 
@@ -45,8 +31,6 @@ export const AddItemButton = ({
   const handleAddToCurrentList = () => {
     AddToCurrentList({ idItem, categoryName, idCategory });
   };
-
-  const isCurrentListEmpty = shoppingCart.every((category) => category.items.length === 0);
 
   const isAddedToCurrentList = shoppingCart.some((category) =>
     category.items.some((item) => {
@@ -70,18 +54,13 @@ export const AddItemButton = ({
         <>
           {!isItemInfo ? (
             <>
-              {isAdding ? (
+              {isAdding && (
                 <Div>
                   <ButtonConfirm isCancel onClick={handleClick} type='button'>
                     Cancel
                   </ButtonConfirm>
                   <ButtonConfirm type='submit'>Save</ButtonConfirm>
                 </Div>
-              ) : (
-                <Form>
-                  <BoxInput type='text' name='item' placeholder='Enter a name' disabled={isCurrentListEmpty} />
-                  <ButtonAddItem disabled={isCurrentListEmpty}>Save</ButtonAddItem>
-                </Form>
               )}
             </>
           ) : (

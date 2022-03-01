@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 export const MenuContainer = styled.div`
   width: 6.52%;
-  height: 100vh;
+  height: 100%;
   background: #ffffff;
   display: flex;
   flex-direction: column;
@@ -13,6 +13,7 @@ export const MenuContainer = styled.div`
 
   @media (max-width: 768px) {
     width: 16.42%;
+    padding: 30px 0;
   }
 `;
 
