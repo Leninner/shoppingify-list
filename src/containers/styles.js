@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const StyledViewMain = styled.div`
   position: relative;
-  width: calc(100% - 24.313rem - 5.87rem);
+  width: calc(100% - 27.0138% - 6.52%);
   height: 100%;
   display: flex;
   flex-direction: column;

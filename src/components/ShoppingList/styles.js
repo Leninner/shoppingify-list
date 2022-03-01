@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const StyledListItems = styled.div`
   position: relative;
-  top: 30%;
+  top: 217.57px;
   height: calc(100vh - 30% - 130.98px);
   width: 100%;
   right: 0;

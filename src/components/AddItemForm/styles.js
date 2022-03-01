@@ -26,6 +26,7 @@ export const Campo = styled.label`
   ${mainStyles}
   color: #34333a;
   display: flex;
+  width: 79.66%;
   flex-direction: column;
   margin: 18px 0;
   position: relative;
@@ -36,8 +37,8 @@ export const Campo = styled.label`
 `;
 
 export const Entrada = styled.input`
-  width: 19.368rem;
   height: 3.828rem;
+  width: 100%;
   border: 2px solid #bdbdbd;
   border-radius: 12px;
   outline: none;
@@ -58,7 +59,7 @@ export const Entrada = styled.input`
 `;
 
 export const EntradaNote = styled.textarea`
-  width: 19.368rem;
+  width: 100%;
   height: 6.889rem;
   border: 2px solid #bdbdbd;
   border-radius: 12px;

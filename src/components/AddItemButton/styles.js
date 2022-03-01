@@ -14,7 +14,7 @@ export const StyledAddItemContainer = styled.div`
 
 const SimilarStyles = `
 position: relative;
-width: 19.368rem;
+width: 79.66%;
 display: flex;
 align-items: center;
 justify-content: center;

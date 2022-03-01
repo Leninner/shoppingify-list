@@ -24,13 +24,13 @@ export const Header = styled.header`
 
 export const SearchContainer = styled.form`
   position: relative;
-  width: 275.61px;
+  width: 28.8%;
   height: 50.92px;
 
   span {
     position: absolute;
     top: calc(50% - 12px);
-    margin-left: 19.39px;
+    margin-left: 9.86%;
     color: #34333a;
   }
 
