@@ -1,5 +1,6 @@
 import { StyledCardCategoryItemInfo, Return, ImgItem, ContainerInfo } from './styles';
 import { cloneElement } from 'react';
+import { useDispatch } from 'react-redux';
 
 const imageDefault =
   'https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=775&q=80';
@@ -7,9 +8,11 @@ const imageDefault =
 export const CardCategoryItemInfo = ({ children, BackToShoppingList, itemToShow, isItemToShow }) => {
   const { itemName, imageURL, id, note } = itemToShow;
   const { name, id: idCategoryShowing } = isItemToShow;
+  const dispatch = useDispatch();
 
   const handleReturn = () => {
     BackToShoppingList({ idItem: id, categoryName: name, idCategory: idCategoryShowing });
+    dispatch({ type: 'SHOW_RESPONSIVE_INTERACTIVE_ASIDE', payload: false });
   };
 
   return (

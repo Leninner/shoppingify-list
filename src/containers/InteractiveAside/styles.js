@@ -7,6 +7,6 @@ export const StyledInteractiveAside = styled.div`
   position: relative;
 
   @media (max-width: 768px) {
-    display: none;
+    ${(props) => (props.showingModal ? 'display: block; width: calc(100% - 6.52%)' : 'display: none')};
   }
 `;

@@ -16,7 +16,7 @@ export const StyledViewMain = styled.div`
     `}
 
   @media (max-width: 768px) {
-    width: calc(100% - 6.52%);
+    ${(props) => (props.showingModal ? 'display: flex; width: calc(100% - 6.52%)' : 'display: none')};
   }
 `;
 

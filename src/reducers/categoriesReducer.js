@@ -172,6 +172,7 @@ const initalState = {
     },
   ],
   isAdding: false,
+  showingModal: false,
 };
 
 export const categoriesReducer = (state = initalState, action) => {
@@ -288,6 +289,13 @@ export const categoriesReducer = (state = initalState, action) => {
       ...state,
       categories: [...categoriesUpdated],
       shoppingCart: [...shoppingCart],
+    };
+  }
+
+  if (action.type === 'SHOW_RESPONSIVE_INTERACTIVE_ASIDE') {
+    return {
+      ...state,
+      showingModal: action.payload,
     };
   }
 

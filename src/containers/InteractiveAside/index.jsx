@@ -5,6 +5,7 @@ import { ShoppingList } from '../../components/ShoppingList';
 import { AddItemForm } from '../../components/AddItemForm';
 import { CardCategoryItemInfo } from '../../components/CardCategoryItemInfo';
 import PropTypes from 'prop-types';
+import { useSelector } from 'react-redux';
 
 const InteractiveAside = ({
   isAdding,
@@ -17,6 +18,7 @@ const InteractiveAside = ({
   AddToHistory,
 }) => {
   const isItemToShow = categories.find((category) => category.items.find((item) => item.isItemInfo));
+  const { showingModal } = useSelector((state) => state.categoriesReducer);
 
   let itemToShow = null;
 
@@ -25,7 +27,7 @@ const InteractiveAside = ({
   }
 
   return (
-    <StyledInteractiveAside>
+    <StyledInteractiveAside showingModal={showingModal}>
       {!isItemToShow ? (
         <>
           {isAdding ? (
