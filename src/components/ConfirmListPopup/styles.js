@@ -45,6 +45,22 @@ export const ConfirmListContainer = styled.div`
     bottom: 29.26px;
     right: 30.15px;
   }
+
+  @media (max-width: 768px) {
+    width: 75%;
+    height: 219.39px;
+    background: #ffffff;
+    border-radius: 24px;
+
+    h3 {
+      width: 85%;
+    }
+
+    span {
+      top: 0.5rem;
+      right: 0.7rem;
+    }
+  }
 `;
 
 export const FeddbackButton = styled.button`

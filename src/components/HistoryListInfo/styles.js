@@ -3,6 +3,10 @@ import styled from 'styled-components';
 export const StyledItemsCategoryInfo = styled.div`
   width: 100%;
   padding: 0 0 0 5rem;
+
+  @media (max-width: 768px) {
+    padding: 40px 0 0 10px;
+  }
 `;
 
 export const TitleCategory = styled.h3`

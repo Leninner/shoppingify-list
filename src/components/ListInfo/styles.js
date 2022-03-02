@@ -6,7 +6,7 @@ export const LinkListInfo = styled(Link)`
 `;
 
 export const ListInfoContainer = styled.div`
-  width: 90%;
+  width: 95%;
   height: 3.966rem;
   background: #ffffff;
   box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.05);
@@ -45,10 +45,19 @@ export const ListState = styled.div`
 
   ${({ isCompleted }) =>
     isCompleted ? `border: 1px solid #56ccf2;  color: #56ccf2;` : `border: 1px solid #EB5757;  color: #EB5757;`}
+
+  @media (max-width: 768px) {
+    margin: 0 10px;
+  }
 `;
 
 export const Icon = styled.span`
   color: ${(props) => props.color};
   margin-left: ${(props) => props.marginLeft};
   margin-right: ${(props) => props.marginRight};
+
+  @media (max-width: 768px) {
+    margin-left: 0;
+    margin-right: 0;
+  }
 `;

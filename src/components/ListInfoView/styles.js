@@ -6,6 +6,10 @@ export const Div = styled.div`
   z-index: 999;
   padding: 0 0 0 5rem;
   margin-top: 51px;
+
+  @media (max-width: 768px) {
+    padding: 0 0 0 10px;
+  }
 `;
 
 export const TitleCategory = styled.h1`

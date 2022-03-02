@@ -10,9 +10,10 @@ export const HistoryListInfoView = () => {
   const newListName = listName.split('_').join(' ');
   const { shoppingifyHistorial } = useSelector((state) => state.historialReducer);
   const { dateCompleted, shoppingList } = shoppingifyHistorial[newMonth].historial[idList - 1];
+  const { showingModal } = useSelector((state) => state.categoriesReducer);
 
   return (
-    <StyledViewMain>
+    <StyledViewMain showingModal={!showingModal}>
       <HeaderHistoryListInfo dateCompleted={dateCompleted} newListName={newListName} />
       <StyledContainerMain>
         <ListInfoView shoppingList={shoppingList} />

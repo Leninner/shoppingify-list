@@ -21,6 +21,10 @@ export const Header = styled.header`
   display: flex;
   flex-direction: column;
   padding: 40px 50px 0 5rem;
+
+  @media (max-width: 768px) {
+    padding: 40px 0 0 10px;
+  }
 `;
 
 export const MainInfo = styled.div`

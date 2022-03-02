@@ -21,4 +21,15 @@ export const TopResumeContainer = styled.div`
   @media (max-width: 1440px) {
     justify-content: space-between;
   }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2.5rem;
+
+    .tops {
+      width: 100%;
+      margin: 0 0 2.5rem 0;
+    }
+  }
 `;

@@ -26,10 +26,12 @@ export const AddItemButton = ({
 
   const handleDeleteItemFromCategories = () => {
     DeleteItemFromCategories({ idItem, categoryName, idCategory, itemName });
+    dispatch({ type: 'SHOW_RESPONSIVE_INTERACTIVE_ASIDE', payload: false });
   };
 
   const handleAddToCurrentList = () => {
     AddToCurrentList({ idItem, categoryName, idCategory });
+    dispatch({ type: 'SHOW_RESPONSIVE_INTERACTIVE_ASIDE', payload: false });
   };
 
   const isAddedToCurrentList = shoppingCart.some((category) =>

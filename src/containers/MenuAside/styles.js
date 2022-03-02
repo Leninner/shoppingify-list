@@ -78,6 +78,10 @@ export const HoverMenuItem = styled.span`
     transform: translateX(-50%);
     transform: rotate(90deg);
   }
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 // https://stackoverflow.com/questions/55465673/jest-enzyme-with-styled-components

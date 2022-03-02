@@ -40,6 +40,8 @@ export const useFormikHook = () => {
     onSubmit: (values) => {
       dispatch(HandleAddItemToCategories(values));
 
+      dispatch({ type: 'SHOW_RESPONSIVE_INTERACTIVE_ASIDE', payload: false });
+
       dispatch({
         type: 'TOGGLE_ADD_ITEM',
         payload: false,
