@@ -24,9 +24,8 @@
 
 <!-- TABLE OF CONTENTS -->
 
-## Table of Contents
+**Table of Contents**
 
-- [Table of Contents](#table-of-contents)
 - [Overview](#overview)
   - [Built With](#built-with)
 - [Features](#features)
@@ -40,12 +39,13 @@
 
 ![screenshot](https://user-images.githubusercontent.com/67031243/156062889-7dd2fce8-166a-4ace-9dbc-63a6a7bbaa85.png)
 
-Introduce your projects by taking a screenshot or a gif. Try to tell visitors a story about your project by answering:
+Shoppingify List allows you to take your shopping lists wherever you want. This project works both on desktop and mobile.
+You will be able to find this application in this [link](https://shoppingify-project.vercel.app/) and start using it right away.
 
-- Where can I see your demo?
-- What was your experience?
-- What have you learned/improved?
-- Your wisdom? :)
+While building this great project, I had a very good experience. There were very complicated features to implement and at a certain point I thought that I was not going to be able to achieve it and that I had to redo the project from scratch, however I did not give up and I was able to complete all the user stories that the challenge required.
+I learned a ton about how Redux handles data and used best practices for cleaner code.
+
+I improved my React, CSS and Redux skills a lot, it was really a very challenging project and it helped me a lot to gain a lot of experience.
 
 ### Built With
 
@@ -101,6 +101,7 @@ This application/site was created as a submission to a [DevChallenges](https://d
 <!-- Example: -->
 
 To clone and run this application, you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer.
+
 From your command line:
 
 ```bash
@@ -130,6 +131,6 @@ $ npm start
 
 ## Contact
 
-- Website [leninner.vercel.app](https://leninner.vercel.app/home)
+- Website [leninner.vercel.app](https://leninner.vercel.app)
 - GitHub [@leninner](https://github.com/leninner)
 - Twitter [@\_leninner](https://twitter.com/_leninner)
